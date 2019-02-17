@@ -1,4 +1,4 @@
-<html>
+<html lang="ar">
 
 <head>
     <title> Waffar</title>
