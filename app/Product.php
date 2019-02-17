@@ -28,4 +28,9 @@ class Product extends Model
     public function wishlist(){
         return $this->hasMany(app\Wishlist);
     }
+
+    public function review(){
+        return $this->hasMany(app\Review);
+    }
+
 }

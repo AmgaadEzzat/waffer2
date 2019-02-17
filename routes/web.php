@@ -86,4 +86,11 @@ Route::get('/wishlist/{id}','WishlistController@addtowishlist');
 
 
 
+Route::get('/details/{id}','ProductDetailController@showproductdetail');
+Route::post('/storecomment/{id}','ProductDetailController@sorecomment');
+Route::get('fetchlike', 'AjaxController@fetchlike');
+Route::get('fetchdislike', 'AjaxController@fetchdislike');
+Route::get('addtowishlist','AjaxController@addtowishlist');
+
+
 

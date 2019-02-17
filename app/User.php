@@ -36,6 +36,10 @@ class User extends Authenticatable
     public function wishlist(){
         return $this->hasMany(app\Wishlist);
     }
+    public function review(){
+        return $this->hasMany(app\Review);
+    }
+
     /**
      * The attributes that should be hidden for arrays.
      *
