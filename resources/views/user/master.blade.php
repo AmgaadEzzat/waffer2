@@ -27,16 +27,50 @@
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <div class=" w-75 text-center">
-            <form method="POST">
+            <form action="/insertsearch" method="post">
+                {{csrf_field()}}
                 <div class="form-group w-75">
                     <div class="input-group mt-4">
-                        <input type="text" class="form-control" placeholder="what you want to buy" id="search">
+                        <input type="text" name="txtsearch" id="txtsearch" class="form-control input-lg" placeholder="Search is easier now...." autocomplete=off />
                         <div class="input-group-append">
-                            <button class="btn btn-success btn-outline-light " type="submit">search</button>
+                            <button class="btn btn-success btn-outline-light" id="buttonsearch" type="submit">Search</button>
                         </div>
                     </div>
                 </div>
+                <div id="productList" class="fixed-top" style="padding-top:60px;padding-left:130px;">
+                </div>
+
             </form>
+            {{ csrf_field() }}
+
+            <script>
+                $(document).ready(function(){
+                    console.log("dddd");
+                    $('#txtsearch').keyup(function(){
+                        var query = $(this).val();
+                        if(query != '')
+                        {
+                            var _token = $('input[name="_token"]').val();
+                            $.ajax({
+                                url:"{{ route('autocomplete.fetch') }}",
+                                method:"POST",
+                                data:{query:query, _token:_token},
+                                success:function(data){
+                                    console.log(data);
+                                    $('#productList').fadeIn("slow");
+                                    $('#productList').html(data);
+                                }
+                            });
+                        }
+                    });
+
+                    $(document).on('click', 'li', function(){
+                        $('#txtsearch').val($(this).text());
+                        $('#productList').fadeOut("slow");
+                    });
+
+                });
+            </script>
 
         </div>
 

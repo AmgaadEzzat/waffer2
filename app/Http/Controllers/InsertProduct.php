@@ -40,7 +40,7 @@ class InsertProduct extends Controller
             $output = '<ul class="dropdown-menu" style="display:block; position:relative">';
             foreach($data as $row)
             {
-                $output .= '<li><a href="#">'.$row->productName.'</a></li>';
+                $output .= '<li><a href="#" class="text-dark">'.$row->productName.'</a></li>';
             }
             $output .= '</ul>';
             echo $output;

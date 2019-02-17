@@ -131,7 +131,7 @@
                 </div>
                 </div>
                 
- <div id="productList">
+ <div id="productList" class="text-dark">
         </div>
     
     </form>
