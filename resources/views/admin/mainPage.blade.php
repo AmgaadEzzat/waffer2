@@ -24,9 +24,7 @@
                     <div class="card-header  d-flex flex-row justify-content-between ">
                         <h5 id="products"> Products</h5>
                         <ul class="list-unstyled d-flex flex-row">
-                            <li ><i class="far fa-trash" ></i></li>
-                            <li ><i class="far fa-trash" ></i></li>
-                            <li ><i class="far fa-trash" ></i></li>
+                            <li ><a href="/adminadd"><i class="fas fa-plus-circle" style="color: #ff5370 ; font-size: 1.8em"></i></a></li>
                         </ul>
                     </div>
                     <div class="card-blok " >
@@ -49,7 +47,7 @@
                                         <td>{{$user->phone}}</td>
                                         <td>{{$user->type}}</td>
                                         <td>{{$user->city}}</td>
-                                        <td><a href="/{{$user->id}}/deleteUser"><i class="far fa-trash" ></i> </a></td>
+                                        <td><a href="/{{$user->id}}/deleteUser"><i class="fas fa-trash"></i></a></td>
                                     </tr>
                                 @endforeach
 
@@ -60,5 +58,25 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="container-fluid mt-5 ">
+        <div class="row d-flex justify-content-around">
+            <div class="col-md-4 ">
+                <div class="p-3 bg-white ">
+                    <i class="fas fa-users pt-3" style="  float: right; font-size: 1.8em ; color: #4099ff"></i>
+                    <h6>Users</h6>
+                    <p style="color: #4099ff ; font-weight: bold">{{$countOfUsers}}</p>
+
+                </div>
+            </div>
+            <div class="col-md-4 ">
+                <div class="p-3 bg-white  " >
+                    <i class="fab fa-product-hunt pt-3" style="  float: right; font-size: 1.8em ; color:#ffb64d">></i>
+                    <h6>Products</h6>
+                    <p style="color: #ffb64d ; font-weight: bold">{{$countOfProducts}}</p>
+                </div>
+            </div>
+        </div>
+
     </div>
     @endsection

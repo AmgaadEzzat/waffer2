@@ -298,7 +298,7 @@
                     <div class="col-sm-3"  >
                         <div class="card w-100 h-100" style="width: 100%;max-height:100%;height: auto; ">
                             <img class="card-img-top w-50 h-50" src="/img/{{$product->	productImage}}" alt="Card image" style="width:100%">
-                            <div class="card-body  h-50">
+                            <div class="card-body  h-100">
                                 <small class="card-title font-weight-bold">{{$product->productName}}</small><br>
                                 <small class="card-text">{{$product->productPrice}}</small>
                                 <p >{{$product->productAddress}}</p>
