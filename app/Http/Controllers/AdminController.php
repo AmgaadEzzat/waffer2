@@ -14,10 +14,12 @@ class AdminController extends Controller
     public function isadmin(){
         $catName=DB::table('categories')->get();
         $users = DB::table('users')->get();
+        $countOfUsers = DB::table('users')->count();
+        $countOfProducts = DB::table('products')->count();
 
        if( Auth::user()->type==2)
        {
-           return view('admin.mainPage',compact('catName'),compact('users'));
+           return view('admin.mainPage',compact('catName' , 'users' , 'countOfUsers' , 'countOfProducts'));
        }
        else{
            return redirect('/');
@@ -38,11 +40,6 @@ class AdminController extends Controller
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
@@ -51,9 +48,13 @@ class AdminController extends Controller
         return view('admin.addCategory' );
     }
     public function showDashboard()
-    { $catName=DB::table('categories')->get();
+    {
+        $catName=DB::table('categories')->get();
         $users = DB::table('users')->get();
-        return view('admin.mainPage' , compact('catName'), compact('users'));
+        $countOfUsers = DB::table('users')->count();
+        $countOfProducts = DB::table('products')->count();
+
+        return view('admin.mainPage' , compact('catName' , 'users' , 'countOfUsers' , 'countOfProducts') );
     }
 
 
@@ -67,7 +68,7 @@ class AdminController extends Controller
             'productAddress'=>'required|string',
             'productDescription'=>'required|string|min:30',
            'productImage'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
-        ]);
+         ]);
             $userId=Auth::user()->id;
          $catname=$request->catname;
          $catid=DB::table('categories')->where('categoryName','=',$catname)->get();
