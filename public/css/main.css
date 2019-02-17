@@ -50,7 +50,7 @@
 	box-sizing: border-box;
 }
 
-body, html {
+body {
 	height: 100%;
 	font-family: Poppins-Regular, sans-serif;
 }
@@ -169,13 +169,15 @@ iframe {
 [ login ]*/
 
 .limiter {
+  /*padding-top: 5%;*/
   width: 100%;
+  height: 100%;
   margin: 0 auto;
 }
 
 .container-login100 {
-  width: 100%;  
-  /*min-height: 100vh;*/
+  width: 100%;
+  min-height: 100vh;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -184,7 +186,7 @@ iframe {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  /*padding-top: 50px;*/
+  padding-top: 50px;
   /*background: #0250c5;*/
   /*background: -webkit-linear-gradient(bottom, #0250c5, #d43f8d);*/
   /*background: -o-linear-gradient(bottom, #0250c5, #d43f8d);*/
@@ -203,7 +205,7 @@ iframe {
   height: 100%;
   top: 0;
   left: 0;
-  /*background-image: url('../images/img-01.png');*/
+  /*background-image: url('../images/pexels-photo-934011.jpeg');*/
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -238,7 +240,6 @@ iframe {
   line-height: 1.2;
   text-transform: uppercase;
   text-align: center;
-
   width: 100%;
   display: block;
 }
@@ -327,7 +328,7 @@ iframe {
 }
 
 .input100:focus + .focus-input100 + .symbol-input100 {
-  color: #d33f8d;
+  color: DarkCyan;
   padding-left: 18px;
 }
 
@@ -368,7 +369,7 @@ iframe {
   height: 18px;
   border-radius: 3px;
   background: #fff;
-  border: 2px solid #d33f8d;
+  border: 2px solid DarkCyan;
   left: 0;
   top: 48%;
   -webkit-transform: translateY(-50%);
@@ -379,7 +380,7 @@ iframe {
 }
 
 .input-checkbox100:checked + .label-checkbox100::before {
-  color: #d33f8d;
+  color: DarkCyan;
 }
 
 
@@ -406,7 +407,7 @@ iframe {
   width: 100%;
   height: 62px;
   border-radius: 3px;
-  background: #d33f8d;
+  background: DarkCyan;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -477,7 +478,7 @@ iframe {
 
 .btn-face:hover,
 .btn-google:hover {
-  border-color: #d33f8d;
+  border-color: DarkCyan;
 }
 
 

@@ -35,7 +35,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/profile','UserController@ShowDataProfile');
 //Route::get('/profile/updatePro','UserController@ShowForUpdateProduct');
 Route::get('/profile/updateUser','UserController@ShowForUpdateUser');
-
+Route::post('/insertProductByUser','UserController@insertProduct');
 
 Route::get('/profile/{id}/editProduct','UserController@editProduct');
 Route::post('/profile/{id}/update', 'UserController@updateProduct');

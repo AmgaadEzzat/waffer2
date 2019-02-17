@@ -1,3 +1,4 @@
+
 #navbar{   background-color: transparent;
 }
 .mySlides {display:none;}
@@ -6,8 +7,8 @@
     height: 653px;
     background-size: 100% 100%; 
 }
-#logo{color: #d33f8d;}
-#navlinks{color: #d33f8d;font-size:20px;}
+#logo{color: DarkCyan ;}
+#navlinks{color: DarkCyan ;font-size:20px;}
 .parallax {
   min-height: 300px;
   background-attachment: fixed;
