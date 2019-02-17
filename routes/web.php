@@ -32,7 +32,7 @@ Route::post('/index/search', 'InsertProduct@index')->name('index.search');
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::get('/profile','UserController@ShowDataProfile');
+Route::get('/profile','UserController@ShowDataProfile')->name('profile');
 //Route::get('/profile/updatePro','UserController@ShowForUpdateProduct');
 Route::get('/profile/updateUser','UserController@ShowForUpdateUser');
 Route::post('/insertProductByUser','UserController@insertProduct');
@@ -85,5 +85,5 @@ Route::get('/','InsertProduct@mostsearchedforhome');
 Route::get('/wishlist/{id}','WishlistController@addtowishlist');
 
 
-//Route::get('/profile','UserController@ShowUserProfile');
+
 

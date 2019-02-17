@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Waffer</title>
-    <link rel="shortcut icon"   href="pics/slslandinglogochart.png"  >
+    <title>Waffar</title>
 
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
@@ -14,6 +13,7 @@
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <link rel="stylesheet" href="{{asset('css/homestyle.css')}}">
     <script src="{{asset('js/homejs.js')}}"></script>
+    <link rel="shortcut icon" type="image/jpg" href="{{asset('images/icon.jpg')}}"/>
 
 </head>
 <style>
@@ -80,6 +80,10 @@
                 <a href="{{ route('register') }}" class="btn  navbutton btn-danger">Join now</a>
             </li>
                 @else
+                <li class="nav-item">
+                    <a class="nav-link font-weight-bold navlink4" href="{{ route('profile') }}" id="navlinks">profile</a>
+                </li>
+
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }} <span class="caret"></span>

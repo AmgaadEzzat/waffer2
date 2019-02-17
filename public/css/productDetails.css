@@ -1,10 +1,27 @@
 nav a{
     color:white;
 }
+ nav a:hover{
+    color:lightcyan;
+}
 nav{
-    height:60px;
+
     background-color:darkcyan;
 }
+div a:hover{
+    color:#809fff;
+}
+
+.btnstyle:hover{
+    background-color:darkcyan;
+
+
+}
+
+.divinfo{
+    border:1px solid darkcyan ;
+}
+
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 /*================================================*/
 @import url('https://fonts.googleapis.com/css?family=Roboto');
@@ -14,3 +31,4 @@ nav{
 .carousel-by-item [class*="cloneditem-"] {
   display: none;
 }
+.footer{color: white;background-color: black;}

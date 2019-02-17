@@ -1,47 +1,47 @@
 @extends('user.master')
 @section('content')
-    <div class= "container-fluid " >
+    
         <div class="row">
         <div class="col-sm-3 m-3">
-            <div class="profile">
+            
 
 
 
 @foreach($userData as $userData)
-                <div class="main-container">
-                    <p><i class="fas fa-briefcase info"></i>{{$userData->name}}</p>
-                    <p><i class="fas fa-home info"></i>{{$userData->city}}</p>
-                    <p><i class="fas fa-envelope info"></i>{{$userData->email}}</p>
+                <div class="divinfo bg-light p-3 h-75 rounded ">
+                    <p ><i class="fas fa-briefcase info"></i>{{$userData->name}}</p>
+                    <p ><i class="fas fa-home info"></i>{{$userData->city}}</p>
+                    <p ><i class="fas fa-envelope info"></i>{{$userData->email}}</p>
 
-                    <p><i class="fas fa-phone info"></i>{{$userData->phone}}</p>
+                    <p ><i class="fas fa-phone info"></i>{{$userData->phone}}</p>
                     <hr>
 
-                   <a href="/profile/{{$userData->id}}/editUser" class="btn btn-outline-dark"> Edit Your Info</a>
+
+                   <a href="/profile/{{$userData->id}}/editUser" class="btn ml-5 border border-secondary btnstyle"> Edit Your Info</a>
 
                     </div>
     @endforeach
 
-                </div>
             </div>
 
         <div class="col-sm-8 m-3">
             <div >
-                <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist" style="background-color:darkcyan;">
+                <div class="nav nav-tabs nav-fill shadow" id="nav-tab" role="tablist" style="background-color:#e6e6e6;">
                     <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#add-product" role="tab">Add product</a>
                     <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#show-product" role="tab">show products</a>
 
 
                 </div>
             </div>
-            <div class="tab-content " id="nav-tabContent">
+            <div class="tab-content  " id="nav-tabContent">
                 <div class="tab-pane fade show active" id="add-product" role="tabpanel" >
 
                     <div class="m-3" >
 
-                                <div class="card">
-                                    <div class="card-header" style="background: #3f9ae5">{{ __('Add New Product') }}</div>
+                                <div class="card shadow">
+                                    <div class="card-header rounded" style="background-color:darkcyan;" > <span class="p-2 text-light"> <i class="fas fa-plus-circle "></i> </span> {{ __('Add New Product') }}</div>
 
-                                    <div class="card-body">
+                                    <div class="card-body shadow">
                                         <form method="POST" action="insertProductByUser" enctype="multipart/form-data">
                                             @csrf
                                             <div class="form-group row">
@@ -161,21 +161,21 @@
                         @foreach($productForUser as $proUser)
 
                         <div class="col-sm-3 m-3 " >
-                            <div class="crad border h-50  ">
+                            <div class="crad border shadow h-75 ">
                                 <img src="/img/{{$proUser->productImage}}"  class="w-25 h-25 m-3">
                                 <div class="card-body cardstyle w-75 h-50" >
-                                    <a href="#"  class="m-4 text-center">  {{$proUser->productName}} </a>
+                                    <a href="#"  class="ml-3 text-center">  {{$proUser->productName}} </a>
                                     <br>
-                                    <span class="small m-2  text-secondary d-flex"> you buy it from {{$proUser->productAddress}} </span>
+                                    <span class="small m-2 text-secondary d-flex">  buy it from {{$proUser->productAddress}} </span>
 
 
-                                    <span class="text-*-center   m-2 font-weight-bold"  style="color:red;">{{$proUser->productPrice }}  EGP </span>
+                                    <span class="text-*-center    font-weight-bold"  style="color:red;">{{$proUser->productPrice }}  EGP </span>
 
 
                                 </div>
                             </div>
-                           <a href="/profile/{{$proUser->id}}/editProduct"  class="btn btn-outline-dark m-3"> Edit</a>
-                            <a href="/delete/{{$proUser->id}}"class="btn btn-outline-dark m-3"  onclick="return confirm ('Are You Sure You want to delete ! ');">
+                           <a href="/profile/{{$proUser->id}}/editProduct"  class="btn btn-outline-dark m-3 shadow"> Edit</a>
+                            <a href="/delete/{{$proUser->id}}"class="btn btn-outline-dark m-3 shadow"  onclick="return confirm ('Are You Sure You want to delete ! ');">
                                  Delete</a>
                         </div>
 
@@ -196,6 +196,6 @@
         </div>
     </div>
 
-        </div>
+        
     </div>
     @endsection

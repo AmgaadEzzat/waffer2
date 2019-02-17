@@ -1,7 +1,7 @@
-<html>
+<html lang="ar">
 
 <head>
-    <title> Waffer</title>
+    <title> Waffar</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="{{asset('css/productDetails.css')}}" rel="stylesheet">
@@ -14,14 +14,19 @@
     <script src="{{asset('js/popper.min.js')}}"></script>
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <script src="{{asset('js/projectDetailsJs.js')}}"></script>
+    <link rel="shortcut icon" type="image/jpg" href="{{asset('/images/icon.jpg')}}"/>
 
 </head>
 
 <body>
-<nav class="navbar navbar-expand-sm  ">
-    <div class="container-fluid  d-flex justify-content-between">
-        <a class="navbar-brand" href="#">WaFFer </a>
-        <div class="container w-75">
+<nav class="navbar navbar-expand-sm   ">
+
+        <a class="navbar-brand mr-5" href="#">WaFFar </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon "> <i class="fas fa-bars"></i></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <div class=" w-75 text-center">
             <form method="POST">
                 <div class="form-group w-75">
                     <div class="input-group mt-4">
@@ -36,7 +41,7 @@
         </div>
 
 
-
+<div class="w-25 ml-5 pl-5">
         <ul class="navbar-nav  ">
 
 
@@ -50,7 +55,7 @@
                 </li>
             @else
                 <li class="nav-item"> <a href="#" class="nav-link">
-                        <span class="badge badge-danger large">Deals </span>
+                     <h5><span class="badge badge-danger large  mt-1">Deals </span> </h5>
                     </a></li>
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -73,8 +78,10 @@
             @endguest
 
         </ul>
+</div>
 
     </div>
+
 </nav>
 
 @yield("content")
@@ -96,7 +103,7 @@
     <div class="row">
         <div class="col-sm-1"></div>
         <!--firstcolumn-->
-        <div class="col-sm-3"><br><strong>WaffeR</strong><br>
+        <div class="col-sm-3"><br><strong>WaffaR</strong><br>
             <p>Customers and componies ,<br>go to our website</p>
 
         </div>
