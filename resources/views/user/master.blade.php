@@ -21,12 +21,12 @@
 <body>
 <nav class="navbar navbar-expand-sm   ">
 
-        <a class="navbar-brand mr-5" href="#">WaFFar </a>
+        <a class="navbar-brand " href="#">WaFFar </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon "> <i class="fas fa-bars"></i></span>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <div class=" w-75 text-center">
+        <div class=" w-75 ">
             <form action="/insertsearch" method="post">
                 {{csrf_field()}}
                 <div class="form-group w-75">
@@ -75,7 +75,7 @@
         </div>
 
 
-<div class="w-25 ml-5 pl-5">
+<div class="w-25 ">
         <ul class="navbar-nav  ">
 
 
@@ -120,7 +120,7 @@
 
 @yield("content")
 
-<div  class="col-sm-12 footer">
+<footer  class="col-sm-12 footer">
     <div class="row"><br><br>
         <div class="col-sm-1"></div>
         <div class="col-sm-8"><br><br><p class="font-weight-bold"><strong><i class="fas fa-money-bill-wave"></i>&nbsp;WaffeR.com</strong></p></div>
@@ -161,7 +161,7 @@
 
 
 
-</div>
+</footer>
 
 
 
