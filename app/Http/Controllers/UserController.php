@@ -72,6 +72,8 @@ class UserController extends Controller
             'productAddress'=>$request->productAddress,
             'productDescription'=>$request->productDescription,
             'productImage'=>$request->productImage,
+
+
             'catId'=>$request->catId,
 
         ));

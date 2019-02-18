@@ -76,9 +76,21 @@ in (select distinct(searchName) from searchs order by  	created_at)');
         ->joinSub($productname, 'productname', function($join) {
             $join->on('products.productName','=','productname.productName');
             $join->on('productname.minPrice', '=', 'products.productPrice' );
-        })->get();
+        })->leftJoin('categories','products.id','=','categories.id')->get();
 
-   return view ('welcome',compact('mostsearchproduct' ,'mostsearchcount' ,'products'));
+
+
+
+    $catName=DB::table('categories')->get();
+//    $products = DB::table('products')
+//        ->joinSub($productname, 'productname', function($join) {
+//            $join->on('products.productName','=','productname.productName');
+//            $join->on('productname.minPrice', '=', 'products.productPrice' );
+//        })->get();
+
+
+
+   return view ('welcome',compact('mostsearchproduct' ,'mostsearchcount' ,'products','catName'));
 
 }
     public function mostsearchedforpage(){
