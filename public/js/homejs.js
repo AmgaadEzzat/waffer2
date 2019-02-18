@@ -1,9 +1,9 @@
 $(document).ready(function(){
     //make navbar scrollable
     $(document).scroll(function () {
-    $('#navbar').toggleClass('bg-danger', $(this).scrollTop() > 20);
-    $('#logo').toggleClass('text-white',$(this).scrollTop() > $('#navbar').height());
-    $('.navlink4').toggleClass('text-white',$(this).scrollTop() > $('#navbar').height());
+    $('#navbar').toggleClass('bg-light', $(this).scrollTop() > 20);
+    $('#logo').toggleClass('text-primary',$(this).scrollTop() > $('#navbar').height());
+    $('.navlink4').toggleClass('text-primary',$(this).scrollTop() > $('#navbar').height());
     });
     //make carousal
     

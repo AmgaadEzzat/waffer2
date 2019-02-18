@@ -1,6 +1,6 @@
 @extends('user.master')
 @section('content')
-    
+    <div class="container-fluid">
         <div class="row">
         <div class="col-sm-3 m-3">
             
@@ -8,7 +8,8 @@
 
 
 @foreach($userData as $userData)
-                <div class="divinfo bg-light p-3 h-75 rounded ">
+    <div class="container-fluid divinfo">
+                <div class=" bg-light p-3 h-100 rounded ">
                     <p ><i class="fas fa-briefcase info"></i>{{$userData->name}}</p>
                     <p ><i class="fas fa-home info"></i>{{$userData->city}}</p>
                     <p ><i class="fas fa-envelope info"></i>{{$userData->email}}</p>
@@ -17,16 +18,16 @@
                     <hr>
 
 
-                   <a href="/profile/{{$userData->id}}/editUser" class="btn ml-5 border border-secondary btnstyle"> Edit Your Info</a>
+                   <a href="/profile/{{$userData->id}}/editUser" class="btn border border-secondary btnstyle"> Edit Your Info</a>
 
                     </div>
     @endforeach
-
+    </div>
             </div>
 
-        <div class="col-sm-8 m-3">
-            <div >
-                <div class="nav nav-tabs nav-fill shadow" id="nav-tab" role="tablist" style="background-color:#e6e6e6;">
+        <div class="col-sm-8 m-2">
+            <div  class="container-fluid">
+                <div class="nav navbar-expand-sm nav-tabs nav-fill shadow" id="nav-tab" role="tablist" style="background-color:#e6e6e6;">
                     <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#add-product" role="tab">Add product</a>
                     <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#show-product" role="tab">show products</a>
 
@@ -34,18 +35,18 @@
                 </div>
             </div>
             <div class="tab-content  " id="nav-tabContent">
-                <div class="tab-pane fade show active" id="add-product" role="tabpanel" >
+                <div class="tab-pane  fade show active" id="add-product" role="tabpanel" >
 
-                    <div class="m-3" >
+                    <div class="container">
 
                                 <div class="card shadow">
                                     <div class="card-header rounded" style="background-color:darkcyan;" > <span class="p-2 text-light"> <i class="fas fa-plus-circle "></i> </span> {{ __('Add New Product') }}</div>
 
-                                    <div class="card-body shadow">
+                                    <div class="card-body container shadow">
                                         <form method="POST" action="insertProductByUser" enctype="multipart/form-data">
                                             @csrf
-                                            <div class="form-group row">
-                                                <label for="name" class="col-sm-4 col-form-label text-md-left">{{ __('Product Name') }}</label>
+                                            <div class="form-group  container row">
+                                                <label for="name" class="col-sm-4 col-form-label text-sm-left">{{ __('Product Name') }}</label>
 
                                                 <div class="col-sm-6">
                                                     <input id="name" type="text" class="form-control{{ $errors->has('Product Name') ? ' is-invalid' : '' }}" name="productName" value="{{ old('Product Name') }}" required autofocus>
@@ -58,8 +59,8 @@
                                                 </div>
                                             </div>
 
-                                            <div class="form-group row">
-                                                <label for="Product Price" class="col-sm-4 col-form-label text-md-left">{{ __('Product Price ') }}</label>
+                                            <div class="form-group  container row">
+                                                <label for="Product Price" class="col-sm-4 col-form-label text-sm-left">{{ __('Product Price ') }}</label>
 
                                                 <div class="col-sm-6">
                                                     <input id="Product Price" type="number" class="form-control{{ $errors->has('Product Price') ? ' is-invalid' : '' }}" name="productPrice" value="{{ old('Product Price') }}" required>
@@ -72,8 +73,8 @@
                                                 </div>
                                             </div>
 
-                                            <div class="form-group row">
-                                                <label for="productAddress" class="col-sm-4 col-form-label text-md-left">{{ __('where you bought it') }}</label>
+                                            <div class="form-group container row">
+                                                <label for="productAddress" class="col-sm-4 col-form-label text-sm-left">{{ __('where you bought it') }}</label>
 
                                                 <div class="col-sm-6">
                                                     <input id="productAddress" type="text" class="form-control{{ $errors->has('productAddress') ? ' is-invalid' : '' }}" name="productAddress" value="{{ old('productAddress') }}" required autofocus>
@@ -86,8 +87,8 @@
                                                 </div>
                                             </div>
 
-                                            <div class="form-group row">
-                                                <label for="productDescription" class="col-sm-4 col-form-label text-md-left">{{ __('Product Description') }}</label>
+                                            <div class="form-group container row">
+                                                <label for="productDescription" class="col-sm-4 col-form-label text-sm-left">{{ __('Product Description') }}</label>
                                                 <div class="col-sm-6">
                                                     <input id="productDescription" type="text" class="form-control{{ $errors->has('productDescription') ? ' is-invalid' : '' }}" name="productDescription" value="{{ old('productDescription') }}" required autofocus>
                                                     @if ($errors->has('productDescription'))
@@ -98,8 +99,8 @@
                                                 </div>
                                             </div>
 
-                                            <div class="form-group row">
-                                                <label for="productImage" class="col-sm-4 col-form-label text-md-left">{{ __('Image for Product') }}</label>
+                                            <div class="form-group container row">
+                                                <label for="productImage" class="col-sm-4 col-form-label text-sm-left">{{ __('Image for Product') }}</label>
                                                 <div class="col-sm-6">
 
                                                     <input id="productImage" type="file" value="Abload File" class="form-control{{ $errors->has('productImage') ? ' is-invalid' : '' }}" name="productImage" required autofocus>
@@ -112,8 +113,8 @@
                                             </div>
 
 
-                                            <div class="form-group row">
-                                                <label for="type" class="col-sm-4 col-form-label text-md-left">{{ __('Category Name') }}</label>
+                                            <div class="form-group container row">
+                                                <label for="type" class="col-sm-4 col-form-label text-sm-left">{{ __('Category Name') }}</label>
                                                 <div class="col-sm-6">
                                                     <div class="dropdown">
 
@@ -141,8 +142,8 @@
                                             </div>
                                             </div>
 
-                                            <div class="form-group row mb-0">
-                                                <div class="col-sm-6 offset-md-4">
+                                            <div class="form-group container row ">
+                                                <div class="col-sm-6 offset-sm-4">
                                                     <button type="submit" class="btn btn-info">
                                                         {{ __('Add') }}
                                                     </button>
@@ -196,6 +197,6 @@
         </div>
     </div>
 
-        
+        </div>
     </div>
     @endsection
