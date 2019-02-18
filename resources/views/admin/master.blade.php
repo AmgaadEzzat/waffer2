@@ -33,8 +33,8 @@
     <!-- Sidebar  -->
     <nav id="sidebar" >
         <div class="sidebar-header">
-            <h3>Waffer</h3>
-            <strong>W</strong>
+            <h3><a href="/dashboard"><i class="fab fa-asymmetrik"></i>ADMIN</a></h3>
+            <strong><i class="fab fa-asymmetrik"></i></strong>
         </div>
 
         <ul class="list-unstyled components">
@@ -79,6 +79,7 @@
                     <span>Toggle Sidebar</span>
                 </button>
 
+
                     <ul class="nav navbar-nav ml-auto">
                         @guest
                             <li class="nav-item">
@@ -110,6 +111,7 @@
                 </div>
 
         </nav>
+
 
         {{--Main Content--}}
         @yield('content')

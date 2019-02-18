@@ -66,6 +66,8 @@ Route::group(['middleware' => 'AdminMiddleware'], function () {
     Route::get('/{id}/deleteUser', 'AdminController@deleteUserByAdmin' );
     Route::get('/showProductByCatId/{idd}/edit1', 'AdminController@edit1');
     Route::post('/showProductByCatId/{idd}/update', 'AdminController@updateProduct');
+    Route::get('/{id}/deleteCategory' , 'AdminController@deleteCategory');
+//    Route::get('/{Did}/showDetailsProduct' , 'AdminController@show');
 });
 
 Route::post('/insertsearch','RatingController@insertsearch');
