@@ -31,7 +31,7 @@
                 {{csrf_field()}}
                 <div class="form-group w-75">
                     <div class="input-group mt-4">
-                        <input type="text" name="txtsearch" id="txtsearch" class="form-control input-lg" placeholder="Search is easier now...." autocomplete=off />
+                        <input type="text" name="txtsearch" id="txtsearch" class="form-control input-lg" placeholder="Search is easier now...."required autocomplete=off />
                         <div class="input-group-append">
                             <button class="btn btn-success btn-outline-light" id="buttonsearch" type="submit">Search</button>
                         </div>

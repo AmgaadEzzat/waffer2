@@ -149,7 +149,7 @@
 
     <div class="input-group mb-3" >
 
-        <input type="text" name="txtsearch" id="txtsearch" class="form-control input-lg" placeholder="Search is easier now...." autocomplete=off />
+        <input type="text" name="txtsearch" id="txtsearch" class="form-control input-lg" placeholder="Search is easier now...." required autocomplete=off />
 
          <div class="input-group-append" >
                     <button class="btn btn-light" id="buttonsearch" type="submit">Search</button>
