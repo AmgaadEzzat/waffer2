@@ -39,6 +39,9 @@ class User extends Authenticatable
     public function review(){
         return $this->hasMany(app\Review);
     }
+    public function deals(){
+        return $this->hasMany(app\Deal);
+    }
 
     /**
      * The attributes that should be hidden for arrays.

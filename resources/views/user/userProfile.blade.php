@@ -19,7 +19,10 @@
 
 
                    <a href="/profile/{{$userData->id}}/editUser" class="btn border border-secondary btnstyle"> Edit Your Info</a>
-
+                    <br>
+                    @if(Auth::user()->type==1)
+                        <a href="/Browse" class="btn border border-secondary btnstyle">Browse A Deal</a>
+                    @endif
                     </div>
     @endforeach
     </div>

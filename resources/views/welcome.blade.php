@@ -44,6 +44,9 @@
                 <a class="nav-link font-weight-bold navlink4" href="#" id="navlinks">Browse product</a>
             </li>
             <li class="nav-item">
+            <a href="/deals" class="badge badge-danger large  mt-1">Deals </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link font-weight-bold navlink4" href="#" id="navlinks">Search</a>
             </li>
             <li class="nav-item">

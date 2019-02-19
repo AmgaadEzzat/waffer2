@@ -44,6 +44,10 @@ Route::group(['middleware' => 'UserMiddleware'], function () {
     Route::get('/profile/{id}/editUser', 'UserController@editUser');
     Route::get('/delete/{id}', 'UserController@destroyProduct');
     Route::post('/profile/{id}/updateUser', 'UserController@updateUser');
+    Route::get('/deals','DealController@index');
+    Route::get(' /Browse','DealController@browse');
+    Route::post('/store','DealController@store');
+    Route::get('/deletedeal/{id}', 'DealController@destroy');
 });
 
 Route::get('/details', function () {
