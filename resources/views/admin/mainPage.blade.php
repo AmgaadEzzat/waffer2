@@ -61,7 +61,7 @@
     </div>
     <div class="container-fluid mt-5 ">
         <div class="row d-flex justify-content-around">
-            <div class="col-md-4 ">
+            <div class="col-md-3 ">
                 <div class="p-3 bg-white ">
                     <i class="fas fa-users pt-3" style="  float: right; font-size: 1.8em ; color: #4099ff"></i>
                     <h6>Users</h6>
@@ -69,11 +69,18 @@
 
                 </div>
             </div>
-            <div class="col-md-4 ">
+            <div class="col-md-3 ">
                 <div class="p-3 bg-white  " >
                     <i class="fab fa-product-hunt pt-3" style="  float: right; font-size: 1.8em ; color:#ffb64d">></i>
                     <h6>Products</h6>
                     <p style="color: #ffb64d ; font-weight: bold">{{$countOfProducts}}</p>
+                </div>
+            </div>
+            <div class="col-md-3 ">
+                <div class="p-3 bg-white  " >
+                    <i class="fab fa-cuttlefish pt-3" style="  float: right; font-size: 1.8em ; color:#2a9055">></i>
+                    <h6>Categoreies</h6>
+                    <p style="color: #2a9055 ; font-weight: bold">{{$countOfCategories}}</p>
                 </div>
             </div>
         </div>
