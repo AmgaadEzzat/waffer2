@@ -103,7 +103,7 @@
                                 @csrf
                             </form>
 
-                    <a class="dropdown-item text-dark" href="{{ route('profile') }}" id="navlinks">profile</a>
+                    <a class="dropdown-item text-dark" href="/isadmin" id="navlinks">profile</a>
 
                         </div>
                     </li>

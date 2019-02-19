@@ -32,18 +32,19 @@ Route::post('/index/search', 'InsertProduct@index')->name('index.search');
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::get('/profile','UserController@ShowDataProfile')->name('profile');
+
 //Route::get('/profile/updatePro','UserController@ShowForUpdateProduct');
-Route::get('/profile/updateUser','UserController@ShowForUpdateUser');
-Route::post('/insertProductByUser','UserController@insertProduct');
 
-Route::get('/profile/{id}/editProduct','UserController@editProduct');
-Route::post('/profile/{id}/update', 'UserController@updateProduct');
-Route::get('/profile/{id}/editUser','UserController@editUser');
-Route::get('/delete/{id}', 'UserController@destroyProduct' );
-
-Route::post('/profile/{id}/updateUser', 'UserController@updateUser');
-
+Route::group(['middleware' => 'UserMiddleware'], function () {
+    Route::get('/profile','UserController@ShowDataProfile')->name('profile');
+    Route::get('/profile/updateUser', 'UserController@ShowForUpdateUser');
+    Route::post('/insertProductByUser', 'UserController@insertProduct');
+    Route::get('/profile/{id}/editProduct', 'UserController@editProduct');
+    Route::post('/profile/{id}/update', 'UserController@updateProduct');
+    Route::get('/profile/{id}/editUser', 'UserController@editUser');
+    Route::get('/delete/{id}', 'UserController@destroyProduct');
+    Route::post('/profile/{id}/updateUser', 'UserController@updateUser');
+});
 
 Route::get('/details', function () {
     return view('user.productDetails');

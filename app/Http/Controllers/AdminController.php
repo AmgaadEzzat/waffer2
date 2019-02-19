@@ -22,7 +22,7 @@ class AdminController extends Controller
            return view('admin.mainPage',compact('catName' , 'users' , 'countOfUsers' , 'countOfProducts'));
        }
        else{
-           return redirect('/');
+           return redirect('/profile');
        }
     }
 
