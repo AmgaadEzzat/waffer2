@@ -48,7 +48,7 @@ class DealController extends Controller
             'Heading'=>'required|string',
             'Description'=>'required|min:15',
             'Image'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'begin'=>'required|date|min:30',
+            'begin'=>'required|date',
             'end'=>'required|date',
         ]);
         $deal=new Deal();
@@ -66,6 +66,7 @@ class DealController extends Controller
         $deal->begin=$request->begin;
         $deal->end=$request->end;
         $deal->save();
+        session()->flash("notif","Success to Insert Your Deal,Thanks for Improving Our Website");
       return back();
     }
 
@@ -112,6 +113,7 @@ class DealController extends Controller
     public function destroy(Deal $id)
     {
         $id->delete();
+        session()->flash("notif","Success to delete This Deal");
         return back();
     }
 }

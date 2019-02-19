@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\User;
 use validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -94,7 +95,8 @@ class AdminController extends Controller
          foreach ($catid as $id)
          $product->catId =  $id->id;
          $product->save();
-        return redirect('/allproducts');
+        session()->flash('notif','Success to save Product');
+        return back();
     }
 
 
@@ -103,17 +105,14 @@ class AdminController extends Controller
         $this->validate($request,[
             'categoryName'=>'required|string|unique:categories'
         ]);
-           $catname=$request->categoryName;
-        if(DB::table('categories')->where('categoryName','like',$catname)->exists()) {
-            return redirect()->back()-> with('alert ','is  exist');
-        }
 
-            else{
+
                 $category = new Category();
                 $category->categoryName =  $request->categoryName;
                 $category->save();
+                session()->flash('notif','Success to save category');
                 return back();
-            }
+
 
         }
 
@@ -196,7 +195,8 @@ class AdminController extends Controller
         $newProduct->catId = $request->catId;
 //        dd($newProduct);
         $newProduct->save();
-        return redirect('/allproducts');
+        session()->flash('notif','Success to Update Product');
+        return back();
     }
 
     public function edit1(Product $idd){
@@ -207,6 +207,7 @@ class AdminController extends Controller
 
     public function deleteUserByAdmin(User $id){
         $id->delete();
+        session()->flash("notif","Success to delete User '$id->name'");
         return back();
     }
 

@@ -1,11 +1,12 @@
 @extends('user.master')
 @section('content')
+    <br><br>
     <div class="row" >
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
             <div class="row">
                 @foreach($deals as $deal)
-                <div class="col-sm-3">
+                <div class="col-sm-4">
                     <div class="card" style="">
                         <b class="text-primary font-weight-bold">{{$deal->name}}</b>
                         <img class="card-img-top" src="/img/{{$deal->Image}}" alt="Card image">

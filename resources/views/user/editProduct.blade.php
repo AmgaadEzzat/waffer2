@@ -4,6 +4,15 @@
 
     <div class= "container-fluid " >
         <div class="row">
+            @if(session()->has('notif'))
+                <div class="row">
+                    <div class="alert alert-success">
+                        <button type="button" class="close"
+                                data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <strong>Notification</strong>{{session()->get('notif')}}
+                    </div>
+                </div>
+            @endif
             <div class="col-sm-3 m-3">
                 @foreach($userData as $userData)
                     <div class="container-fluid divinfo shadow rounded">

@@ -15,8 +15,20 @@
                     </div>
                 </div>
             </div>
+            <div class="col-md-4"> <a href="/" type="button"  class="btn" style="background: #2ed8b6;color:white">
+                    Back To Home
+                </a></div>
         </div>
     </div>
+    @if(session()->has('notif'))
+        <div class="row">
+            <div class="alert alert-success">
+                <button type="button" class="close"
+                        data-dismiss="alert" aria-hidden="true">&times;</button>
+                <strong>Notification</strong>{{session()->get('notif')}}
+            </div>
+        </div>
+    @endif
     <div class="container-fluid ">
         <div class="  justify-content-center">
             <div class="col-md-12 ">
@@ -27,6 +39,8 @@
                             <li ><a href="/adminadd"><i class="fas fa-plus-circle" style="color: #ff5370 ; font-size: 1.8em"></i></a></li>
                         </ul>
                     </div>
+
+
                     <div class="card-blok " >
                         <div class="table-responsive ">
                             <table class="  table table-hover m-b-0" id="table">

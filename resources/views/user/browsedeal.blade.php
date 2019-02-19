@@ -1,18 +1,28 @@
 @extends('user.master')
 @section('content')
+    <br><br>
 <div class="row" >
     <div class="col-sm-1"></div>
     <div class="col-sm-10">
+        @if(session()->has('notif'))
+            <div class="row">
+                <div class="alert alert-success">
+                    <button type="button" class="close"
+                            data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <strong>Notification</strong>{{session()->get('notif')}}
+                </div>
+            </div>
+        @endif
         <div class="row">
             @foreach($deals as $deal)
-                <div class="col-sm-3">
-                    <div class="card" style="">
+                <div class="col-sm-4">
+                    <div class="card" style="width:100%;">
                         <img class="card-img-top" src="/img/{{$deal->Image}}" alt="Card image">
                         <div class="card-body">
                             <h4 class="card-title">{{$deal->Heading}}</h4>
                             <p class="card-text"><b class="text-primary">
                                     <b class="text-primary"> End Date&nbsp;</b>:&nbsp;{{$deal->end}}<br>
-                                    <b class="text-primary">Begin Date</b>&nbsp;:&nbsp;{{$deal->begin }}<br></p>{{$deal->id}}
+                                    <b class="text-primary">Begin Date</b>&nbsp;:&nbsp;{{$deal->begin }}<br></p>
                             <a href="/deletedeal/{{$deal->id}}" class="btn btn-primary">Delete</a>
                         </div>
                     </div>
@@ -23,7 +33,11 @@
     </div>
     <div class="col-sm-1"></div>
 </div>
-
+<div class="row"><div class="col-sm-2"></div>
+    <div class="col-sm-8">
+    <h1> You can Browse A deal For Your Shop </h1><br><br></div>
+    <div class="col-sm-2"></div>
+</div>
 <div class="row" >
     <div class="col-sm-1"></div>
     <div class="col-sm-10">

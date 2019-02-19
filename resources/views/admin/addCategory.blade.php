@@ -1,12 +1,21 @@
 @extends('admin.master')
 @section('content')
     <div class="container">
+        @if(session()->has('notif'))
+            <div class="row">
+                <div class="alert alert-success">
+                    <button type="button" class="close"
+                            data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <strong>Notification</strong>{{session()->get('notif')}}
+                </div>
+            </div>
+        @endif
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header" style="background: #17a2b8">{{ __('Add New Category') }}</div>
-
                     <div class="card-body">
+
                         <form method="POST" action="/addCategory" >
                             @csrf
                             <div class="form-group row">

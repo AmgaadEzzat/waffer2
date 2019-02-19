@@ -44,7 +44,15 @@
 
                                 <div class="card shadow">
                                     <div class="card-header rounded" style="background-color:darkcyan;" > <span class="p-2 text-light"> <i class="fas fa-plus-circle "></i> </span> {{ __('Add New Product') }}</div>
-
+                                    @if(session()->has('notif'))
+                                        <div class="row">
+                                            <div class="alert alert-success">
+                                                <button type="button" class="close"
+                                                        data-dismiss="alert" aria-hidden="true">&times;</button>
+                                                <strong>Notification</strong>{{session()->get('notif')}}
+                                            </div>
+                                        </div>
+                                    @endif
                                     <div class="card-body container shadow">
                                         <form method="POST" action="insertProductByUser" enctype="multipart/form-data">
                                             @csrf

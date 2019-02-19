@@ -41,6 +41,7 @@ class UserController extends Controller
         foreach ($catid as $id)
             $product->catId =  $id->id;
         $product->save();
+        session()->flash("notif","Success to Insert Product");
         return back();
 
     }
@@ -72,6 +73,7 @@ class UserController extends Controller
             'catId'=>$request->catId,
 
         ));
+        session()->flash("notif","Success to Update Product");
         return back();
     }
 
@@ -85,6 +87,7 @@ class UserController extends Controller
 
 
         ));
+        session()->flash("notif","Success to Update Your Info");
         return back();
     }
 
@@ -93,6 +96,7 @@ class UserController extends Controller
     public function destroyProduct(Product $id)
     {
         $id->delete();
+        session()->flash("notif","Success to delete Product '$id->productName'");
         return back();
     }
 
