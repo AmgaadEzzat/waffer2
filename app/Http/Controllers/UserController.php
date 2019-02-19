@@ -19,7 +19,7 @@ class UserController extends Controller
     public function showAddProduct()
     {
         $catName=DB::table('categories')->get();
-        return view('user.addProduct' , compact('catName'));
+        return view('user.userProfile' , compact('catName'));
     }
 
     public function insertProduct(Request $request)

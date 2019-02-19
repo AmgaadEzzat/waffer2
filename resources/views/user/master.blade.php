@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
           crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
     <script src="{{asset('js/jquery.min.js')}}"></script>
     <script src="{{asset('js/popper.min.js')}}"></script>
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
@@ -21,9 +25,9 @@
 <body>
 <nav class="navbar navbar-expand-sm   ">
 
-        <a class="navbar-brand " href="#">WaFFar </a>
+        <a class="navbar-brand"  href="welcome"><i class="fas fa-money-bill-wave"></i>&nbsp;Waffar </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon "> <i class="fas fa-bars"></i></span>
+            <span class="text-light navbar-toggler-icon "> <i class="fas fa-bars"></i></span>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <div class=" w-75 ">

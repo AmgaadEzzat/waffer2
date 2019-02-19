@@ -5,25 +5,26 @@
     <div class= "container-fluid " >
         <div class="row">
             <div class="col-sm-3 m-3">
-                <div class="profile">
+                @foreach($userData as $userData)
+                    <div class="container-fluid divinfo shadow rounded">
+                        <div class=" bg-light p-3 h-100 rounded ">
+                            <p ><i class="fas fa-briefcase info"></i>{{$userData->name}}</p>
+                            <p ><i class="fas fa-home info"></i>{{$userData->city}}</p>
+                            <p ><i class="fas fa-envelope info"></i>{{$userData->email}}</p>
 
-
-
-                    @foreach($userData as $userData)
-                        <div class="main-container">
-                            <p><i class="fas fa-briefcase info"></i>{{$userData->name}}</p>
-                            <p><i class="fas fa-home info"></i>{{$userData->city}}</p>
-                            <p><i class="fas fa-envelope info"></i>{{$userData->email}}</p>
-
-                            <p><i class="fas fa-phone info"></i>{{$userData->phone}}</p>
+                            <p ><i class="fas fa-phone info"></i>{{$userData->phone}}</p>
                             <hr>
 
+
+                            <a href="/profile/{{$userData->id}}/editUser" class="btn border border-secondary btnstyle"> Edit Your Info</a>
+
                         </div>
-                    @endforeach
+                        @endforeach
                 </div>
             </div>
 
             <div class="col-sm-8 m-3">
+                <span class="text-center m-2" > <h4  class="text-light  p-2 rounded" style="background-color: darkcyan"> Edit Product </h4></span>
 
                 <form method="POST" action="update" enctype="multipart/form-data">
                     @csrf
@@ -98,13 +99,14 @@
 
 <div class="form-group row">
    <label for="type" class="col-md-4 col-form-label text-md-left">{{ __('Category Name') }}</label>
-
-                <select  name= "catId"value="{{$id->catId}}" >
+    <div class="col-sm-6">
+                <select  class="form-control" name= "catId"value="{{$id->catId}}" >
                     @foreach($catName as $category)
                     <option  name="catname" value="{{$category->id}}" >
                         {{$category->categoryName}}</option>
                     @endforeach
                 </select>
+    </div>
 
 </div>
     <div class="form-group row mb-0">

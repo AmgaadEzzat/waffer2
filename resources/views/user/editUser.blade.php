@@ -3,7 +3,7 @@
 
     <div class="container m-4">
         <div class="card">
-            <div class="card-header" style="background: #3f9ae5">{{ __('Update Your Information ') }}</div>
+            <div class="card-header" style="background: darkcyan">{{ __('Update Your Information ') }}</div>
 
             <div class="card-body">
 
