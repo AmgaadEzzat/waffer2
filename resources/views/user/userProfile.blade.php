@@ -1,7 +1,7 @@
 @extends('user.master')
 @section('content')
     <div class="container-fluid">
-        <div class="row">
+        <div class="row infoAnim">
         <div class="col-sm-3 m-3">
             
 
@@ -116,28 +116,15 @@
                                             <div class="form-group container row">
                                                 <label for="type" class="col-sm-4 col-form-label text-sm-left">{{ __('Category Name') }}</label>
                                                 <div class="col-sm-6">
-                                                    <div class="dropdown">
 
+                                                    <span class="form-group" name="catname">
+                                    <select class="form-control" id="sel1" name="catname">
+                                        @foreach($catName as $catname)
+                                            <option name="catname" >{{$catname->categoryName}}</option>
+                                        @endforeach
+                                    </select>
 
-                                                        <button type="button" id="btncat" class="btn  dropdown-toggle" data-toggle="dropdown">
-                                                          select Category
-                                                        </button>
-                                                        <div class="dropdown-menu">
-
-
-                                                            @foreach($catName as $category)
-
-                                                                <div class="dropdown-item border border-secondary   "  >
-                                                                <input type="checkbox"  id="cat" name="catname" value="{{$category->categoryName}}" >
-                                                                    {{$category->categoryName}}
-
-                                                                </div>
-
-
-                                                            @endforeach
-
-                                                        </div>
-                                                </div>
+                                </span>
 
                                             </div>
                                             </div>
@@ -163,7 +150,21 @@
 
                         <div class="col-sm-3 m-3 " >
                             <div class="crad border shadow h-75 ">
-                                <img src="/img/{{$proUser->productImage}}"  class="w-25 h-25 m-3">
+                                <img src="/img/{{$proUser->productImage}}"  class="w-25 h-25 m-3" data-toggle="modal" data-target="#myModal">
+                                <div class="modal fade" id="myModal">
+                                    <div class="modal-dialog modal-xl">
+                                        <div class="modal-content">
+
+                                            <!-- Modal Header -->
+                                            <div class="modal-header">
+                                                <h4 class="modal-title"> {{$proUser->productName}}</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                              <img src="/img/{{$proUser->productImage}}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="card-body cardstyle w-75 h-50" >
                                     <a href="#"  class="ml-3 text-center">  {{$proUser->productName}} </a>
                                     <br>

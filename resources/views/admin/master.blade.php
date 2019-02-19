@@ -53,6 +53,9 @@
                     <li>
                         <a href="/showFormCategory">Add Category</a>
                     </li>
+                    <li>
+                        <a href="/piechart">Show Statistics</a>
+                    </li>
 
                 </ul>
             </li>
