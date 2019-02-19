@@ -19,6 +19,14 @@ class UserController extends Controller
 
     public function insertProduct(Request $request)
     {
+        $this->validate($request,[
+            'productName'=>'required|string',
+            'productPrice'=>'required',
+            'productAddress'=>'required|string',
+            'productDescription'=>'required|string|min:15',
+            'productImage'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+        ]);
+        
         $userId=Auth::user()->id;
         $catname=$request->catname;
         $catid=DB::table('categories')->where('categoryName','=',$catname)->get();
@@ -63,22 +71,48 @@ class UserController extends Controller
     }
     public function updateProduct(Request $request, $id)
     {
-        DB::table('products')-> where('id',$id)->update(array('productName'=>$request->productName,
-            'productPrice'=>$request->productPrice,
-            'productAddress'=>$request->productAddress,
-            'productDescription'=>$request->productDescription,
-            'productImage'=>$request->productImage,
+      
+        $this->validate($request,[
+            'productName'=>'required|string',
+            'productPrice'=>'required',
+            'productAddress'=>'required|string',
+            'productDescription'=>'required|string|min:15',
+            'productImage'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+        ]);
 
 
-            'catId'=>$request->catId,
 
+<<<<<<< HEAD
         ));
         session()->flash("notif","Success to Update Product");
         return back();
+=======
+
+        $newProduct = Product::find($id);
+        if ($request->hasFile('productImage')) {
+            $image = $request->file('productImage');
+            $name = $image->getClientOriginalName();
+            $destinationPath = public_path('/img');
+            $image->move($destinationPath, $name);
+            $newProduct->productImage = $name;
+        }
+        $userId=Auth::user()->id;
+        $newProduct->userId =  $userId;
+        $newProduct->productPrice = $request->productPrice;
+        $newProduct->productAddress = $request->productAddress;
+        $newProduct->productName = $request->productName;
+        $newProduct->catId = $request->catId;
+
+        $newProduct->save();
+        return redirect('/allproducts');
+>>>>>>> 67c2d23d4f2a12e943976fc79788df6f05cb5b65
     }
+
+  
 
     public function updateUser(Request $request, $id)
     {
+        
         DB::table('users')-> where('id',$id)->update(array('name'=>$request->name,
             'email'=>$request->email,
             'city'=>$request->city,
