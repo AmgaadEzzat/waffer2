@@ -53,18 +53,23 @@
                     <li>
                         <a href="/showFormCategory">Add Category</a>
                     </li>
-                    <li>
-                        <a href="/piechart">Show Statistics</a>
-                    </li>
+
 
                 </ul>
             </li>
             <li>
                 <a href="#">
                     <i class="fas fa-briefcase"></i>
-                    About
+                    ALL
                 </a>
-
+                <ul class=" list-unstyled" >
+                    <li>
+                        <a href="/allproducts">All Products</a>
+                    </li>
+                    <li>
+                        <a href="/piechart">Show Statistics</a>
+                    </li>
+                </ul>
             </li>
         </ul>
     </nav>

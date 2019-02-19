@@ -16,10 +16,11 @@ class AdminController extends Controller
         $users = DB::table('users')->get();
         $countOfUsers = DB::table('users')->count();
         $countOfProducts = DB::table('products')->count();
+        $countOfCategories = DB::table('categories')->count();
 
        if( Auth::user()->type==2)
        {
-           return view('admin.mainPage',compact('catName' , 'users' , 'countOfUsers' , 'countOfProducts'));
+           return view('admin.mainPage',compact('catName' , 'users' , 'countOfUsers' , 'countOfProducts' , 'countOfCategories'));
        }
        else{
            return redirect('/profile');
@@ -56,8 +57,8 @@ class AdminController extends Controller
         $users = DB::table('users')->get();
         $countOfUsers = DB::table('users')->count();
         $countOfProducts = DB::table('products')->count();
-
-        return view('admin.mainPage' , compact('catName' , 'users' , 'countOfUsers' , 'countOfProducts') );
+        $countOfCategories = DB::table('categories')->count();
+        return view('admin.mainPage' , compact('catName' , 'users' , 'countOfUsers' , 'countOfProducts' , 'countOfCategories') );
     }
 
 
@@ -69,7 +70,7 @@ class AdminController extends Controller
             'productName'=>'required|string',
             'productPrice'=>'required',
             'productAddress'=>'required|string',
-            'productDescription'=>'required|string|min:30',
+            'productDescription'=>'required|string|min:15',
            'productImage'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
          ]);
             $userId=Auth::user()->id;
@@ -93,7 +94,7 @@ class AdminController extends Controller
          foreach ($catid as $id)
          $product->catId =  $id->id;
          $product->save();
-         return back();
+        return redirect('/allproducts');
     }
 
 
@@ -117,30 +118,31 @@ class AdminController extends Controller
         }
 
 
-    public function show($id  )
+    public function show($id   )
     {
-      //$products = DB::table('products')->where('catid', '=', $id)->get();
 
-             $products = DB::table('products')
+            $products = DB::table('products')
                 ->leftJoin('categories', 'products.catId', '=', 'categories.id')
                 ->leftJoin('users', 'products.userId', '=', 'users.id')->where('catid', '=', $id)
-                 ->select('products.*','categories.categoryName','users.name')
+                ->select('products.*', 'categories.categoryName', 'users.name')
                 ->get();
-            $catName=DB::table('categories')->get();
-            return view('admin.showproductbycatid', compact('products','catName'));
+            $catName = DB::table('categories')->get();
+
+            return view('admin.showproductbycatid', compact('products', 'catName'));
 
 
-//        if(!$Did ){
-//            $detailsProducts = DB::table('products')->where('id' ,' =' , 'Did')->get();
-//            return view('admin.showproductbycatid' , compact('detailsProducts'));
-//        }
+
     }
 
 
 
-    public function edit($id)
+    public function showAllProducts()
     {
-        //
+       $products = DB::table('products')
+           ->leftJoin('categories', 'products.catId', '=', 'categories.id')
+           ->select('products.*', 'categories.categoryName')->get();
+//       dd($products);
+       return view('admin.allProducts' , compact('products'));
     }
 
 
@@ -165,19 +167,36 @@ class AdminController extends Controller
             'productName'=>'required|string',
             'productPrice'=>'required',
             'productAddress'=>'required|string',
-            'productDescription'=>'required|string|min:30',
+            'productDescription'=>'required|string|min:15',
             'productImage'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
-        DB::table('products')-> where('id',$id)->update(array('productName'=>$request->productName,
-            'productPrice'=>$request->productPrice,
-            'productAddress'=>$request->productAddress,
-            'productDescription'=>$request->productDescription,
-            'productImage'=>$request->productImage,
-            'catId'=>$request->catId,
+//        DB::table('products')-> where('id',$id)->update(array('productName'=>$request->productName,
+//            'productPrice'=>$request->productPrice,
+//            'productAddress'=>$request->productAddress,
+//            'productDescription'=>$request->productDescription,
+//            'productImage'=>$request->productImage,
+//            'catId'=>$request->catId,
+//            ));
 
-            ));
-        return back();
+
+        $newProduct = Product::find($id);
+        if ($request->hasFile('productImage')) {
+            $image = $request->file('productImage');
+            $name = $image->getClientOriginalName();
+            $destinationPath = public_path('/img');
+            $image->move($destinationPath, $name);
+            $newProduct->productImage = $name;
+        }
+        $userId=Auth::user()->id;
+        $newProduct->userId =  $userId;
+        $newProduct->productPrice = $request->productPrice;
+        $newProduct->productAddress = $request->productAddress;
+        $newProduct->productName = $request->productName;
+        $newProduct->catId = $request->catId;
+//        dd($newProduct);
+        $newProduct->save();
+        return redirect('/allproducts');
     }
 
     public function edit1(Product $idd){
