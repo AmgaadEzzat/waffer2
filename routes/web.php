@@ -95,4 +95,7 @@ Route::get('fetchdislike', 'AjaxController@fetchdislike');
 Route::get('addtowishlist','AjaxController@addtowishlist');
 
 
+Route::get('/piechart','ChartController@piechart');
 
+Route::get('/fetchchartdate','ChartController@fetchchartdate');
+Route::get('/fetchdailyproduct','ChartController@fetchproductspostedeveryday');
