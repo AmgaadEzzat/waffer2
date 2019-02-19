@@ -94,7 +94,7 @@ class AdminController extends Controller
          foreach ($catid as $id)
          $product->catId =  $id->id;
          $product->save();
-         return back();
+        return redirect('/allproducts');
     }
 
 
