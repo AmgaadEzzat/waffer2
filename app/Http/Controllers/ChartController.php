@@ -13,6 +13,39 @@ use DB;
 
 class ChartController extends Controller
 {
+    public function piechart()
+    {
+        return view('admin.piechart');
+    }
+public function fetchchartdate(){
+    $arrayofMostInserted=[];
+    $arrayofMostInserted[0]=['Category','Num Of Products Inserted'];
+        $MostInserted=DB::Select("select count(products.catId) as count 
+                                  ,categories.categoryName from products,categories
+                                  where products.catId = categories.id group by products.catId,categories.categoryName");
+        $c=1;
+        foreach($MostInserted as $data) {
+            $arrayofMostInserted[$c] =[ $data->categoryName, $data->count];
+            $c+=1;
+        }
+    echo json_encode($arrayofMostInserted);
+
+}
+
+    public function fetchproductspostedeveryday()
+    {
+        $arrayofInserteddaily=[];
+        $arrayofInserteddaily[0]=['day','Num Of Products Inserted'];
+       $products=DB::Select('SELECT date( created_at ) AS day, COUNT(id) AS num_products FROM products
+                GROUP BY date(created_at)');
+        $c=1;
+        foreach($products as $data) {
+            $arrayofInserteddaily[$c] =[ $data->day, $data->num_products];
+            $c+=1;
+        }
+
+        echo json_encode($arrayofInserteddaily);
+    }
     public function makeChart($type)
     {
         /*  switch ($type)

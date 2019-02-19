@@ -22,7 +22,7 @@ class AdminController extends Controller
            return view('admin.mainPage',compact('catName' , 'users' , 'countOfUsers' , 'countOfProducts'));
        }
        else{
-           return redirect('/');
+           return redirect('/profile');
        }
     }
 
@@ -35,17 +35,20 @@ class AdminController extends Controller
         return view('admin.mainPage' , compact('catName'));
     }
     
-    public function index()
+    public function showDetailsProduct(Product $id)
     {
-        //
+        $detailsProducts = DB::table('products')->where('id' ,' =' , 'id')->get();
+        return view('admin.showproductbycatid' , compact('detailsProducts'));
     }
 
-    public function create()
+    public function deleteCategory(Category $id )
     {
-        //
+        $id->delete();
+        return back();
     }
     public function showCatForm(){
-        return view('admin.addCategory' );
+        $categories = DB::table('categories')->get();
+        return view('admin.addCategory' , compact('categories'));
     }
     public function showDashboard()
     {
@@ -99,33 +102,38 @@ class AdminController extends Controller
         $this->validate($request,[
             'categoryName'=>'required|string|unique:categories'
         ]);
-           $catname=$request->catname;
+           $catname=$request->categoryName;
         if(DB::table('categories')->where('categoryName','like',$catname)->exists()) {
             return redirect()->back()-> with('alert ','is  exist');
         }
 
             else{
                 $category = new Category();
-                $category->categoryName =  $request->catname;
+                $category->categoryName =  $request->categoryName;
                 $category->save();
                 return back();
-
             }
+
         }
 
 
-    public function show($id)
+    public function show($id  )
     {
       //$products = DB::table('products')->where('catid', '=', $id)->get();
+
              $products = DB::table('products')
                 ->leftJoin('categories', 'products.catId', '=', 'categories.id')
                 ->leftJoin('users', 'products.userId', '=', 'users.id')->where('catid', '=', $id)
                  ->select('products.*','categories.categoryName','users.name')
                 ->get();
             $catName=DB::table('categories')->get();
+            return view('admin.showproductbycatid', compact('products','catName'));
 
 
-                return view('admin.showproductbycatid', compact('products'),compact('catName'));
+//        if(!$Did ){
+//            $detailsProducts = DB::table('products')->where('id' ,' =' , 'Did')->get();
+//            return view('admin.showproductbycatid' , compact('detailsProducts'));
+//        }
     }
 
 

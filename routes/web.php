@@ -32,18 +32,19 @@ Route::post('/index/search', 'InsertProduct@index')->name('index.search');
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::get('/profile','UserController@ShowDataProfile')->name('profile');
+
 //Route::get('/profile/updatePro','UserController@ShowForUpdateProduct');
-Route::get('/profile/updateUser','UserController@ShowForUpdateUser');
-Route::post('/insertProductByUser','UserController@insertProduct');
 
-Route::get('/profile/{id}/editProduct','UserController@editProduct');
-Route::post('/profile/{id}/update', 'UserController@updateProduct');
-Route::get('/profile/{id}/editUser','UserController@editUser');
-Route::get('/delete/{id}', 'UserController@destroyProduct' );
-
-Route::post('/profile/{id}/updateUser', 'UserController@updateUser');
-
+Route::group(['middleware' => 'UserMiddleware'], function () {
+    Route::get('/profile','UserController@ShowDataProfile')->name('profile');
+    Route::get('/profile/updateUser', 'UserController@ShowForUpdateUser');
+    Route::post('/insertProductByUser', 'UserController@insertProduct');
+    Route::get('/profile/{id}/editProduct', 'UserController@editProduct');
+    Route::post('/profile/{id}/update', 'UserController@updateProduct');
+    Route::get('/profile/{id}/editUser', 'UserController@editUser');
+    Route::get('/delete/{id}', 'UserController@destroyProduct');
+    Route::post('/profile/{id}/updateUser', 'UserController@updateUser');
+});
 
 Route::get('/details', function () {
     return view('user.productDetails');
@@ -66,6 +67,8 @@ Route::group(['middleware' => 'AdminMiddleware'], function () {
     Route::get('/{id}/deleteUser', 'AdminController@deleteUserByAdmin' );
     Route::get('/showProductByCatId/{idd}/edit1', 'AdminController@edit1');
     Route::post('/showProductByCatId/{idd}/update', 'AdminController@updateProduct');
+    Route::get('/{id}/deleteCategory' , 'AdminController@deleteCategory');
+//    Route::get('/{Did}/showDetailsProduct' , 'AdminController@show');
 });
 
 Route::post('/insertsearch','RatingController@insertsearch');
@@ -93,4 +96,7 @@ Route::get('fetchdislike', 'AjaxController@fetchdislike');
 Route::get('addtowishlist','AjaxController@addtowishlist');
 
 
+Route::get('/piechart','ChartController@piechart');
 
+Route::get('/fetchchartdate','ChartController@fetchchartdate');
+Route::get('/fetchdailyproduct','ChartController@fetchproductspostedeveryday');

@@ -20,11 +20,6 @@
                                         <strong>{{ $errors->first('categoryName') }}</strong>
                                     </span>
                                     @endif
-                                        {{--@if(session('alert'))--}}
-                                            {{--<div class="alert alert-success">--}}
-                                                {{--{{session('alert')}}--}}
-                                            {{--</div>--}}
-                                        {{--@endif--}}
 
                                 </div>
                             </div>
@@ -44,6 +39,25 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="container pt-5">
+            <h2>All Categories</h2>
+         <table class="table table-bordered w-50 bg-white">
+          <thead>
+
+            <th style="color: #ff5370">Category Name </th>
+          </thead>
+             <tbody>
+             @foreach($categories as $category)
+              <tr>
+                  <td>
+                   {{$category->categoryName}}
+                  </td>
+                  <td><a href="/{{$category->id}}/deleteCategory"><i class="fas fa-trash" style="color: #17a2b8"></i></a></td>
+              </tr>
+                 @endforeach
+             </tbody>
+         </table>
         </div>
     </div>
 @endsection

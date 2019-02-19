@@ -33,8 +33,8 @@
     <!-- Sidebar  -->
     <nav id="sidebar" >
         <div class="sidebar-header">
-            <h3>Waffer</h3>
-            <strong>W</strong>
+            <h3><a href="/dashboard"><i class="fab fa-asymmetrik"></i>ADMIN</a></h3>
+            <strong><i class="fab fa-asymmetrik"></i></strong>
         </div>
 
         <ul class="list-unstyled components">
@@ -52,6 +52,9 @@
                     </li>
                     <li>
                         <a href="/showFormCategory">Add Category</a>
+                    </li>
+                    <li>
+                        <a href="/piechart">Show Statistics</a>
                     </li>
 
                 </ul>
@@ -78,6 +81,7 @@
                     <i class="fas fa-align-left"></i>
                     <span>Toggle Sidebar</span>
                 </button>
+
 
                     <ul class="nav navbar-nav ml-auto">
                         @guest
@@ -110,6 +114,7 @@
                 </div>
 
         </nav>
+
 
         {{--Main Content--}}
         @yield('content')

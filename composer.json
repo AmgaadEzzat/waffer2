@@ -9,6 +9,7 @@
         "consoletvs/charts": "^6.3",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "5.6.*",
+        "laravel/socialite": "^3.2.0",
         "laravel/tinker": "^1.0",
         "overtrue/laravel-follow": "^1.1"
     },

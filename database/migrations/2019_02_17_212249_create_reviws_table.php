@@ -15,6 +15,11 @@ class CreateReviwsTable extends Migration
     {
         Schema::create('reviws', function (Blueprint $table) {
             $table->increments('id');
+            $table->text('Comment');
+            $table->integer('userId')->unsigned();
+            $table->foreign('userId')->references('id')->on('users')->onDelete('cascade');
+            $table->integer('productid')->unsigned();
+            $table->foreign('productid')->references('id')->on('products')->onDelete('cascade');
             $table->timestamps();
         });
     }

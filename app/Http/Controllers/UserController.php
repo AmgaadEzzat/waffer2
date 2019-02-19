@@ -10,11 +10,6 @@ use Illuminate\Support\Facades\DB;
 class UserController extends Controller
 {
 
-//
-//    public function getCatID(){
-//        $catName=DB::table('categories')->get();
-//        return view('user.userProfile' , compact('catName'));
-//    }
 
     public function showAddProduct()
     {
