@@ -7,18 +7,12 @@
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
             <div class="row">
-=======
->>>>>>> e6fec2d75905335e984c91c2d4db27db7869f003
-
-
-
-
   <div class="container-fluid">
      <div class="row"> 
     
 
         @foreach($deals as $deal)
-                <div class="col-sm-4">
+
 
 
                 <div class="col-sm-3">
@@ -45,8 +39,8 @@
 
 
    </div> <!--end of container-->    
-                </div></div>
+                </div>
         <div class="col-sm-1"></div>
     </div>
-    
+    </div>
 @stop

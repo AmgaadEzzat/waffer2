@@ -22,7 +22,10 @@
 
 </head>
 <style>
-
+.btnnn:hover{
+    background-color: white;
+    color: white;
+}
 </style>
 <script>
 
@@ -336,11 +339,13 @@
             <br><br>
             <div  class="row mx-auto text-center" ><div  class="col-sm-12 text-center">
                     <p class="h-6" style="color:#d6d6d6;">Get Ready For More Opportunities!</p><br>
-                        <h4 style="color:#f3f0f0;">You ara minutes away from Browse your latest product you buy</h4><br>
+                        <h4 style="color:#f3f0f0;">You are minutes away from Browse your latest product you buy</h4><br>
                 </div></div>
+            @if(!Auth::check())
             <div  class="row"><br><br><div  class="col-sm-12 text-center"><br>
                     <a href="{{ route('login') }}" class="btn btn-danger mx-auto"   >Join Now</a><br>
                 </div></div>
+            @endif
         </div>
     </div>
 
@@ -354,6 +359,24 @@
 
 
     <br>
+
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                <div id="myBtnContainer"><br><br>
+                @foreach($places as $place)
+                        <a href="/place/{{$place->productAddress}}" class="btn btnnn"style="background-color:#407410; color:white;"> {{$place->productAddress}}</a>
+                @endforeach
+                </div>
+                <br><br>
+            </div>
+            <div class="col-sm-1"></div>
+            </div>
+        </div>
+    </div>
     <!--footer-->
     <div class="row">
         <div  class="col-sm-12 footer">
@@ -400,6 +423,15 @@
         </div></div>
     <!--end-footer-->
 
+
+
+
+
+
+
+
+
+</div>
 </body>
 </html>
 

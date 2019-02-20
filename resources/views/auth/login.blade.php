@@ -142,7 +142,7 @@
 						</span>
                 </div>
 
-                <a href="#" class="btn-face m-b-10">
+                <a href="/login/facebook" class="btn-face m-b-10">
                     <i class="fa fa-facebook-official"></i>
                     Facebook
                 </a>

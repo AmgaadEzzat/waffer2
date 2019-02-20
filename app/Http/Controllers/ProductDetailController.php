@@ -35,4 +35,6 @@ class ProductDetailController extends Controller
     }
 
 
+
+
 }

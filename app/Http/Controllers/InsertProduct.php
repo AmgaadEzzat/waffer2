@@ -89,9 +89,18 @@ in (select distinct(searchName) from searchs order by  	created_at)');
 //        })->get();
 
 
+    $places=DB::table('products')->select('productAddress')->distinct()->get();
+   return view ('welcome',compact('mostsearchproduct' ,'products','catName','places'));
 
-   return view ('welcome',compact('mostsearchproduct' ,'products','catName'));
+}
 
+
+public function place($id){
+        $place=DB::table('products')->leftJoin('users','products.userId','=','users.id')
+            ->where('products.productAddress','=',$id)
+            ->select('products.*','users.name')
+            ->get();
+        return view('place',compact('place'));
 }
     public function mostsearchedforpage(){
         $mostsearchproduct=DB::Select('select products.* from products where productName in (select distinct(searchName) from searchs order by  	created_at)');
