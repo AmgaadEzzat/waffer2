@@ -48,8 +48,9 @@ Route::group(['middleware' => 'UserMiddleware'], function () {
     Route::get(' /Browse','DealController@browse');
     Route::post('/store','DealController@store');
     Route::get('/deletedeal/{id}', 'DealController@destroy');
-});
 
+});
+Route::get('/deals','DealController@index');
 Route::get('/details', function () {
     return view('user.productDetails');
 });
@@ -73,10 +74,10 @@ Route::group(['middleware' => 'AdminMiddleware'], function () {
     Route::post('/showProductByCatId/{idd}/update', 'AdminController@updateProduct');
     Route::get('/{id}/deleteCategory' , 'AdminController@deleteCategory');
     Route::get('/allproducts' , 'AdminController@showAllProducts');
-    Route::get('/deals','DealController@index');
+
 //    Route::get('/{Did}/showDetailsProduct' , 'AdminController@show');
 });
-Route::get('/deals','DealController@index');
+
 Route::post('/insertsearch','RatingController@insertsearch');
 Route::get('/insertsearch', function () {
     return view('products');

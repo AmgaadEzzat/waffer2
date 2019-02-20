@@ -48,19 +48,20 @@
         </ul>
 
         <ul class="navbar-nav ml-auto">
-
+@if(Auth::check())
             <li class="nav-item"  style="padding-left:24px;">
 
                 <a href="/deals"class="btn btn-danger">Deals</a>
 
             </li>
+    @endif
             @guest
                 <li class="nav-item" style="padding-left:24px;">
                     <a href="{{ route('login') }}"  class="btn btn-warning">Log in</a>
                 </li>
 
                 <li class="nav-item"  style="padding-left:24px;">
-                    <a href="{{ route('register') }}" class="btn  navbutton btn-primary">Join now</a>
+                    <a href="{{ route('register') }}" class="btn  navbutton btn-danger">Join now</a>
                 </li>
             @else
 
@@ -361,7 +362,7 @@
     <br>
     <div class="row" style="background-color: #dbe6f0;">
 
-        <div class="col-sm-1" style="background-color: " ></div>
+        <div class="col-sm-1" ></div>
         <div class="col-sm-7" style="">
             <h1 class="text-secondary"> <br><br>Available Places At Our Websit</h1>
             <hr style="background-color:gray;border-color:gray;"><br><br>
