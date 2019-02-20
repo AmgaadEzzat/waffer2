@@ -12,7 +12,7 @@
             </div>
         @endif
         <div class="card">
-            <div class="card-header" style="background: darkcyan">{{ __('Update Your Information ') }}</div>
+            <div class="card-header" style="background: darkcyanphp artsin">{{ __('Update Your Information ') }}</div>
 
             <div class="card-body">
 

@@ -25,9 +25,10 @@
             </div>
            
 
-            <div class="col-sm-8 m-3">
-            @if(session()->has('notif'))
+            <div class="col-sm-8 m-2">
+         <div class="container-fluid">
                 <div class=" w-75">
+                    @if(session()->has('notif'))
                     <div class="alert alert-success">
                         <button type="button" class="close"
                                 data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -39,11 +40,12 @@
 
                 <form method="POST" action="update" enctype="multipart/form-data">
                     @csrf
+<div class="container">
 
 <div class="form-group row">
-   <label for="name" class="col-md-4 col-form-label text-md-left">{{ __('Product Name') }}</label>
+   <label for="name" class="col-sm-4 col-form-label text-md-left">{{ __('Product Name') }}</label>
 
-   <div class="col-md-6">
+   <div class="col-6">
        <input id="name" type="text" class="form-control{{ $errors->has('Product Name') ? ' is-invalid' : '' }}" name="productName" value="{{$id->productName}}" required autofocus>
 
        @if ($errors->has('Product Name'))
@@ -53,11 +55,13 @@
        @endif
    </div>
 </div>
+</div>
+                    <div class="container">
 
 <div class="form-group row">
-   <label for="Product Price" class="col-md-4 col-form-label text-md-left">{{ __('Product Price ') }}</label>
+   <label for="Product Price" class="col-sm-4 col-form-label text-md-left">{{ __('Product Price ') }}</label>
 
-   <div class="col-md-6">
+   <div class="col-6">
        <input id="Product Price" type="number" class="form-control{{ $errors->has('Product Price') ? ' is-invalid' : '' }}" name="productPrice" value="{{$id->productPrice}}" required>
 
        @if ($errors->has('Product Price'))
@@ -67,11 +71,13 @@
        @endif
    </div>
 </div>
+                    </div>
+                    <div class="container">
 
 <div class="form-group row">
-   <label for="productAddress" class="col-md-4 col-form-label text-md-left">{{ __('where you bought it') }}</label>
+   <label for="productAddress" class="col-sm-4 col-form-label text-md-left">{{ __('where you bought it') }}</label>
 
-   <div class="col-md-6">
+   <div class="col-6">
        <input id="productAddress" type="text" class="form-control{{ $errors->has('productAddress') ? ' is-invalid' : '' }}" name="productAddress" value="{{ $id->productAddress }}" required autofocus>
 
        @if ($errors->has('productAddress'))
@@ -81,10 +87,12 @@
        @endif
    </div>
 </div>
+                    </div>
+                    <div class="container">
 
 <div class="form-group row">
-   <label for="productDescription" class="col-md-4 col-form-label text-md-left">{{ __('Product Description') }}</label>
-   <div class="col-md-6">
+   <label for="productDescription" class="col-sm-4 col-form-label text-md-left">{{ __('Product Description') }}</label>
+   <div class="col-6">
        <input id="productDescription" type="text" class="form-control{{ $errors->has('productDescription') ? ' is-invalid' : '' }}" name="productDescription" value="{{ $id->productDescription}}" required autofocus>
        @if ($errors->has('productDescription'))
            <span class="invalid-feedback" role="alert">
@@ -93,10 +101,12 @@
        @endif
    </div>
 </div>
+                    </div>
+                    <div class="container">
 
 <div class="form-group row">
-   <label for="productImage" class="col-md-4 col-form-label text-md-left">{{ __('Image for Product') }}</label>
-   <div class="col-md-6">
+   <label for="productImage" class="col-sm-4 col-form-label text-md-left">{{ __('Image for Product') }}</label>
+   <div class="col-6">
        <input type="file" name="productImage" value="{{$id->productImage}}" id="productImage" >
        {{--<input id="productImage" type="file" value="Abload File" class="form-control{{ $errors->has('productImage') ? ' is-invalid' : '' }}" name="productImage" required autofocus>--}}
        @if ($errors->has('productImage'))
@@ -106,11 +116,12 @@
        @endif
    </div>
 </div>
+                    </div>
 
-
+<div class="container">
 <div class="form-group row">
-   <label for="type" class="col-md-4 col-form-label text-md-left">{{ __('Category Name') }}</label>
-    <div class="col-sm-6">
+   <label for="type" class="col-sm-4 col-form-label text-md-left">{{ __('Category Name') }}</label>
+    <div class="col-6">
                 <select  class="form-control" name= "catId"value="{{$id->catId}}" >
                     @foreach($catName as $category)
                     <option  name="catname" value="{{$category->id}}" >
@@ -120,20 +131,23 @@
     </div>
 
 </div>
-    <div class="form-group row mb-0">
-        <div class="col-md-6 offset-md-4">
+</div>
+                    <div class="container">
+    <div class="form-group row">
+        <div class="col-6 offset-md-4">
             <button type="submit" class="btn btn-info">
                 {{ __('Update') }}
             </button>
         </div>
     </div>
 
-
+                    </div>
 
 
 
 </form>
-</div>
+         </div>
+            </div>
 </div>
 </div>
 

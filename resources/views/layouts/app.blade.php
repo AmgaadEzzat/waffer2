@@ -97,6 +97,7 @@
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <link rel="stylesheet" href="{{asset('css/homestyle.css')}}">
     <script src="{{asset('js/homejs.js')}}"></script>
+    <link rel="shortcut icon" type="image/jpg" href="{{asset('/images/icon.jpg')}}"/>
 
 </head>
 <style>

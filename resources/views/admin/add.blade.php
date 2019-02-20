@@ -1,7 +1,7 @@
 @extends('admin.master')
 @section('content')
 
-<div class="container">
+<div class="container-fluid">
     <div class="row justify-content-center">
         @if(session()->has('notif'))
             <div class="row">
@@ -75,8 +75,8 @@
 
                         <div class="form-group row">
                             <label for="productImage" class="col-md-4 col-form-label text-md-left">{{ __('Image for Product') }}</label>
-                            <div class="col-md-6">
-                                <input type="file"  name="productImage" value="Abload File" id="productImage" accept="image/*"  class="{{ $errors->has('productImage') ? ' is-invalid' : '' }}" required>
+                            <div class="col-md-6 ">
+                                <input type="file"  name="productImage" value="Abload File" id="productImage" accept="image/*"  class="form-control {{ $errors->has('productImage') ? ' is-invalid' : '' }}" required>
                                 {{--<input id="productImage" type="file" value="Abload File" class="form-control{{ $errors->has('productImage') ? ' is-invalid' : '' }}" name="productImage" required autofocus>--}}
                                 @if ($errors->has('productImage'))
                                     <span class="invalid-feedback" role="alert">

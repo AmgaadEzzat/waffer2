@@ -128,14 +128,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sign Up Form by Colorlib</title>
+
+
 
     <!-- Font Icon -->
-    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="{{asset('fonts/material-icon/css/material-design-iconic-font.min.css')}}">
 
     <!-- Main css -->
-    <link rel="stylesheet" href="reg-css/style.css">
+    <link rel="stylesheet" href="{{asset('reg-css/style.css')}}">
 </head>
 <body>
 
@@ -220,8 +220,8 @@
 </div>
 
 <!-- JS -->
-<script src="vendor/reg-jquery/jquery.min.js"></script>
-<script src="js/reg-main.js"></script>
+<script src="{{asset('vendor/reg-jquery/jquery.min.js')}}"></script>
+<script src="{{asset('js/reg-main.js')}}"></script>
 </body>
 </html>
 
