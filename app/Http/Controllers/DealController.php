@@ -17,6 +17,7 @@ class DealController extends Controller
     public function index()
     {
         $deals=DB::table('deals')->leftJoin('users','deals.userId','=','users.id')
+            ->orderBy('deals.created_at')
             ->get();
         return view('user.deals',compact('deals'));
     }

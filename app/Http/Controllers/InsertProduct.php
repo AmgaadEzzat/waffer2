@@ -98,9 +98,10 @@ in (select distinct(searchName) from searchs order by  	created_at)');
 public function place($id){
         $place=DB::table('products')->leftJoin('users','products.userId','=','users.id')
             ->where('products.productAddress','=',$id)
-            ->select('products.*','users.name')
+            ->select('products.*','users.name')->orderBy('productPrice')
             ->get();
-        return view('place',compact('place'));
+
+        return view('place',compact('place','id'));
 }
     public function mostsearchedforpage(){
         $mostsearchproduct=DB::Select('select products.* from products where productName in (select distinct(searchName) from searchs order by  	created_at)');
