@@ -235,7 +235,7 @@
 
 
 
-    <div class="row" style=""><div class="col-sm-1" style=""></div>
+    <div class="row" style="background-color: #dbe6f0;"><div class="col-sm-1" style=""></div>
         <div class="col-sm-7" style="">  <hr style="background-color:gray;border-color:gray;">
             <h1 class="text-secondary">The Lowest Prices At Our Website</h1>
             <hr style="background-color:gray;border-color:gray;"><br><br>
@@ -359,9 +359,17 @@
 
 
     <br>
+    <div class="row" style="background-color: #dbe6f0;">
+
+        <div class="col-sm-1" style="background-color: " ></div>
+        <div class="col-sm-7" style="">
+            <h1 class="text-secondary"> <br><br>Available Places At Our Websit</h1>
+            <hr style="background-color:gray;border-color:gray;"><br><br>
+        </div>
+        <div class="col-sm-4" style=""></div></div>
 
 
-    <div class="row">
+    <div class="row" style="background-color: #dbe6f0; ">
         <div class="col-sm-12">
             <div class="row">
             <div class="col-sm-1"></div>
