@@ -18,12 +18,11 @@
     
 
         @foreach($deals as $deal)
-<<<<<<< HEAD
                 <div class="col-sm-4">
 
-=======
+
                 <div class="col-sm-3">
->>>>>>> e6fec2d75905335e984c91c2d4db27db7869f003
+
                     <div class="card" style="">
                         <b class="text-primary font-weight-bold">{{$deal->name}}</b>
                         <img class="card-img-top" src="/img/{{$deal->Image}}" alt="Card image">

@@ -63,8 +63,8 @@ class InsertProduct extends Controller
 public function mostsearchedforhome()
 {
 
-    $mostsearchcount=DB::Select('select count(productName) from products where productName in 
-(select distinct(searchName) from searchs order by  	created_at)group by productName');
+//    $mostsearchcount=DB::Select('select count(productName) from products where productName in
+//(select distinct(searchName) from searchs order by (created_at)group by productName');
     $mostsearchproduct=DB::Select('select products.* from products where productName 
 in (select distinct(searchName) from searchs order by  	created_at)');
 
@@ -76,7 +76,7 @@ in (select distinct(searchName) from searchs order by  	created_at)');
         ->joinSub($productname, 'productname', function($join) {
             $join->on('products.productName','=','productname.productName');
             $join->on('productname.minPrice', '=', 'products.productPrice' );
-        })->leftJoin('categories','products.id','=','categories.id')->get();
+        })->join('categories','products.catId','=','categories.id')->get();
 
 
 

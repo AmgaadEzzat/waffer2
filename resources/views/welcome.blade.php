@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="{{asset('css/homestyle.css')}}">
     <script src="{{asset('js/homejs.js')}}"></script>
     <link rel="shortcut icon" type="image/jpg" href="{{asset('images/icon.jpg')}}"/>
-    <link href="{{asset('js/owl-carousel/owl.carousel.css')}} rel="stylesheet" />
+    <link href="{{asset('js/owl-carousel/owl.carousel.css')}}" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="{{asset('css/animate.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
 
@@ -193,13 +193,18 @@
 
 
 
-
+    {{$count=0}}
     <div class="row" style="">
         <div class="col-sm-1" ></div>
         <div class="col-sm-10" >
             <div class="row">
+
                 @foreach($mostsearchproduct as $mostsearch)
                     <div class="col-sm-3" style="">
+                        @if($count ==8)
+                            {{$count+=1}}
+                            @break
+                        @endif
                         <div class="card" style="">
                             <img class="card-img-top" src="/images/{{$mostsearch->productImage}}" alt="Card image" style="">
                             <div class="card-body">
@@ -259,7 +264,7 @@
                         <div class="row text-left">
                             @foreach($products as $product)
                                 {{--<div class="col-sm-4 float-left  text-left"style="margin-top:30px;">--}}
-                                <div class="column col-sm-3 text-left {{$product->categoryName}}" style="margin:20px 20px 20px 20px;" >
+                                <div class="column col-sm-3 {{$product->categoryName}}" style="margin:20px 20px 20px 20px;" >
                                     <div class="content" style="width:100%;height:100%;">
                                         <img src="/images/{{$product->productImage}}" class="img-thumbnail"alt="Car" style="width:100%;">
                                         <h4>{{$product->productName}}</h4>
