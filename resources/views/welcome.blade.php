@@ -232,9 +232,6 @@
 
 
 
-
-
-
     <div class="row" style=""><div class="col-sm-1" style=""></div>
         <div class="col-sm-7" style="">  <hr style="background-color:gray;border-color:gray;">
             <h1 class="text-secondary">The Lowest Prices At Our Website</h1>

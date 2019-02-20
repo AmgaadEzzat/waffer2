@@ -1,241 +1,228 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+{{--<div class="container">--}}
+    {{--<div class="row justify-content-center">--}}
+        {{--<div class="col-md-8">--}}
+            {{--<div class="card">--}}
+                {{--<div class="card-header">{{ __('Register') }}</div>--}}
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
-                        @csrf
+                {{--<div class="card-body">--}}
+                    {{--<form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">--}}
+                        {{--@csrf--}}
 
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                        {{--<div class="form-group row">--}}
+                            {{--<label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>--}}
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+                            {{--<div class="col-md-6">--}}
+                                {{--<input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>--}}
 
-                                @if ($errors->has('name'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
-
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="city" class="col-md-4 col-form-label text-md-right">{{ __('city') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="city" type="text" class="form-control{{ $errors->has('city') ? ' is-invalid' : '' }}" name="city" value="{{ old('city') }}" required autofocus>
-
-                                @if ($errors->has('city'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('city') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="phone" class="col-md-4 col-form-label text-md-right">{{ __('phone') }}</label>
-                            <div class="col-md-6">
-                                <input id="phone" type="text" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" value="{{ old('phone') }}" required autofocus>
-
-                                @if ($errors->has('phone'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('phone') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="type" class="col-md-4 col-form-label text-md-right">{{ __('Type') }}</label>
-                            <div class="col-md-6">
-                                <div class="radio" name="type" class="form-control{{ $errors->has('type') ? ' is-invalid' : '' }}">
-                                    <label><input id="type" type="radio" name="type"  value=0>User</label>
-
-                                </div>
-                                <div class="radio" name="type" class="form-control{{ $errors->has('type') ? ' is-invalid' : '' }}">
-                                    <label><input type="radio" name="type"   value=1>Company</label>
-                                </div>
-                            </div>
-                            @if ($errors->has('type'))
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('type') }}</strong>
-                                    </span>
-                            @endif
-
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-        {{--<!DOCTYPE html>--}}
-{{--<html lang="en">--}}
-
-{{--<head>--}}
-    {{--<!-- Required meta tags-->--}}
-    {{--<meta charset="UTF-8">--}}
-    {{--<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">--}}
-
-
-
-    {{--<!-- Icons font CSS-->--}}
-    {{--<link href="{{asset('vendor/mdi-font/css/material-design-iconic-font.min.css')}}" rel="stylesheet" media="all">--}}
-    {{--<link href="{{asset('vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet')}}" media="all">--}}
-    {{--<!-- Font special for pages-->--}}
-    {{--<link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">--}}
-
-    {{--<!-- Vendor CSS-->--}}
-    {{--<link href="{{asset('vendor/select2Reg/select2.min.css')}}" rel="stylesheet" media="all">--}}
-    {{--<link href="{{asset('vendor/datepicker/daterangepicker.css')}}" rel="stylesheet" media="all">--}}
-
-    {{--<!-- Main CSS-->--}}
-    {{--<link href="{{asset('css/Regmain.css')}}" rel="stylesheet" media="all">--}}
-{{--</head>--}}
-
-{{--<body>--}}
-{{--<div class="page-wrapper bg-gra-02 p-t-130 p-b-100  font-poppins">--}}
-    {{--<div class="wrapper wrapper--w680">--}}
-        {{--<div class="card card-4">--}}
-            {{--<div class="card-body">--}}
-                {{--<h2 class="title">Registration Form</h2>--}}
-                {{--<form method="POST">--}}
-                    {{--<div class="row row-space">--}}
-                        {{--<div class="col-2">--}}
-                            {{--<div class="input-group">--}}
-                                {{--<label class="label">Name</label>--}}
-                                {{--<input class="input--style-4" type="text" name="Name">--}}
+                                {{--@if ($errors->has('name'))--}}
+                                    {{--<span class="invalid-feedback" role="alert">--}}
+                                        {{--<strong>{{ $errors->first('name') }}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
                             {{--</div>--}}
                         {{--</div>--}}
 
-                    {{--</div>--}}
-                    {{--<div class="row row-space">--}}
-                        {{--<div class="col-2">--}}
-                            {{--<div class="input-group">--}}
-                                {{--<label class="label">Birthday</label>--}}
-                                {{--<div class="input-group-icon">--}}
-                                    {{--<input class="input--style-4 js-datepicker" type="text" name="birthday">--}}
-                                    {{--<i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>--}}
+                        {{--<div class="form-group row">--}}
+                            {{--<label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>--}}
+
+                            {{--<div class="col-md-6">--}}
+                                {{--<input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>--}}
+
+                                {{--@if ($errors->has('email'))--}}
+                                    {{--<span class="invalid-feedback" role="alert">--}}
+                                        {{--<strong>{{ $errors->first('email') }}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+
+                        {{--<div class="form-group row">--}}
+                            {{--<label for="city" class="col-md-4 col-form-label text-md-right">{{ __('city') }}</label>--}}
+
+                            {{--<div class="col-md-6">--}}
+                                {{--<input id="city" type="text" class="form-control{{ $errors->has('city') ? ' is-invalid' : '' }}" name="city" value="{{ old('city') }}" required autofocus>--}}
+
+                                {{--@if ($errors->has('city'))--}}
+                                    {{--<span class="invalid-feedback" role="alert">--}}
+                                        {{--<strong>{{ $errors->first('city') }}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+
+                        {{--<div class="form-group row">--}}
+                            {{--<label for="phone" class="col-md-4 col-form-label text-md-right">{{ __('phone') }}</label>--}}
+                            {{--<div class="col-md-6">--}}
+                                {{--<input id="phone" type="text" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" value="{{ old('phone') }}" required autofocus>--}}
+
+                                {{--@if ($errors->has('phone'))--}}
+                                    {{--<span class="invalid-feedback" role="alert">--}}
+                                        {{--<strong>{{ $errors->first('phone') }}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+
+
+
+                        {{--<div class="form-group row">--}}
+                            {{--<label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>--}}
+
+                            {{--<div class="col-md-6">--}}
+                                {{--<input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>--}}
+
+                                {{--@if ($errors->has('password'))--}}
+                                    {{--<span class="invalid-feedback" role="alert">--}}
+                                        {{--<strong>{{ $errors->first('password') }}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+
+                        {{--<div class="form-group row">--}}
+                            {{--<label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>--}}
+
+                            {{--<div class="col-md-6">--}}
+                                {{--<input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+
+                        {{--<div class="form-group row">--}}
+                            {{--<label for="type" class="col-md-4 col-form-label text-md-right">{{ __('Type') }}</label>--}}
+                            {{--<div class="col-md-6">--}}
+                                {{--<div class="radio" name="type" class="form-control{{ $errors->has('type') ? ' is-invalid' : '' }}">--}}
+                                    {{--<label><input id="type" type="radio" name="type"  value=0>User</label>--}}
+
+                                {{--</div>--}}
+                                {{--<div class="radio" name="type" class="form-control{{ $errors->has('type') ? ' is-invalid' : '' }}">--}}
+                                    {{--<label><input type="radio" name="type"   value=1>Company</label>--}}
                                 {{--</div>--}}
                             {{--</div>--}}
+                            {{--@if ($errors->has('type'))--}}
+                                {{--<span class="invalid-feedback" role="alert">--}}
+                                        {{--<strong>{{ $errors->first('type') }}</strong>--}}
+                                    {{--</span>--}}
+                            {{--@endif--}}
+
                         {{--</div>--}}
-                        {{--<div class="col-2">--}}
-                            {{--<div class="input-group">--}}
-                                {{--<label class="label">Gender</label>--}}
-                                {{--<div class="p-t-10">--}}
-                                    {{--<label class="radio-container m-r-45">Male--}}
-                                        {{--<input type="radio" checked="checked" name="gender">--}}
-                                        {{--<span class="checkmark"></span>--}}
-                                    {{--</label>--}}
-                                    {{--<label class="radio-container">Female--}}
-                                        {{--<input type="radio" name="gender">--}}
-                                        {{--<span class="checkmark"></span>--}}
-                                    {{--</label>--}}
-                                {{--</div>--}}
+
+                        {{--<div class="form-group row mb-0">--}}
+                            {{--<div class="col-md-6 offset-md-4">--}}
+                                {{--<button type="submit" class="btn btn-primary">--}}
+                                    {{--{{ __('Register') }}--}}
+                                {{--</button>--}}
                             {{--</div>--}}
                         {{--</div>--}}
-                    {{--</div>--}}
-                    {{--<div class="row row-space">--}}
-                        {{--<div class="col-2">--}}
-                            {{--<div class="input-group">--}}
-                                {{--<label class="label">Email</label>--}}
-                                {{--<input class="input--style-4" type="email" name="email">--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                        {{--<div class="col-2">--}}
-                            {{--<div class="input-group">--}}
-                                {{--<label class="label">Phone Number</label>--}}
-                                {{--<input class="input--style-4" type="text" name="phone">--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                    {{--<div class="input-group">--}}
-                        {{--<label class="label">Subject</label>--}}
-                        {{--<div class="rs-select2 js-select-simple select--no-search">--}}
-                            {{--<select name="subject">--}}
-                                {{--<option disabled="disabled" selected="selected">Choose option</option>--}}
-                                {{--<option>Subject 1</option>--}}
-                                {{--<option>Subject 2</option>--}}
-                                {{--<option>Subject 3</option>--}}
-                            {{--</select>--}}
-                            {{--<div class="select-dropdown"></div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                    {{--<div class="p-t-15">--}}
-                        {{--<button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>--}}
-                    {{--</div>--}}
-                {{--</form>--}}
+                    {{--</form>--}}
+                {{--</div>--}}
             {{--</div>--}}
         {{--</div>--}}
     {{--</div>--}}
 {{--</div>--}}
 
-{{--<!-- Jquery JS-->--}}
-{{--<script src="{{asset('vendor/jqueryReg/jquery.min.js')}}"></script>--}}
-{{--<!-- Vendor JS-->--}}
-{{--<script src="{{asset('vendor/select2Reg/select2.min.js')}}"></script>--}}
-{{--<script src="{{asset('vendor/datepicker/moment.min.js')}}"></script>--}}
-{{--<script src="{{asset('vendor/datepicker/daterangepicker.js')}}"></script>--}}
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Colorlib</title>
 
-{{--<!-- Main JS-->--}}
-{{--<script src="{{asset('js/global.js')}}"></script>--}}
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
 
-{{--</body>--}}
+    <!-- Main css -->
+    <link rel="stylesheet" href="reg-css/style.css">
+</head>
+<body>
 
-{{--</html>--}}
-<!-- end document-->
+<div class="main">
+
+    <section class="signup">
+        <!-- <img src="images/signup-bg.jpg" alt=""> -->
+        <div class="container">
+            <div class="signup-content">
+                <form method="POST" id="signup-form" class="signup-form" action="{{ route('register') }}">
+                    @csrf
+                    <h2 class="form-title">Create account</h2>
+                    <div class="form-group">
+                        <input type="text"  name="name" class=" form-input form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"  id="name" value="{{ old('name') }}" placeholder="Your Name" required/>
+                        @if ($errors->has('name'))
+                        <span class="invalid-feedback" role="alert">
+                        <strong>{{ $errors->first('name') }}</strong>
+                        </span>
+                        @endif
+                    </div>
+                    <div class="form-group ">
+                        <input type="email" class=" form-input form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"  name="email" id="email" value="{{ old('email') }}" placeholder="Your Email" required/>
+                        @if ($errors->has('email'))
+                        <span class="invalid-feedback" role="alert">
+                        <strong>{{ $errors->first('email') }}</strong>
+                        </span>
+                        @endif
+                    </div>
+                    <div class="form-group">
+                        <input type="text"  name="city" class="form-input form-control{{ $errors->has('city') ? ' is-invalid' : '' }}"  id="city" value="{{ old('city') }}" placeholder="Your City" required/>
+                        @if ($errors->has('city'))
+                            <span class="invalid-feedback" role="alert">
+                        <strong>{{ $errors->first('city') }}</strong>
+                        </span>
+                        @endif
+                    </div>
+                    <div class="form-group">
+                        <input type="text"  name="phone" class="form-input form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}"  id="phone" value="{{ old('phone') }}" placeholder="Your Phone" required/>
+                        @if ($errors->has('name'))
+                            <span class="invalid-feedback" role="alert">
+                        <strong>{{ $errors->first('name') }}</strong>
+                        </span>
+                        @endif
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-input form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" id="password" placeholder="Password" required/>
+                        <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+                        @if ($errors->has('password'))
+                        <span class="invalid-feedback" role="alert">
+                        <strong>{{ $errors->first('password') }}</strong>
+                        </span>
+                        @endif
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-input" name="password_confirmation" id="re_password" placeholder="Repeat your password"/>
+                    </div>
+                    <div class="form-group">
+                        <span class="form-group" name="type">
+                                    <select class="form-control" id="type" name="type" placeholder="Type">
+                                        <option name="type" value=0>User</option>
+                                         <option name="type" value=1>Company</option>
+                                    </select>
+
+                                </span>
+                        @if ($errors->has('type'))
+                        <span class="invalid-feedback" role="alert">
+                        <strong>{{ $errors->first('type') }}</strong>
+                        </span>
+                        @endif
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" name="submit" id="submit" class=" btn btn-info w-100" value="Sign up"/>
+                    </div>
+                </form>
+                <p class="loginhere">
+                    Have already an account ? <a href="login" class="loginhere-link">Login here</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<!-- JS -->
+<script src="vendor/reg-jquery/jquery.min.js"></script>
+<script src="js/reg-main.js"></script>
+</body>
+</html>
 
 @endsection
