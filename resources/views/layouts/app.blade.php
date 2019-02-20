@@ -106,7 +106,7 @@
 
 </script>
 </head>
-<body style = " background-image: url({{asset('../images/pexels-photo-934011.jpeg')}}) ">
+<body style = " background-color: #dde4ea ">
 
 
 
