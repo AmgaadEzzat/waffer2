@@ -1,14 +1,14 @@
 @extends('admin.master')
 @section('content')
 <div class="row">
-    <div class="col-sm-2"></div>
-    <div class="col-sm-9">
+
+    <div class="col-sm-12">
         <button class="btn btn-info"id="chart1">Percent Of Products Inserted For Every Category</button>
         <button class="btn btn-info"id="chart2">Percent Search Every Day</button><br><br>
     <div id="piechart" ></div>
     <div id="piechart2"></div>
     </div>
-    <div class="col-sm-1"></div>
+
 </div>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 

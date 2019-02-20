@@ -74,7 +74,8 @@ Route::group(['middleware' => 'AdminMiddleware'], function () {
     Route::post('/showProductByCatId/{idd}/update', 'AdminController@updateProduct');
     Route::get('/{id}/deleteCategory' , 'AdminController@deleteCategory');
     Route::get('/allproducts' , 'AdminController@showAllProducts');
-
+    Route::get('/showdeals' , 'DealController@showdealsforadmin');
+    Route::get('/delete/{id}', 'DealController@destroydealfromadmin');
 //    Route::get('/{Did}/showDetailsProduct' , 'AdminController@show');
 });
 

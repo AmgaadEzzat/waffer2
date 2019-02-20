@@ -1,5 +1,18 @@
 @extends('user.master')
 @section('content')
+
+    <link rel="stylesheet" href="{{asset('css/homestyle.css')}}">
+    <script src="{{asset('js/homejs.js')}}"></script>
+    <div class="col-sm-12" >
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-8"><br><br>
+                <h1 class="text-secondary">Latest Deals Browsed By You <b>MR/MS :{{Auth::user()->name}}</b></h1>
+                <hr style="background-color:gray;border-color:gray;"><br><br>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
     <br><br>
 <div class="row" >
     <div class="col-sm-1"></div>

@@ -28,9 +28,19 @@ class DealController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function browse(){
-        $deals=DB::table('deals')->get();
+        $deals=DB::table('deals')->join('users','users.id','=','deals.userId')->get();
         return view('user.browsedeal',compact('deals'));
     }
+
+    public function showdealsforadmin(){
+        $deals=DB::table('deals')->leftJoin('users','deals.userId','=','users.id')
+            ->select('deals.*','users.name')
+            ->orderBy('deals.created_at')
+            ->get();
+        return view('admin.showdeals',compact('deals'));
+    }
+
+
 //    public function create()
 //    {
 //        $deals=DB::table('deals')->get();
@@ -79,7 +89,6 @@ class DealController extends Controller
      */
     public function show($id)
     {
-        //
     }
 
     /**
@@ -112,6 +121,14 @@ class DealController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(Deal $id)
+    {
+        $id->delete();
+        session()->flash("notif","Success to delete This Deal");
+        return back();
+    }
+
+
+    public function destroydealfromadmin(Deal $id)
     {
         $id->delete();
         session()->flash("notif","Success to delete This Deal");

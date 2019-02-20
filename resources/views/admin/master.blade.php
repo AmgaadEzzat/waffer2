@@ -53,7 +53,9 @@
                     <li>
                         <a href="/showFormCategory">Add Category</a>
                     </li>
-
+                    <li>
+                        <a href="/showdeals">All Deals</a>
+                    </li>
 
                 </ul>
             </li>
