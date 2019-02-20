@@ -210,6 +210,7 @@
                             @break
                         @endif
                         <div class="card" style="">
+                            <b class="text-primary font-weight-bold">{{$mostsearch->name}}</b>
                             <img class="card-img-top" src="/images/{{$mostsearch->productImage}}" alt="Card image" style="">
                             <div class="card-body">
                                 <h4 class="card-title">{{$mostsearch->productName}}</h4>
@@ -265,8 +266,10 @@
                         <div class="row text-left">
                             @foreach($products as $product)
                                 {{--<div class="col-sm-4 float-left  text-left"style="margin-top:30px;">--}}
+
                                 <div class="column col-sm-3 {{$product->categoryName}}" style="margin:20px 20px 20px 20px;" >
                                     <div class="content" style="width:100%;height:100%;">
+                                        <b class="text-primary font-weight-bold">{{$product->name}}</b>
                                         <img src="/images/{{$product->productImage}}" class="img-thumbnail"alt="Car" style="width:100%;">
                                         <h4>{{$product->productName}}</h4>
                                         <p>{{$product->productDescription}}<br>

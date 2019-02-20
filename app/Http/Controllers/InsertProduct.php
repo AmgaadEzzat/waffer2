@@ -65,8 +65,11 @@ public function mostsearchedforhome()
 
 //    $mostsearchcount=DB::Select('select count(productName) from products where productName in
 //(select distinct(searchName) from searchs order by (created_at)group by productName');
-    $mostsearchproduct=DB::Select('select products.* from products where productName 
-in (select distinct(searchName) from searchs order by  	created_at)');
+    $mostsearchproduct=DB::Select('select distinct(products.productName),products.id,products.productPrice 
+,products.productAddress ,products.productImage ,products.productDescription,products.like 
+,products.dislike,products.created_at,users.name 
+ from products,users where productName 
+in (select distinct(searchName) from searchs order by  	created_at)and users.id=products.userId');
 
     $productname = DB::table('products')
         ->select('productName',DB::raw('MIN(productPrice) as minPrice '))
@@ -76,7 +79,8 @@ in (select distinct(searchName) from searchs order by  	created_at)');
         ->joinSub($productname, 'productname', function($join) {
             $join->on('products.productName','=','productname.productName');
             $join->on('productname.minPrice', '=', 'products.productPrice' );
-        })->join('categories','products.catId','=','categories.id')->get();
+        })->join('categories','products.catId','=','categories.id')->
+        leftJoin('users','products.userId','=','users.id')->get();
 
 
 
@@ -104,7 +108,7 @@ public function place($id){
         return view('place',compact('place','id'));
 }
     public function mostsearchedforpage(){
-        $mostsearchproduct=DB::Select('select products.* from products where productName in (select distinct(searchName) from searchs order by  	created_at)');
+        $mostsearchproduct=DB::Select('select products.*,users.name from products,users where productName in (select distinct(searchName) from searchs order by  	created_at)');
         return view ('mostsearch',compact('mostsearchproduct'));
     }
 
