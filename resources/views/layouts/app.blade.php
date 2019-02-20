@@ -112,7 +112,7 @@
 
 <nav class="navbar navbar-expand-sm fixed-top ">
 
-    <a class="navbar-brand font-weight-bold pl-5 " id="logo" href="{{ url('/home') }}"><STRONG><i class="fas fa-money-bill-wave"></i>WaffeR</STRONG></a>
+    <a class="navbar-brand font-weight-bold pl-5 " id="logo" href="{{ url('/') }}"><STRONG><i class="fas fa-money-bill-wave"></i>WaffeR</STRONG></a>
     <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon" style="background-color:rgb(224, 220, 220);color:red;"></span>
     </button>
@@ -122,23 +122,12 @@
                 {{--<a class="nav-link  navlink4" href="#" id="navlinks">Browse product</a>--}}
             {{--</li>--}}
             <li class="nav-item">
-                <a class="nav-link  navlink4  " href="#" id="navlinks">Search</a>
+                <a class="nav-link  navlink4  " href="/" id="navlinks">Search</a>
             </li>
             {{--<li class="nav-item">--}}
                 {{--<a class="nav-link  navlink4" href="#" id="navlinks">Message</a>--}}
             {{--</li>--}}
-            <li class="nav-item">
-                <div class="btn-group">
 
-                    <a  href="#" class="  dropdown-toggle-split nav-link font-weight-bold navlink4"id="navlinks" data-toggle="dropdown"><i class="fas fa-money-check"></i>
-                    </a>
-                    <div class="dropdown-menu" style="background-color:rgb(228, 166, 166);">
-                        <a class="dropdown-item" href="#">Contact Us</a>
-                        <a class="dropdown-item" href="#">About Us</a>
-                        <a class="dropdown-item" href="#">More</a>
-                    </div>
-                </div>
-            </li>
         </ul>
 
         <ul class="navbar-nav ml-auto">

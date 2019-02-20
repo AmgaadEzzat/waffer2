@@ -90,7 +90,7 @@ in (select distinct(searchName) from searchs order by  	created_at)');
 
 
 
-   return view ('welcome',compact('mostsearchproduct' ,'mostsearchcount' ,'products','catName'));
+   return view ('welcome',compact('mostsearchproduct' ,'products','catName'));
 
 }
     public function mostsearchedforpage(){
