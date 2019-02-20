@@ -105,3 +105,10 @@ Route::get('/piechart','ChartController@piechart');
 
 Route::get('/fetchchartdate','ChartController@fetchchartdate');
 Route::get('/fetchdailyproduct','ChartController@fetchproductspostedeveryday');
+
+
+
+//Route::get('sendemail',function (){
+//  $data=array(['name'=>'Doaa','email'=>'doaabakhiet11@gmail.com']);
+//});
+

@@ -78,15 +78,15 @@ class UserController extends Controller
             'productAddress'=>'required|string',
             'productDescription'=>'required|string|min:15',
             'productImage'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+
+
+
+
+
         ]);
-
-
-
-<<<<<<< HEAD
-        ));
         session()->flash("notif","Success to Update Product");
         return back();
-=======
+
 
         $newProduct = Product::find($id);
         if ($request->hasFile('productImage')) {
@@ -105,7 +105,7 @@ class UserController extends Controller
 
         $newProduct->save();
         return redirect('/allproducts');
->>>>>>> 67c2d23d4f2a12e943976fc79788df6f05cb5b65
+
     }
 
   
