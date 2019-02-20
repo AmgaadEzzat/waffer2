@@ -79,13 +79,9 @@ class UserController extends Controller
             'productDescription'=>'required|string|min:15',
             'productImage'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
 
-
-
-
-
         ]);
         session()->flash("notif","Success to Update Product");
-        return back();
+   
 
 
         $newProduct = Product::find($id);
@@ -104,7 +100,7 @@ class UserController extends Controller
         $newProduct->catId = $request->catId;
 
         $newProduct->save();
-        return redirect('/allproducts');
+        return back();
 
     }
 

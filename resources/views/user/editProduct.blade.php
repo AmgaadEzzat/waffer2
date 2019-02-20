@@ -4,15 +4,7 @@
 
     <div class= "container-fluid " >
         <div class="row">
-            @if(session()->has('notif'))
-                <div class="row">
-                    <div class="alert alert-success">
-                        <button type="button" class="close"
-                                data-dismiss="alert" aria-hidden="true">&times;</button>
-                        <strong>Notification</strong>{{session()->get('notif')}}
-                    </div>
-                </div>
-            @endif
+            
             <div class="col-sm-3 m-3">
                 @foreach($userData as $userData)
                     <div class="container-fluid divinfo shadow rounded">
@@ -31,8 +23,18 @@
                         @endforeach
                 </div>
             </div>
+           
 
             <div class="col-sm-8 m-3">
+            @if(session()->has('notif'))
+                <div class=" w-75">
+                    <div class="alert alert-success">
+                        <button type="button" class="close"
+                                data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <strong>Notification</strong>{{session()->get('notif')}}
+                    </div>
+                </div>
+            @endif
                 <span class="text-center m-2" > <h4  class="text-light  p-2 rounded" style="background-color: darkcyan"> Edit Product </h4></span>
 
                 <form method="POST" action="update" enctype="multipart/form-data">
