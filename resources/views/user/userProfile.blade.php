@@ -45,6 +45,7 @@
                                 <div class="card shadow">
                                     <div class="card-header rounded" style="background-color:darkcyan;" > <span class="p-2 text-light"> <i class="fas fa-plus-circle "></i> </span> {{ __('Add New Product') }}</div>
                                     @if(session()->has('notif'))
+                                        <div class="container">
                                         <div class="row">
                                             <div class="alert alert-success">
                                                 <button type="button" class="close"
@@ -52,15 +53,20 @@
                                                 <strong>Notification</strong>{{session()->get('notif')}}
                                             </div>
                                         </div>
+                                        </div>
                                     @endif
                                     <div class="card-body container shadow">
-                                        <form method="POST" action="insertProductByUser" enctype="multipart/form-data">
+                                        <form method="POST" action="insertProductByUser" enctype="multipart/form-data" class="needs-validation" novalidate>
                                             @csrf
-                                            <div class="form-group  container row">
+                                        <div class="container">
+                                            <div class="form-group   row">
                                                 <label for="name" class="col-sm-4 col-form-label text-sm-left">{{ __('Product Name') }}</label>
 
-                                                <div class="col-sm-6">
+                                                <div class="col-6">
                                                     <input id="name" type="text" class="form-control{{ $errors->has('Product Name') ? ' is-invalid' : '' }}" name="productName" value="{{ old('Product Name') }}" required autofocus>
+                                                    <div class="invalid-feedback">
+                                                        Please enter product name.
+                                                    </div>
 
                                                     @if ($errors->has('Product Name'))
                                                         <span class="invalid-feedback" role="alert">
@@ -69,12 +75,16 @@
                                                     @endif
                                                 </div>
                                             </div>
-
-                                            <div class="form-group  container row">
+                                        </div>
+                                            <div class="container">
+                                            <div class="form-group   row">
                                                 <label for="Product Price" class="col-sm-4 col-form-label text-sm-left">{{ __('Product Price ') }}</label>
 
-                                                <div class="col-sm-6">
+                                                <div class="col-6">
                                                     <input id="Product Price" type="number" class="form-control{{ $errors->has('Product Price') ? ' is-invalid' : '' }}" name="productPrice" value="{{ old('Product Price') }}" required>
+                                                    <div class="invalid-feedback">
+                                                        Please enter product price.
+                                                    </div>
 
                                                     @if ($errors->has('Product Price'))
                                                         <span class="invalid-feedback" role="alert">
@@ -83,12 +93,18 @@
                                                     @endif
                                                 </div>
                                             </div>
+                                            </div>
+                                            <div class="container">
 
-                                            <div class="form-group container row">
+                                            <div class="form-group  row">
                                                 <label for="productAddress" class="col-sm-4 col-form-label text-sm-left">{{ __('where you bought it') }}</label>
 
-                                                <div class="col-sm-6">
+                                                <div class="col-6">
+
                                                     <input id="productAddress" type="text" class="form-control{{ $errors->has('productAddress') ? ' is-invalid' : '' }}" name="productAddress" value="{{ old('productAddress') }}" required autofocus>
+                                                    <div class="invalid-feedback">
+                                                        Please enter product address.
+                                                    </div>
 
                                                     @if ($errors->has('productAddress'))
                                                         <span class="invalid-feedback" role="alert">
@@ -97,11 +113,17 @@
                                                     @endif
                                                 </div>
                                             </div>
+                                            </div>
+                                        <div class="container">
 
-                                            <div class="form-group container row">
+
+                                            <div class="form-group  row">
                                                 <label for="productDescription" class="col-sm-4 col-form-label text-sm-left">{{ __('Product Description') }}</label>
-                                                <div class="col-sm-6">
+                                                <div class="col-6">
                                                     <input id="productDescription" type="text" class="form-control{{ $errors->has('productDescription') ? ' is-invalid' : '' }}" name="productDescription" value="{{ old('productDescription') }}" required autofocus>
+                                                    <div class="invalid-feedback">
+                                                        Please enter product description.
+                                                    </div>
                                                     @if ($errors->has('productDescription'))
                                                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('productDescription') }}</strong>
@@ -109,12 +131,17 @@
                                                     @endif
                                                 </div>
                                             </div>
+                                        </div>
+                                            <div class="container">
 
-                                            <div class="form-group container row">
+                                            <div class="form-group  row">
                                                 <label for="productImage" class="col-sm-4 col-form-label text-sm-left">{{ __('Image for Product') }}</label>
-                                                <div class="col-sm-6">
+                                                <div class="col-6">
 
                                                     <input id="productImage" type="file" value="Abload File" class="form-control{{ $errors->has('productImage') ? ' is-invalid' : '' }}" name="productImage" required autofocus>
+                                                    <div class="invalid-feedback">
+                                                        Please enter product image.
+                                                    </div>
                                                     @if ($errors->has('productImage'))
                                                         <span class="invalid-feedback" role="alert">
                                         <input type="file" name="productImage" value="Abload File" >
@@ -122,30 +149,42 @@
                                                     @endif
                                                 </div>
                                             </div>
+                                            </div>
+                                            <div class="container">
 
 
-                                            <div class="form-group container row">
+                                            <div class="form-group  row">
                                                 <label for="type" class="col-sm-4 col-form-label text-sm-left">{{ __('Category Name') }}</label>
-                                                <div class="col-sm-6">
+                                                <div class="col-6">
+
 
                                                     <span class="form-group" name="catname">
+                                                            <div class="invalid-feedback">
+                                                        Please enter product category.
+                                                    </div>
+
                                     <select class="form-control" id="sel1" name="catname">
                                         @foreach($catName as $catname)
                                             <option name="catname" >{{$catname->categoryName}}</option>
                                         @endforeach
                                     </select>
 
+
+
                                 </span>
 
                                             </div>
                                             </div>
+                                            </div>
+                                            <div class="container">
 
-                                            <div class="form-group container row ">
-                                                <div class="col-sm-6 offset-sm-4">
+                                            <div class="form-group  row ">
+                                                <div class="col-6 offset-sm-4">
                                                     <button type="submit" class="btn btn-info">
                                                         {{ __('Add') }}
                                                     </button>
                                                 </div>
+                                            </div>
                                             </div>
                                         </form>
                                     </div>

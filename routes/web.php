@@ -73,9 +73,10 @@ Route::group(['middleware' => 'AdminMiddleware'], function () {
     Route::post('/showProductByCatId/{idd}/update', 'AdminController@updateProduct');
     Route::get('/{id}/deleteCategory' , 'AdminController@deleteCategory');
     Route::get('/allproducts' , 'AdminController@showAllProducts');
+    Route::get('/deals','DealController@index');
 //    Route::get('/{Did}/showDetailsProduct' , 'AdminController@show');
 });
-
+Route::get('/deals','DealController@index');
 Route::post('/insertsearch','RatingController@insertsearch');
 Route::get('/insertsearch', function () {
     return view('products');
@@ -96,6 +97,7 @@ Route::get('/wishlist/{id}','WishlistController@addtowishlist');
 
 Route::get('/details/{id}','ProductDetailController@showproductdetail');
 Route::post('/storecomment/{id}','ProductDetailController@sorecomment');
+Route::get('/place/{id}','InsertProduct@place');
 Route::get('fetchlike', 'AjaxController@fetchlike');
 Route::get('fetchdislike', 'AjaxController@fetchdislike');
 Route::get('addtowishlist','AjaxController@addtowishlist');
@@ -106,7 +108,8 @@ Route::get('/piechart','ChartController@piechart');
 Route::get('/fetchchartdate','ChartController@fetchchartdate');
 Route::get('/fetchdailyproduct','ChartController@fetchproductspostedeveryday');
 
-
+Route::get('/login/facebook', 'Auth\LoginController@redirectToProvider');
+Route::get('/login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
 
 //Route::get('sendemail',function (){
 //  $data=array(['name'=>'Doaa','email'=>'doaabakhiet11@gmail.com']);
