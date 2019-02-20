@@ -112,7 +112,7 @@
 
             </div>
 
-
+<br><br><br>
 
             <script>
                 $(document).ready(function () {
@@ -229,6 +229,6 @@
                 });
             </script>
         </div>
-
+        <br><br><br>
     </div>
 @stop

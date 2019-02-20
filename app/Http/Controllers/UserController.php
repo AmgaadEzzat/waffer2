@@ -19,6 +19,14 @@ class UserController extends Controller
 
     public function insertProduct(Request $request)
     {
+        $this->validate($request,[
+            'productName'=>'required|string',
+            'productPrice'=>'required',
+            'productAddress'=>'required|string',
+            'productDescription'=>'required|string|min:15',
+            'productImage'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+        ]);
+        
         $userId=Auth::user()->id;
         $catname=$request->catname;
         $catid=DB::table('categories')->where('categoryName','=',$catname)->get();
@@ -41,6 +49,7 @@ class UserController extends Controller
         foreach ($catid as $id)
             $product->catId =  $id->id;
         $product->save();
+        session()->flash("notif","Success to Insert Product");
         return back();
 
     }
@@ -62,21 +71,44 @@ class UserController extends Controller
     }
     public function updateProduct(Request $request, $id)
     {
-        DB::table('products')-> where('id',$id)->update(array('productName'=>$request->productName,
-            'productPrice'=>$request->productPrice,
-            'productAddress'=>$request->productAddress,
-            'productDescription'=>$request->productDescription,
-            'productImage'=>$request->productImage,
+      
+        $this->validate($request,[
+            'productName'=>'required|string',
+            'productPrice'=>'required',
+            'productAddress'=>'required|string',
+            'productDescription'=>'required|string|min:15',
+            'productImage'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+
+        ]);
+        session()->flash("notif","Success to Update Product");
+   
 
 
-            'catId'=>$request->catId,
+        $newProduct = Product::find($id);
+        if ($request->hasFile('productImage')) {
+            $image = $request->file('productImage');
+            $name = $image->getClientOriginalName();
+            $destinationPath = public_path('/img');
+            $image->move($destinationPath, $name);
+            $newProduct->productImage = $name;
+        }
+        $userId=Auth::user()->id;
+        $newProduct->userId =  $userId;
+        $newProduct->productPrice = $request->productPrice;
+        $newProduct->productAddress = $request->productAddress;
+        $newProduct->productName = $request->productName;
+        $newProduct->catId = $request->catId;
 
-        ));
+        $newProduct->save();
         return back();
+
     }
+
+  
 
     public function updateUser(Request $request, $id)
     {
+        
         DB::table('users')-> where('id',$id)->update(array('name'=>$request->name,
             'email'=>$request->email,
             'city'=>$request->city,
@@ -85,6 +117,7 @@ class UserController extends Controller
 
 
         ));
+        session()->flash("notif","Success to Update Your Info");
         return back();
     }
 
@@ -93,6 +126,7 @@ class UserController extends Controller
     public function destroyProduct(Product $id)
     {
         $id->delete();
+        session()->flash("notif","Success to delete Product '$id->productName'");
         return back();
     }
 

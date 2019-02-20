@@ -41,6 +41,15 @@
 
     <div class="container">
         <div class="row justify-content-center">
+            @if(session()->has('notif'))
+                <div class="row">
+                    <div class="alert alert-success">
+                        <button type="button" class="close"
+                                data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <strong>Notification</strong>{{session()->get('notif')}}
+                    </div>
+                </div>
+            @endif
             <div class="col-md-10">
                 <div class="card">
                     <div class="card-header" style="background: #2ed8b6   ">{{ __('Update Product') }}</div>

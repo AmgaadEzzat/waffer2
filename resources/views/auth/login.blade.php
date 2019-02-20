@@ -131,6 +131,9 @@
                     <button class="login100-form-btn" type="submit">
                         Login
                     </button>
+                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                    {{ __('Forgot Your Password?') }}
+                    </a>
                 </div>
 
                 <div class="text-center w-full p-t-30 p-b-22">
