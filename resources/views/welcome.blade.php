@@ -199,14 +199,14 @@
             <div class="row">
 
                 @foreach($mostsearchproduct as $mostsearch)
-                    <div class="col-sm-3" style="">
+                    <div class="col-sm-3" >
                         @if($count ==8)
                             {{$count+=1}}
                             @break
                         @endif
-                        <div class="card" style="">
+                        <div class="card" style="width:100%;height:100%;">
                             <b class="text-primary font-weight-bold">{{$mostsearch->name}}</b>
-                            <img class="card-img-top" src="/images/{{$mostsearch->productImage}}" alt="Card image" style="">
+                            <img class="card-img-top" src="/images/{{$mostsearch->productImage}}" alt="Card image" style="width:100%;height:50%;">
                             <div class="card-body">
                                 <h4 class="card-title">{{$mostsearch->productName}}</h4>
                                 <p class="card-text"><b class="text-primary">Address</b> &nbsp;:&nbsp;{{$mostsearch->productAddress}}<br>
@@ -265,7 +265,7 @@
                                 <div class="column col-sm-3 {{$product->categoryName}}" style="margin:20px 20px 20px 20px;background-color: white;" >
 
                                         <b class="text-primary font-weight-bold">{{$product->name}}</b>
-                                        <img src="/images/{{$product->productImage}}" class="img-thumbnail"alt="Car" style="width:100%;">
+                                        <img src="/images/{{$product->productImage}}" class="img-thumbnail"alt="Car" style="width:100%;height:50%;">
                                         <h4>{{$product->productName}}</h4>
                                         <p>{{$product->productDescription}}<br>
                                             <b class="text-danger"> Address &nbsp;</b>:&nbsp;{{$product->productAddress}}<br>
