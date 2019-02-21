@@ -2,7 +2,11 @@
 <html>
 <head>
     <title>Waffar</title>
-
+    <link rel="stylesheet" href="{{asset('animate.css-master/animate.min.css')}}">
+    <script src="{{asset('wow.min.js')}}"></script>
+    <script>
+        new WOW().init();
+    </script>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <meta charset="utf-8">
@@ -19,6 +23,9 @@
     <link href="{{asset('js/owl-carousel/owl.carousel.css')}}" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="{{asset('css/animate.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 </head>
 <style>
@@ -39,30 +46,30 @@
 
     <a class="navbar-brand font-weight-bold" id="logo" href="{{ url('/') }}"><i class="fas fa-money-bill-wave"></i><STRONG>WaffeR</STRONG>.com</a>
     <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon" style="background-color:rgb(224, 220, 220);color:red;"></span>
+        <span class="navbar-toggler-icon" style="background-color:#49cbe7;color:white;"></span>
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav ml-auto">
 @if(Auth::check())
             <li class="nav-item"  style="padding-left:24px;">
 
-                <a href="/deals"class="btn btn-danger">Deals</a>
+                <a href="/deals"class="btn" style= "background-color: #ff5370;color: white">Deals</a>
 
             </li>
     @endif
             @guest
                 <li class="nav-item" style="padding-left:24px;">
-                    <a href="{{ route('login') }}"  class="btn btn-warning">Log in</a>
+                    <a href="{{ route('login') }}"  class="btn btn-warning" style="color:white">Log in</a>
                 </li>
 
                 <li class="nav-item"  style="padding-left:24px;">
-                    <a href="{{ route('register') }}" class="btn  navbutton btn-danger">Join now</a>
+                    <a href="{{ route('register') }}" class="btn  navbutton " style="background-color: #ff5370;color: white">Join now</a>
                 </li>
             @else
 
 
                 <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle text-white font-weight-bold" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle  font-weight-bold" href="#" style="color: #49cbe7" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         {{ Auth::user()->name }} <span class="caret"></span>
                     </a>
 
@@ -109,11 +116,10 @@
 <div class="col-sm-12" >
 
     <div class="row">
-        <div class="col-sm-5"></div>
+        {{--<div class="col-sm-5"></div>--}}
         <div class="col-sm-7">
-
             <!--begin for loop-->
-            <br><br><br><br><br><br><br><br><label for="txtsearch" class="text-light" id=""style="font-size:2vw; margin-bottom:1000;" >
+            <br><br><br><br><br><br><br><br><label for="txtsearch" class="text-light" id=""style="font-size:2vw" >
                 <i class="fas fa-search"></i>
                 Search now for the lowest price<br> in <h class="font-weight-bold">Egypt</h></label><br><br>
 
@@ -121,12 +127,12 @@
                 {{csrf_field()}}
                 <div class="form-group">
 
-                    <div class="input-group mb-3" >
+                    <div class="input-group " >
 
                         <input type="text" name="txtsearch" id="txtsearch" required class="form-control input-lg" placeholder="Search is easier now...." autocomplete=off />
 
                         <div class="input-group-append" >
-                            <button class="btn btn-light" id="buttonsearch" type="submit">Search</button>
+                            <button class="btn btn-light ml-3" id="buttonsearch" type="submit">Search</button>
                         </div>
                     </div>
                 </div>
@@ -174,9 +180,6 @@
 
 
 
-
-
-
         </div>
     </div>
     <br><br><br><br><br><br><br>
@@ -184,16 +187,14 @@
     <br><br><br><br><br><br><br><br><br>
     <div class="row" style=""><div class="col-sm-1" style=""></div>
         <div class="col-sm-7" style="">
-            <h1 class="text-secondary">Latest searched by users</h1>
+            <h3 class="text-secondary">Latest searched by users</h3>
             <hr style="background-color:gray;border-color:gray;"><br><br>
         </div>
-        <div class="col-sm-4" style=""></div></div>
-
-
-
+        {{--<div class="col-sm-4" style=""></div>--}}
+    </div>
 
     {{$count=0}}
-    <div class="row" style="">
+    <div class="row wow fadeInRightBig " >
         <div class="col-sm-1" ></div>
         <div class="col-sm-10" >
             <div class="row">
@@ -204,9 +205,9 @@
                             {{$count+=1}}
                             @break
                         @endif
-                        <div class="card" style="width:100%;height:100%;">
-                            <b class="text-primary font-weight-bold">{{$mostsearch->name}}</b>
-                            <img class="card-img-top" src="/images/{{$mostsearch->productImage}}" alt="Card image" style="width:100%;height:50%;">
+                        <div class="card pt-4" style="width:100%;height:88%;">
+                            <b class="text-primary font-weight-bold pl-3">{{$mostsearch->name}}</b>
+                            <img class="card-img-top pl-2" src="/images/{{$mostsearch->productImage}}" alt="Card image" style="width:80%;height:40%;">
                             <div class="card-body">
                                 <h4 class="card-title">{{$mostsearch->productName}}</h4>
                                 <p class="card-text"><b class="text-primary">Address</b> &nbsp;:&nbsp;{{$mostsearch->productAddress}}<br>
@@ -234,14 +235,11 @@
 
     <div class="row" style="background-color: #dbe6f0;"><div class="col-sm-1" style=""></div>
         <div class="col-sm-7" style="">  <hr style="background-color:gray;border-color:gray;">
-            <h1 class="text-secondary">The Lowest Prices At Our Website</h1>
+            <h3 class="text-secondary">The Lowest Prices At Our Website</h3>
             <hr style="background-color:gray;border-color:gray;"><br><br>
         </div>
         <div class="col-sm-4" style=""></div></div>
-
-
-
-    <div class="row" style="background-color: #dbe6f0;">
+        <div class="row" style="background-color: #dbe6f0;">
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
             <div class="main">
@@ -255,38 +253,39 @@
                 </div>
 
                 <!-- Portfolio Gallery Grid -->
-                <div class="row">
+                <div class="row wow fadeInUpBig">
 
-                    <div class="col-sm-12">
-                        <div class="row text-left">
+                    <div class="col-sm-12 wow fadeInUpBig">
+                        <div class="row text-left wow fadeInUpBig">
                             @foreach($products as $product)
                                 {{--<div class="col-sm-4 float-left  text-left"style="margin-top:30px;">--}}
 
-                                <div class="column col-sm-3 {{$product->categoryName}}" style="margin:20px 20px 20px 20px;background-color: white;" >
+                                <div class="column col-sm-3 wow fadeInUpBig {{$product->categoryName}}" style="margin:20px 20px 20px 20px;background-color: white;" >
 
-                                        <b class="text-primary font-weight-bold">{{$product->name}}</b>
-                                        <img src="/images/{{$product->productImage}}" class="img-thumbnail"alt="Car" style="width:100%;height:50%;">
-                                        <h4>{{$product->productName}}</h4>
-                                        <p>{{$product->productDescription}}<br>
-                                            <b class="text-danger"> Address &nbsp;</b>:&nbsp;{{$product->productAddress}}<br>
-                                            <b class="text-danger"> Price&nbsp;</b>:&nbsp;{{$product->productPrice}}EGP<br>
-                                            <b class="text-danger">Posted At</b>&nbsp;:&nbsp;{{$product->created_at }}<br>
-                                            <a href="/details/{{$product->id}}" class="btn btn-primary">Show More Details</a>
-                                        </p>
+                                    <b class="text-primary ">{{$product->name}}</b>
+                                    <img src="/images/{{$product->productImage}}" class="img-thumbnail"alt="Car" style="width:90%;height:40%;">
+                                    <h4>{{$product->productName}}</h4>
+                                    <p>{{$product->productDescription}}<br>
+                                        <b class="text-danger"> Address &nbsp;</b>:&nbsp;{{$product->productAddress}}<br>
+                                        <b class="text-danger"> Price&nbsp;</b>:&nbsp;{{$product->productPrice}}EGP<br>
+                                        <b class="text-danger">Posted At</b>&nbsp;:&nbsp;{{$product->created_at }}<br>
+                                        <a href="/details/{{$product->id}}" class="btn btn-primary">Show More Details</a>
+                                    </p>
 
                                 </div>
                                 {{--</div>--}}
                             @endforeach
                         </div>
                     </div>
-                    <div class="col-sm-1"></div>
-                    <!-- END GRID -->
+                {{--<div class="col-sm-1"></div>--}}
+                <!-- END GRID -->
                 </div>
             </div>
             <!-- END MAIN -->
 
         </div>
     </div>
+
     <script>
         filterSelection("all")
         function filterSelection(c) {
@@ -332,6 +331,13 @@
             });
         }
     </script>
+
+
+
+    {{-- --}}
+
+
+
     <br><br>
     <div class="row" style="">
         <div  class="col-sm-12 parallax" style="background-image: url({{asset('images/images.jpg')}});" >
