@@ -108,7 +108,26 @@ public function place($id){
         return view('place',compact('place','id'));
 }
     public function mostsearchedforpage(){
-        $mostsearchproduct=DB::Select('select products.*,users.name from products,users where productName in (select distinct(searchName) from searchs order by  	created_at)');
+////        $mostsearchproduct=DB::table('products')->
+////        leftJoin('searchs','products.productName','=','searchs.searchName')
+////            ->distinct('searchs.searchName','products.productName')
+////        ->get();
+//
+//
+//     $most=DB::table('searchs')->select('searchName')->distinct('searchName')->get();
+//     $mostsearchproduct=DB::table('products')
+//         ->select('productName',DB::raw('MIN(productPrice) as minPrice '))
+//         ->groupBy('productName');
+//
+//
+//
+//        dd($most);
+          $mostsearchproduct= $mostsearchproduct=DB::Select('select distinct(products.productName),products.id,products.productPrice 
+,products.productAddress ,products.productImage ,products.productDescription,products.like 
+,products.dislike,products.created_at,users.name 
+ from products,users where productName 
+in (select distinct(searchName) from searchs order by  	created_at)and users.id=products.userId');
+
         return view ('mostsearch',compact('mostsearchproduct'));
     }
 

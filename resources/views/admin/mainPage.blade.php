@@ -59,7 +59,15 @@
                                         <td>{{$user->name}}</td>
                                         <td>{{$user->email}}</td>
                                         <td>{{$user->phone}}</td>
-                                        <td>{{$user->type}}</td>
+                                        <td>@if($user->type==0)
+                                        User
+                                        @elseif($user->type==1)
+                                            Company
+                                        @else
+                                          Admin
+                                                @endif
+
+                                        </td>
                                         <td>{{$user->city}}</td>
                                         <td><a href="/{{$user->id}}/deleteUser"><i class="fas fa-trash"></i></a></td>
                                     </tr>
