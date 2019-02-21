@@ -1,5 +1,8 @@
 @extends('user.master')
 @section('content')
+    <script type='text/javascript'
+            src='//platform-api.sharethis.com/js/sharethis.js#property=5c6dfab11ef90f001147ace3&product=inline-share-buttons'
+            async='async'></script>
     <style>
 
 
@@ -181,10 +184,8 @@
                         @endif
                     </div>
                     <div> Share:
-                        <span > <a href="www.facebook.com" style="color:blue ; font-size: 35px;"> <i class="fab fa-facebook-square"></i></a></span>
-                        <span ><a href="www.twitter.com" style="color:darkturquoise ;font-size: 35px;">  <i class="fab fa-twitter"></i></a></span>
-                        <span ><a href="www.google.com" style="color:firebrick;font-size: 35px;"> <i class="fab fa-google-plus"></i></a> </span>
-
+                        {{--<div class="sharethis-inline-share-buttons"></div>--}}
+                        <div class="sharethis-inline-share-buttons"></div>
                     </div>
                     <hr>
                     <ul class="nav d-inline-flex ">

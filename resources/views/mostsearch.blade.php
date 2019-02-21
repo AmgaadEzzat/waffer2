@@ -55,4 +55,17 @@
             <div class="col-sm-1"></div>
         </div>  <br><br>
     </div>  <br><br></div>
+
+
+
+    {{--<button onclick="myFunction()">Try it</button>--}}
+
+    {{--<p id="demo"></p>--}}
+
+    {{--<script>--}}
+        {{--function myFunction() {--}}
+            {{--var x = document.domain;--}}
+            {{--document.getElementById("demo").innerHTML = x;--}}
+        {{--}--}}
+    {{--</script>--}}
 @stop
