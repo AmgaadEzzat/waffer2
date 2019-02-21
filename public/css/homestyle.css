@@ -1,5 +1,4 @@
-#navbar{   background-color: transparent;
-}
+#navbar{   background-color: transparent ; height: 11%}
 .mySlides {display:none;}
 #particles-js{
     width: 100%;
@@ -11,13 +10,17 @@
     position: absolute;
     z-index: 0;
 }
+#particles-js::before{content:''; position:absolute;top:0;right:0;left:0;bottom:0;
+    background-color:rgba(0,0,0,0.4);}
 
 .inputsearch{
     position: absolute;
-    margin-bottom:px;
-    z-index: 8;
+    /*margin-bottom:px;*/
+    /*top:20px;*/
+    /*left:20px;*/
+    z-index: 1;
 }
-#logo{color: rgb(214, 64, 90);}
+#logo{color:#49cbe7; font-size: 1.8em}
 #navlinks{color: white;font-size:20px;}
 .parallax {
 
@@ -49,9 +52,9 @@
   display: none;
 } */
 #modal1:hover{
-    border:2px solid rgb(248, 58, 58);
+    border:2px solid #49cbe7;
     background-color: rgb(167, 164, 164);
-    color:rgb(248, 58, 58);
+    color:#49cbe7;
 }
 #img-prd:hover #modal1{ display: block;}
 .carousel-item div a{color:#606060;}

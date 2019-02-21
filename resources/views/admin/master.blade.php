@@ -86,7 +86,6 @@
 
                         <button type="button" id="sidebarCollapse" class="btn">
                             <i class="fas fa-align-left"></i>
-                            <span>Toggle Sidebar</span>
                         </button>
 
 
