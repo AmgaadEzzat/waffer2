@@ -19,7 +19,7 @@
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <script src="{{asset('js/projectDetailsJs.js')}}"></script>
     <link rel="shortcut icon" type="image/jpg" href="{{asset('/images/icon.jpg')}}"/>
-
+    <script src="https://cdn.ckeditor.com/4.5.6/standard/ckeditor.js"></script>
 </head>
 
 <body>

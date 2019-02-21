@@ -7,7 +7,7 @@ use App\Review;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-
+use validator;
 class ProductDetailController extends Controller
 {
     public function showproductdetail( $id)
@@ -26,10 +26,12 @@ class ProductDetailController extends Controller
     }
 
     public function sorecomment(Request $request,$id){
+        $this->validate($request,[
+            'Comment'=>'required|string|min:10']);
         $review=new Review();
         $review->userId=Auth::user()->id;
         $review->productid=$id;
-        $review->Comment=$request->comment;
+        $review->Comment=$request->Comment;
         $review->save();
         return back();
     }

@@ -189,18 +189,30 @@
                     </div>
                     <hr>
                     <ul class="nav d-inline-flex ">
-                        <li class=""><b style="color:gray">{{$commentsinthisproduct}}&nbsp; comments</b></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <li class=""><b style="color:gray">{{$commentsinthisproduct}}&nbsp; comments</b></li>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
                         @if ($commentsinthisproduct==0)
-                            <li ><button class="p-2 btn btn-light" id="addcomment">Be the frist to review</button></li>
+                            @if(Auth::check())
+                            <li ><button class="p-2 btn btn-light" id="addcomment">Be the frist to review</button></li>@endif
                             <div id="comment">
                                 <form action="/storecomment/{{$id}}" method="post">
                                     {{csrf_field()}}
-                                    <textarea type="text" name="comment" placeholder="Add Your Comment Here">
-                            </textarea><br>
+                                    <textarea type="text" name="Comment"class="form-control{{ $errors->has('Comment') ? ' is-invalid' : '' }}" value="{{ old('Comment') }}" required placeholder="Add Your Comment Here">
+                            </textarea>
+                                    @if ($errors->has('Comment'))
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('Comment') }}</strong>
+                                    </span>
+                                    @endif
+
+                                    <br>
                                     <br><button id="add" class="btn btn-primary">Add Comment</button>
                                 </form>
                             </div>  </ul>
@@ -220,7 +232,7 @@
                             @if(Auth::check())
                                 <form action="/storecomment/{{$id}}" method="post">
                                     {{csrf_field()}}
-                                    <textarea type="text" name="comment" placeholder="Add Your Comment Here">
+                                    <textarea type="text" name="Commentt"class="form-control"  placeholder="Add Your Comment Here" required>
                             </textarea><br>
                                     <br><button id="add" class="btn btn-primary">Add Comment</button>
                                 </form>

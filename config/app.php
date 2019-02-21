@@ -161,6 +161,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         ConsoleTVs\Charts\ChartsServiceProvider::class,
+        Unisharp\Ckeditor\ServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
     ],
 
@@ -212,6 +213,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Charts' => ConsoleTVs\Charts\Facades\Charts::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+
         ],
 
 ];

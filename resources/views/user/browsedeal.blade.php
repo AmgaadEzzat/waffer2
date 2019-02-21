@@ -3,6 +3,7 @@
 
     <link rel="stylesheet" href="{{asset('css/homestyle.css')}}">
     <script src="{{asset('js/homejs.js')}}"></script>
+
     <div class="col-sm-12" >
         <div class="row">
             <div class="col-sm-1"></div>
@@ -46,6 +47,7 @@
     </div>
     <div class="col-sm-1"></div>
 </div>
+        <br><br><br>
 <div class="row"><div class="col-sm-2"></div>
     <div class="col-sm-8">
     <h1> You can Browse A deal For Your Shop </h1><br><br></div>
@@ -74,8 +76,13 @@
         <label for="Product Price" class="col-sm-4 col-form-label text-sm-left">{{ __('Description') }}</label>
 
         <div class="col-sm-6">
-            <textarea id="Product Price" type="number" class="form-control{{ $errors->has('Description') ? ' is-invalid' : '' }}" name="Description" value="{{ old('Description') }}" required>
+
+
+            <textarea id="article-ckeditor" type="number" class="form-control{{ $errors->has('Description') ? ' is-invalid' : '' }}" name="Description" value="{{ old('Description') }}" required>
             </textarea>
+            <script>
+                CKEDITOR.replace( 'article-ckeditor' );
+            </script>
             @if ($errors->has('Description'))
                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('Description') }}</strong>
@@ -138,4 +145,5 @@
 <br><br><br>
 </div>
 <br><br><br><br><br><br>
+
 @stop
