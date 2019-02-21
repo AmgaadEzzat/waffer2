@@ -24,6 +24,9 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/animate.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
 
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
 </head>
 <style>
 .btnnn:hover{
@@ -282,6 +285,7 @@
 
         </div>
     </div>
+
     <script>
         filterSelection("all")
         function filterSelection(c) {
@@ -327,6 +331,13 @@
             });
         }
     </script>
+
+
+
+    {{-- --}}
+
+
+
     <br><br>
     <div class="row" style="">
         <div  class="col-sm-12 parallax" style="background-image: url({{asset('images/images.jpg')}});" >
