@@ -57,7 +57,7 @@ class LoginController extends Controller
 
         if($user){
             if(Auth::loginUsingId($user->id)){
-                return redirect()->route('/');
+                return redirect()->route('/welcome');
             }
         }
 

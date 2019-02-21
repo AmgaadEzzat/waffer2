@@ -23,13 +23,15 @@ class UserController extends Controller
         return view('user.master', compact('catName'));
     }
 
-    public function masterCategory(Category $id)
+    public function showByCategory( $id)
     {
 
-        $oneCategory= DB::table('categories')->where('id', '=',$id )->get();
+        $catName=DB::table('categories')->get();
+
         $catgoryPro = DB::table('products')->where('catId','=',$id)->get();
-        return view('user.category', compact('oneCategory'),compact('catgoryPro'));
+        return view('user.category', compact('catgoryPro','catName'));
     }
+
 
 
     public function insertProduct(Request $request)
@@ -81,8 +83,9 @@ class UserController extends Controller
     {
 
         $userId=Auth::user()->id;
+        $catName=DB::table('categories')->get();
         $userData = DB::table('users')->where('id', '=',$userId )->get();
-        return view('user.editUser',compact('id','userData'));
+        return view('user.editUser',compact('id','userData','catName'));
     }
     public function updateProduct(Request $request, $id)
     {
@@ -140,6 +143,8 @@ class UserController extends Controller
 
     public function destroyProduct(Product $id)
     {
+
+
         $id->delete();
         session()->flash("notif","Success to delete Product '$id->productName'");
         return back();

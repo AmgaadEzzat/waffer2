@@ -1,44 +1,29 @@
 @extends('user.master')
 @section('content')
 
-    <div class="container w-100 h-25" style="background-color: #0c5460"> <h3> {{$id->categoryName}}</h3></div>
+
     <div class="container">
-        <div class="row">
+        <div class="row m-3">
+
             @foreach($catgoryPro as $catPro)
-            <div class="col-4">
+            <div class="col-sm-3 ml-5 mb-4 wow bounceIn">
 
-                <div class="crad border shadow h-75 w-50">
-                    <img src="/img/{{$catPro->productImage}}"  class="w-25 h-25 m-3" data-toggle="modal" data-target="#myModal">
-                    <div class="modal fade" id="myModal">
-                        <div class="modal-dialog modal-xl">
-                            <div class="modal-content">
-
-                                <!-- Modal Header -->
-                                <div class="modal-header">
-                                    <h4 class="modal-title"> {{$catPro->productName}}</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <img src="/img/{{$catPro->productImage}}">
-                                </div>
-                            </div>
-                        </div>
+                <div class="card shadow p-2 w-100  " style="height: 85%;">
+                    <b class="text-primary font-weight-bold m-2">{{$catPro->productName}}</b>
+                    <img class="card-img-top m-2 w-75 h-25" src="/images/{{$catPro->productImage}}" alt="Card image" >
+                    <div class="card-body">
+                        <h4 class="card-title">{{$catPro->productName}}</h4>
+                        <p class="card-text"><b class="text-primary">Address</b> &nbsp;:&nbsp;{{$catPro->productAddress}}<br>
+                            <b class="text-primary"> Price&nbsp;</b>:&nbsp;{{$catPro->productPrice}}EGP<br>
+                            <b class="text-primary">Posted At</b>&nbsp;:&nbsp;{{$catPro->created_at }}<br></p>
+                        <a href="/details/{{$catPro->id}}" class="btn btn-primary">Show More Details</a>
                     </div>
-                    <div class="card-body cardstyle w-75 h-50" >
-                        <a href="#"  class="ml-3 text-center">  {{$catPro->productName}} </a>
-                        <br>
-                        <span class="small m-2 text-secondary d-flex">  you can buy it from {{$catPro->productAddress}} </span>
-
-
-                        <span class="text-*-center    font-weight-bold"  style="color:red;">{{$catPro->productPrice }}  EGP </span>
-
-
-                    </div>
-
+                </div>
+            </div>
+            @endforeach
             </div>
         </div>
-                @endforeach
-    </div>
-    </div>
+
 
 
     @stop

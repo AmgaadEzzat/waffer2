@@ -36,7 +36,7 @@
                     </div>
                 </div>
             @endif
-                <span class="text-center m-2" > <h4  class="text-light  p-2 rounded" style="background-color: darkcyan"> Edit Product </h4></span>
+                <span class="text-center m-2" > <h4  class="text-light  p-2 rounded" style="background-color: #1dbee2"> Edit Product </h4></span>
 
                 <form method="POST" action="update" enctype="multipart/form-data">
                     @csrf

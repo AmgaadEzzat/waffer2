@@ -5,8 +5,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="{{asset('css/productDetails.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('animate.css-master/animate.min.css')}}">
+    <script src="{{asset('wow.min.js')}}"></script>
+    <script>
+        new WOW().init();
+    </script>
     <link href="{{asset('css/profile.css')}}" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
           crossorigin="anonymous">
   <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
@@ -16,7 +21,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 
-   <script src="{{asset('js/jquery.min.js')}}"></script>
+ <!--  <script src="{{asset('js/jquery.min.js')}}"></script> -->
    <script src="{{asset('js/popper.min.js')}}"></script>
    <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <script src="{{asset('js/projectDetailsJs.js')}}"></script>
@@ -25,19 +30,19 @@
 </head>
 
 <body>
-<nav class="navbar navbar-expand-sm   ">
+<nav class="navbar navbar-expand-sm   " >
 
         <a class="navbar-brand"  href="/"><i class="fas fa-money-bill-wave"></i>&nbsp;Waffar </a>
 
 
-        <div class=" w-75 ">
+        <div style="width:60%;">
             <form action="/insertsearch" method="post">
                 {{csrf_field()}}
-                <div class="form-group w-75">
+                <div class="form-group " style="width: 80%;">
                     <div class="input-group mt-4">
                         <input type="text" name="txtsearch" id="txtsearch" class="form-control input-lg" placeholder="Search is easier now...."required autocomplete=off />
                         <div class="input-group-append">
-                            <button class="btn btn-success btn-outline-light" id="buttonsearch" type="submit">Search</button>
+                            <button class="btn  btn-outline-light" id="buttonsearch" type="submit" style="background-color:#1caaca">Search</button>
                         </div>
                     </div>
                 </div>
@@ -95,7 +100,7 @@
                 @if(Auth::check())
                     <li class="nav-item dropdown" >
 
-                        <a href="/"class="nav-link dropdown-toggle" data-toggle="dropdown" >Category </a>
+                        <a href="category" class="nav-link dropdown-toggle" data-toggle="dropdown" >Category </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                         @foreach($catName as $category)
                             <a href="/category/{{$category->id}}" class="dropdown-item"> {{$category->categoryName}}</a>
@@ -106,6 +111,10 @@
                 <li class="nav-item">
                 <a href="/deals"class=" nav-link btn btn-danger">Deals</a>
                 </li>
+
+                    <li class="nav-item">
+                        <a href="/contactUs"class=" nav-link ">Contact us</a>
+                    </li>
                 @endif
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

@@ -42,8 +42,8 @@
 
                     <div class="container">
 
-                                <div class="card shadow">
-                                    <div class="card-header rounded" style="background-color:darkcyan;" > <span class="p-2 text-light"> <i class="fas fa-plus-circle "></i> </span> {{ __('Add New Product') }}</div>
+                                <div class="card ">
+                                    <div class="card-header rounded" style="background-color:#1dbee2;" > <span class="p-2 text-light"> <i class="fas fa-plus-circle "></i> </span> {{ __('Add New Product') }}</div>
                                     @if(session()->has('notif'))
                                         <div class="container">
                                         <div class="row">
@@ -198,7 +198,7 @@
                     <div class="row " id=bestsellerDiv>
                         @foreach($productForUser as $proUser)
 
-                        <div class="col-sm-3 m-3 " >
+                        <div class="col-sm-3 m-3 wow pulse " >
                             <div class="crad border shadow h-75 ">
                                 <img src="/img/{{$proUser->productImage}}"  class="w-25 h-25 m-3" data-toggle="modal" data-target="#myModal">
                                 <div class="modal fade" id="myModal">
@@ -215,7 +215,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card-body cardstyle w-75 h-50" >
+                                <div class="card-body cardstyle w-100 h-75" >
                                     <a href="#"  class="ml-3 text-center">  {{$proUser->productName}} </a>
                                     <br>
                                     <span class="small m-2 text-secondary d-flex">  buy it from {{$proUser->productAddress}} </span>
@@ -227,7 +227,7 @@
                                 </div>
                             </div>
                            <a href="/profile/{{$proUser->id}}/editProduct"  class="btn btn-outline-dark m-3 shadow"> Edit</a>
-                            <a href="/delete/{{$proUser->id}}" class="btn btn-outline-dark m-3 shadow"  onclick="return confirm ('Are You Sure You want to delete ! ');">
+                            <a href="{{$proUser->id}}/deleteFromUser" class="btn btn-outline-dark m-3 shadow"  onclick="return confirm ('Are You Sure You want to delete ! ');">
                                  Delete</a>
                         </div>
 

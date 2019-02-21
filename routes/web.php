@@ -42,7 +42,7 @@ Route::group(['middleware' => 'UserMiddleware'], function () {
     Route::get('/profile/{id}/editProduct', 'UserController@editProduct');
     Route::post('/profile/{id}/update', 'UserController@updateProduct');
     Route::get('/profile/{id}/editUser', 'UserController@editUser');
-    Route::get('/{id}/delete/', 'UserController@destroyProduct');
+    Route::get('/{id}/deleteFromUser', 'UserController@destroyProduct');
     Route::post('/profile/{id}/updateUser', 'UserController@updateUser');
     Route::get('/deals','DealController@index');
     Route::get(' /Browse','DealController@browse');
@@ -103,7 +103,8 @@ Route::get('/place/{id}','InsertProduct@place');
 Route::get('fetchlike', 'AjaxController@fetchlike');
 Route::get('fetchdislike', 'AjaxController@fetchdislike');
 Route::get('addtowishlist','AjaxController@addtowishlist');
-Route::get('/category/{id}','UserController@masterCategory');
+Route::get('/category/{id}','UserController@showByCategory');
+
 
 
 Route::get('/piechart','ChartController@piechart');
