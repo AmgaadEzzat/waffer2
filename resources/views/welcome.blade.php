@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Waffar</title>
+
     <link rel="stylesheet" href="{{asset('animate.css-master/animate.min.css')}}">
     <script src="{{asset('wow.min.js')}}"></script>
     <script>
@@ -24,8 +25,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/animate.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
 
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
 
 </head>
 <style>
@@ -174,12 +174,6 @@
 
 
 
-
-
-
-
-
-
         </div>
     </div>
     <br><br><br><br><br><br><br>
@@ -286,6 +280,7 @@
         </div>
     </div>
 
+
     <script>
         filterSelection("all")
         function filterSelection(c) {
@@ -333,9 +328,23 @@
     </script>
 
 
+    {{--begin of carousel--}}
 
-    {{-- --}}
+    <div class="container">
+        <h3 class="pt-5" style="text-align: left ; color: gray">Latest additions</h3>
+        <section class="customer-logos slider pt-4">
+            @foreach($lastProducts as $lastProduct)
+            <div class="slide ">
+                <img  src="/img/{{$lastProduct->productImage }}">
+                <h5 class="pt-3">{{$lastProduct->productName}}</h5>
+                <p>{{$lastProduct->productDescription }}</p>
 
+            </div>
+       @endforeach
+        </section>
+    </div>
+
+    {{--end of carousel--}}
 
 
     <br><br>
@@ -353,13 +362,6 @@
             @endif
         </div>
     </div>
-
-
-
-
-
-
-
 
 
 
@@ -437,14 +439,12 @@
     <!--end-footer-->
 
 
-
-
-
-
-
-
-
 </div>
+<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
 </body>
 </html>
 
