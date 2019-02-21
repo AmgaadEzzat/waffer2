@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -16,6 +17,20 @@ class UserController extends Controller
         $catName=DB::table('categories')->get();
         return view('user.userProfile' , compact('catName'));
     }
+    public function masterCat()
+    {
+        $catName = DB::table('categories')->get();
+        return view('user.master', compact('catName'));
+    }
+
+    public function masterCategory(Category $id)
+    {
+
+        $oneCategory= DB::table('categories')->where('id', '=',$id )->get();
+        $catgoryPro = DB::table('products')->where('catId','=',$id)->get();
+        return view('user.category', compact('oneCategory'),compact('catgoryPro'));
+    }
+
 
     public function insertProduct(Request $request)
     {

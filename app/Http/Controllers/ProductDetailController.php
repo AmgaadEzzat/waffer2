@@ -25,6 +25,13 @@ class ProductDetailController extends Controller
             return view('user.productDetails',compact('productdetails','commentsinthisproduct','comments','id'));
     }
 
+    public function sendCat()
+    {
+        $catName = DB::table('categories')->get();
+        return view('user.productDetails', compact('catName'));
+    }
+
+
     public function sorecomment(Request $request,$id){
         $this->validate($request,[
             'Comment'=>'required|string|min:10']);

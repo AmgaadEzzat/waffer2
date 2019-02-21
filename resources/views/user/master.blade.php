@@ -6,17 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="{{asset('css/productDetails.css')}}" rel="stylesheet">
     <link href="{{asset('css/profile.css')}}" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
           crossorigin="anonymous">
-    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 
-    <script src="{{asset('js/jquery.min.js')}}"></script>
-    <script src="{{asset('js/popper.min.js')}}"></script>
-    <script src="{{asset('js/bootstrap.min.js')}}"></script>
+   <script src="{{asset('js/jquery.min.js')}}"></script>
+   <script src="{{asset('js/popper.min.js')}}"></script>
+   <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <script src="{{asset('js/projectDetailsJs.js')}}"></script>
     <link rel="shortcut icon" type="image/jpg" href="{{asset('/images/icon.jpg')}}"/>
     <script src="https://cdn.ckeditor.com/4.5.6/standard/ckeditor.js"></script>
@@ -25,11 +27,9 @@
 <body>
 <nav class="navbar navbar-expand-sm   ">
 
-        <a class="navbar-brand"  href="welcome"><i class="fas fa-money-bill-wave"></i>&nbsp;Waffar </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="text-light navbar-toggler-icon "> <i class="fas fa-bars"></i></span>
-        </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <a class="navbar-brand"  href="/"><i class="fas fa-money-bill-wave"></i>&nbsp;Waffar </a>
+
+
         <div class=" w-75 ">
             <form action="/insertsearch" method="post">
                 {{csrf_field()}}
@@ -41,8 +41,8 @@
                         </div>
                     </div>
                 </div>
-                <div id="productList" class="fixed-top" style="padding-top:60px;padding-left:130px;">
-                </div>
+                {{--<div id="productList"  style="padding-top:60px;padding-left:130px;">--}}
+                {{--</div>--}}
 
             </form>
             {{ csrf_field() }}
@@ -79,7 +79,7 @@
         </div>
 
 
-<div class="w-25 ">
+
         <ul class="navbar-nav  ">
 
 
@@ -93,8 +93,18 @@
                 </li>
             @else
                 @if(Auth::check())
+                    <li class="nav-item dropdown" >
+
+                        <a href="/"class="nav-link dropdown-toggle" data-toggle="dropdown" >Category </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        @foreach($catName as $category)
+                            <a href="/category/{{$category->id}}" class="dropdown-item"> {{$category->categoryName}}</a>
+                            @endforeach
+                        </div>
+                    </li>
+
                 <li class="nav-item">
-                <a href="/deals"class="btn btn-danger">Deals</a>
+                <a href="/deals"class=" nav-link btn btn-danger">Deals</a>
                 </li>
                 @endif
                 <li class="nav-item dropdown">
@@ -118,9 +128,9 @@
             @endguest
 
         </ul>
-</div>
 
-    </div>
+
+
 
 </nav>
 

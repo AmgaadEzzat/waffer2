@@ -227,7 +227,7 @@
                                 </div>
                             </div>
                            <a href="/profile/{{$proUser->id}}/editProduct"  class="btn btn-outline-dark m-3 shadow"> Edit</a>
-                            <a href="/delete/{{$proUser->id}}"class="btn btn-outline-dark m-3 shadow"  onclick="return confirm ('Are You Sure You want to delete ! ');">
+                            <a href="/delete/{{$proUser->id}}" class="btn btn-outline-dark m-3 shadow"  onclick="return confirm ('Are You Sure You want to delete ! ');">
                                  Delete</a>
                         </div>
 

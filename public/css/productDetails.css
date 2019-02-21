@@ -1,22 +1,17 @@
 nav a{
     color:white;
+
 }
- nav a:hover{
-    color:lightcyan;
+
+nav a:hover{
+    color:papayawhip;
 }
 nav{
 
+
     background-color:darkcyan;
 }
-div a:hover{
-    color:#809fff;
-}
 
-.btnstyle:hover{
-    background-color:darkcyan;
-
-
-}
 
 .divinfo{
     border:1px solid darkcyan ;
@@ -24,11 +19,5 @@ div a:hover{
 
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 /*================================================*/
-@import url('https://fonts.googleapis.com/css?family=Roboto');
-.carousel-item > div {
-  float: left;
-}
-.carousel-by-item [class*="cloneditem-"] {
-  display: none;
-}
+
 .footer{color: white;background-color: black;}

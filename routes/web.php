@@ -42,7 +42,7 @@ Route::group(['middleware' => 'UserMiddleware'], function () {
     Route::get('/profile/{id}/editProduct', 'UserController@editProduct');
     Route::post('/profile/{id}/update', 'UserController@updateProduct');
     Route::get('/profile/{id}/editUser', 'UserController@editUser');
-    Route::get('/delete/{id}', 'UserController@destroyProduct');
+    Route::get('/{id}/delete/', 'UserController@destroyProduct');
     Route::post('/profile/{id}/updateUser', 'UserController@updateUser');
     Route::get('/deals','DealController@index');
     Route::get(' /Browse','DealController@browse');
@@ -103,6 +103,7 @@ Route::get('/place/{id}','InsertProduct@place');
 Route::get('fetchlike', 'AjaxController@fetchlike');
 Route::get('fetchdislike', 'AjaxController@fetchdislike');
 Route::get('addtowishlist','AjaxController@addtowishlist');
+Route::get('/category/{id}','UserController@masterCategory');
 
 
 Route::get('/piechart','ChartController@piechart');
@@ -112,6 +113,13 @@ Route::get('/fetchdailyproduct','ChartController@fetchproductspostedeveryday');
 
 Route::get('/login/facebook', 'Auth\LoginController@redirectToProvider');
 Route::get('/login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
+
+Route::get('/login/google', 'Auth\LoginController@redirectToProvidergoogle');
+Route::get('/login/google/callback', 'Auth\LoginController@handleProviderCallbackgoogle');
+
+
+Route::get('/master','UserController@masterCat');
+Route::get('/proDetails','ProductDetailController@sendCat');
 
 //Route::get('sendemail',function (){
 //  $data=array(['name'=>'Doaa','email'=>'doaabakhiet11@gmail.com']);
