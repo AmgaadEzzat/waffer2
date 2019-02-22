@@ -86,3 +86,6 @@ function imageZoom(imgID, resultID) {
         });
     }, false);
 })();
+$('.wowclass').hover(function (){
+    $('#brand').toggleClass('.pulse');
+});

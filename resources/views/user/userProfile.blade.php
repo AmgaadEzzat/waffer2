@@ -8,13 +8,13 @@
 
 
 @foreach($userData as $userData)
-    <div class="container-fluid divinfo">
-                <div class=" bg-light p-3 h-100 rounded ">
-                    <p ><i class="fas fa-briefcase info"></i>{{$userData->name}}</p>
-                    <p ><i class="fas fa-home info"></i>{{$userData->city}}</p>
-                    <p ><i class="fas fa-envelope info"></i>{{$userData->email}}</p>
+    <div class="container-fluid divinfo rounded">
+                <div class=" bg-light p-3 h-100   ">
+                    <p class="wow fadeInDown" ><i class="fas fa-briefcase info"></i>{{$userData->name}}</p>
+                    <p class="wow fadeInDown" ><i class="fas fa-home info"></i>{{$userData->city}}</p>
+                    <p  class="wow fadeInDown"><i class="fas fa-envelope info"></i>{{$userData->email}}</p>
 
-                    <p ><i class="fas fa-phone info"></i>{{$userData->phone}}</p>
+                    <p  class="wow fadeInDown"><i class="fas fa-phone info"></i>{{$userData->phone}}</p>
                     <hr>
 
 
@@ -42,8 +42,8 @@
 
                     <div class="container">
 
-                                <div class="card ">
-                                    <div class="card-header rounded" style="background-color:#1dbee2;" > <span class="p-2 text-light"> <i class="fas fa-plus-circle "></i> </span> {{ __('Add New Product') }}</div>
+                                <div class="card m-2 ">
+                                    <div class="card-header rounded border border-info"  > <span class="p-2 text-info"> <i class="fas fa-plus-circle "></i> </span> {{ __('Add New Product') }}</div>
                                     @if(session()->has('notif'))
                                         <div class="container">
                                         <div class="row">

@@ -15,5 +15,8 @@ color:#1dbee2;
 .main-container{
     padding: 20px;
 }
+.btnstyle:hover{
+    background-color:#1dbee2 ;
+}
 
 
