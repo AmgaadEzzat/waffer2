@@ -168,6 +168,9 @@
                         $('#txtsearch').val($(this).text());
                         $('#productList').fadeOut("slow");
                     });
+                    $(document).on('click', 'body', function(){
+                        $('#productList').fadeOut("slow");
+                    });
 
                 });
             </script>
