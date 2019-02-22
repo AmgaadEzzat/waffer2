@@ -38,7 +38,7 @@
                     <p>Cost: <span id="range"></span> EGP</p>
 
                 </div>
-                
+
                 <button type="button" id="filter" class="btn btn-danger">Filter</button>
                 <button type="button" id="back" class="btn btn-danger">Back<br> without Filter</button>
             </div>

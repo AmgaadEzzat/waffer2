@@ -9,28 +9,34 @@ $(document).ready(function(){
     
     var images=['images/save6.jpg','images/save12.png','images/save10.jpg'];
     var i = 0;
-    function changebackground(){
-    $('#carousal').css('background-image', function () {
-      if (i >= images.length) {
-          i = 0;
-      }
-      return 'url(' + images[i++] + ')';
-    });
-    }
-    setInterval(changebackground,6000);
-    $('#txtsearch').css("border-color", "red");
-        $("#txtsearch").mouseover(function ()
-        {$(this).css("border-color", "#656660");
-        });
+    // function changebackground(){
+    // $('#carousal').css('background-image', function () {
+    //   if (i >= images.length) {
+    //       i = 0;
+    //   }
+    //   return 'url(' + images[i++] + ')';
+    // });
+    // }
+    // setInterval(changebackground,6000);
+    $('#txtsearch').css("border-color", "white");
+        // $("#txtsearch").mouseover(function ()
+        // {$(this).css("border-color", "#656660");
+        // });
     
-    $("#txtsearch").mouseleave(function ()
-    { $(this).css("border-color", "red");
-    });
+    // $("#txtsearch").mouseleave(function ()
+    // { $(this).css("border-color", "red");
+    // });
     $("#txtsearch").focus(function (){
-              $(this).css("border-color", "blue");
+              $(this).css("border-color", "red");
+        $("#buttonsearch").removeClass('btn-light');
+        $("#buttonsearch").addClass('btn-danger');
+        $("#buttonsearch").css('color','white');
     });
     $("#txtsearch").blur(function (){
-              $(this).css("border-color", "red");
+              $(this).css("border-color", "white");
+        $("#buttonsearch").removeClass('btn-danger');
+        $("#buttonsearch").addClass('btn-light');
+        $("#buttonsearch").css('color','#93ade0');
     });
 
 //////////////////////////////////////////////

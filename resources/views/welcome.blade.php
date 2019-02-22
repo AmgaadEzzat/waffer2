@@ -33,6 +33,8 @@
     background-color: white;
     color: white;
 }
+
+
 </style>
 <script>
 
@@ -44,7 +46,7 @@
 
 <nav class="navbar navbar-expand-sm fixed-top text-white" id="navbar">
 
-    <a class="navbar-brand font-weight-bold" id="logo" href="{{ url('/') }}"><i class="fas fa-money-bill-wave"></i><STRONG>WaffeR</STRONG>.com</a>
+    <a class="navbar-brand font-weight-bold" id="logo" href="{{ url('/') }}"><i class="fas fa-money-bill-wave"></i><STRONG style="">WaffeR</STRONG>.com</a>
     <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon" style="background-color:#49cbe7;color:white;"></span>
     </button>
@@ -59,11 +61,11 @@
     @endif
             @guest
                 <li class="nav-item" style="padding-left:24px;">
-                    <a href="{{ route('login') }}"  class="btn btn-warning" style="color:white">Log in</a>
+                    <a href="{{ route('login') }}"  class="btn btn-warning" style="color:#93ade0; border-radius:20px;color:white">Log in</a>
                 </li>
 
                 <li class="nav-item"  style="padding-left:24px;">
-                    <a href="{{ route('register') }}" class="btn  navbutton " style="background-color: #ff5370;color: white">Join now</a>
+                    <a href="{{ route('register') }}" class="btn  navbutton " style="color:#6473e0; border-radius:20px;background-color: #ff5370;color: white">Join now</a>
                 </li>
             @else
 
@@ -116,23 +118,28 @@
 <div class="col-sm-12" >
 
     <div class="row">
-        {{--<div class="col-sm-5"></div>--}}
-        <div class="col-sm-7">
+        <div class="col-sm-2">
+            {{--<p style="color:#fffdee;"><br><br><br><br><br>--}}
+                {{--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our Website Is A Service that <br>Helps You Searching About The<br>--}}
+                {{--Product Price To Buy <br> With Lowest Price Help Others to Find Near PLace<br>To Buy Thier Product From--}}
+                {{--<br><a herf="/isadmin">Click Here</a>--}}
+            {{--</p>--}}
+        </div>
+        <div class="col-sm-8">
             <!--begin for loop-->
-            <br><br><br><br><br><br><br><br><label for="txtsearch" class="text-light" id=""style="font-size:2vw" >
+            <br><br><br><br><br><br><br><br><br><label for="txtsearch" class="text-light" id=""style="font-size:1.8vw;" >
                 <i class="fas fa-search"></i>
-                Search now for the lowest price<br> in <h class="font-weight-bold">Egypt</h></label><br><br>
+                Search now for the lowest price in <h class="font-weight-bold">Egypt</h></label><br>
 
             <form action="/insertsearch" method="post">
                 {{csrf_field()}}
                 <div class="form-group">
 
-                    <div class="input-group " >
-
-                        <input type="text" name="txtsearch" id="txtsearch" required class="form-control input-lg" placeholder="Search is easier now...." autocomplete=off />
+                    <div class="input-group mb-3" >
+                        <input type="search" name="txtsearch" id="txtsearch" required class="" placeholder="Search is easier now...."style="width:90%;" autocomplete=off />
 
                         <div class="input-group-append" >
-                            <button class="btn btn-light ml-3" id="buttonsearch" type="submit">Search</button>
+                            <button class="btn btn-light" id="buttonsearch" style="margin-top:12%;margin-bottom:12%;border-top-right-radius:20px;border-bottom-right-radius:20px;color:#93ade0;" type="submit">Search</button>
                         </div>
                     </div>
                 </div>
@@ -141,6 +148,7 @@
                 </div>
 
             </form>
+
             {{ csrf_field() }}
 
             <script>
@@ -174,11 +182,9 @@
 
                 });
             </script>
-
-
-
         </div>
-    </div>
+        <div class="col-sm-2">
+        </div></div>
     <br><br><br><br><br><br><br>
 
     <br><br><br><br><br><br><br><br><br>
@@ -190,7 +196,7 @@
         {{--<div class="col-sm-4" style=""></div>--}}
     </div>
 
-    {{$count=0}}
+    <div style="visibility:hidden;">{{$count=0}}</div>
     <div class="row wow fadeInRightBig " >
         <div class="col-sm-1" ></div>
         <div class="col-sm-10" >
@@ -230,18 +236,28 @@
 
 
 
+
+
+
+
+
+
+
     <div class="row" style="background-color: #dbe6f0;"><div class="col-sm-1" style=""></div>
         <div class="col-sm-7" style="">  <hr style="background-color:gray;border-color:gray;">
-            <h3 class="text-secondary">The Lowest Prices At Our Website</h3>
+            <h1 class="text-secondary">The Lowest Prices At Our Website</h1>
             <hr style="background-color:gray;border-color:gray;"><br><br>
         </div>
         <div class="col-sm-4" style=""></div></div>
-        <div class="row" style="background-color: #dbe6f0;">
+
+
+
+    <div class="row " style="background-color: #dbe6f0;">
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
             <div class="main">
 
-                <div id="myBtnContainer"><br><br>
+                <div id="myBtnContainer wow fadeInUpBig"><br><br>
                     <button class="btn btnn active" onclick="filterSelection('all')"> All</button>
                     @foreach($catName as $catagory)
                         <button class="btn btnn" onclick="filterSelection('{{$catagory->categoryName}}')"> {{$catagory->categoryName}}</button>
@@ -250,19 +266,20 @@
                 </div>
 
                 <!-- Portfolio Gallery Grid -->
-                <div class="row wow fadeInUpBig">
+                <div class="row">
 
-                    <div class="col-sm-12 wow fadeInUpBig">
-                        <div class="row text-left wow fadeInUpBig">
+                    <div class="col-sm-12">
+                        <div class="row text-left">
                             @foreach($products as $product)
                                 {{--<div class="col-sm-4 float-left  text-left"style="margin-top:30px;">--}}
 
-                                <div class="column col-sm-3 wow fadeInUpBig {{$product->categoryName}}" style="margin:20px 20px 20px 20px;background-color: white;" >
-
-                                    <b class="text-primary ">{{$product->name}}</b>
-                                    <img src="/images/{{$product->productImage}}" class="img-thumbnail"alt="Car" style="width:90%;height:40%;">
+                                <div class="column col-sm-3 wow fadeInUpBig {{$product->categoryName}}" style="margin-top:10px;background-color: #dbe6f0;" >
+                                <div class="container-fluid" style="width:100%;height:100%;background-color: white;">
+                                    <b class="text-primary font-weight-bold">{{$product->name}}</b>
+                                    <img src="/images/{{$product->productImage}}" class="img-thumbnail"alt="Car" style="width:100%;height:50%;">
                                     <h4>{{$product->productName}}</h4>
-                                    <p>{{$product->productDescription}}<br>
+                                    <div style="height:10%">{{$product->productDescription}}</div>
+                                    <p>
                                         <b class="text-danger"> Address &nbsp;</b>:&nbsp;{{$product->productAddress}}<br>
                                         <b class="text-danger"> Price&nbsp;</b>:&nbsp;{{$product->productPrice}}EGP<br>
                                         <b class="text-danger">Posted At</b>&nbsp;:&nbsp;{{$product->created_at }}<br>
@@ -270,19 +287,20 @@
                                     </p>
 
                                 </div>
+                                </div>
                                 {{--</div>--}}
                             @endforeach
                         </div>
                     </div>
-                {{--<div class="col-sm-1"></div>--}}
-                <!-- END GRID -->
+                    <div class="col-sm-1"></div>
+                    <!-- END GRID -->
+                    <br>
                 </div>
             </div>
             <!-- END MAIN -->
-
+            <br>
         </div>
     </div>
-
 
     <script>
         filterSelection("all")
@@ -340,17 +358,23 @@
             <div class="slide ">
                 <img  src="/img/{{$lastProduct->productImage }}">
                 <h5 class="pt-3">{{$lastProduct->productName}}</h5>
-                <p>{{$lastProduct->productDescription }}</p>
+                <p style="height:50%">{{$lastProduct->productAddress }}<br>
+                {{$lastProduct->productDescription }}
+                    {{$lastProduct->created_at }}</p>
 
+                <a href="/details/{{$lastProduct->id}} fixed-bottom" class="btn btn-primary">Show More Details</a>
             </div>
        @endforeach
+
+
         </section>
+        <br><br>
     </div>
 
     {{--end of carousel--}}
 
 
-    <br><br>
+
     <div class="row" style="">
         <div  class="col-sm-12 parallax" style="background-image: url({{asset('images/images.jpg')}});" >
             <br><br>
@@ -368,7 +392,7 @@
 
 
 
-    <br>
+
     <div class="row" style="background-color: #dbe6f0;">
 
         <div class="col-sm-1" ></div>
