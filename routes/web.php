@@ -51,9 +51,7 @@ Route::group(['middleware' => 'UserMiddleware'], function () {
     Route::get('/home', 'InsertProduct@ mostsearchedforhome');
 });
 Route::get('/deals','DealController@index');
-Route::get('/details', function () {
-    return view('user.productDetails');
-});
+
 Route::get('/isadmin' , 'AdminController@isadmin');
 
 Route::get('/isadmin' , 'AdminController@isadmin');
@@ -120,7 +118,7 @@ Route::get('/login/twitter/callback', 'Auth\LoginController@handleProviderCallba
 
 
 Route::get('/master','UserController@masterCat');
-Route::get('/proDetails','ProductDetailController@sendCat');
+//Route::get('/details/{}','ProductDetailController@sendCat');
 
 //Route::get('sendemail',function (){
 //  $data=array(['name'=>'Doaa','email'=>'doaabakhiet11@gmail.com']);
