@@ -17,7 +17,7 @@ Auth::routes();
 
 
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'InsertProduct@ mostsearchedforhome');
 
 Route::get('/autocomplete', 'InsertProduct@index');
 Route::post('/autocomplete/fetch', 'InsertProduct@fetch')->name('autocomplete.fetch');
@@ -29,7 +29,7 @@ Route::post('/index/search', 'InsertProduct@index')->name('index.search');
 
 
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 
 
 
@@ -48,7 +48,7 @@ Route::group(['middleware' => 'UserMiddleware'], function () {
     Route::get(' /Browse','DealController@browse');
     Route::post('/store','DealController@store');
     Route::get('/deletedeal/{id}', 'DealController@destroy');
-
+    Route::get('/home', 'InsertProduct@ mostsearchedforhome');
 });
 Route::get('/deals','DealController@index');
 Route::get('/details', function () {

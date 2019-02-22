@@ -59,3 +59,45 @@ $(document).ready(function(){
 
 
 });
+
+/////////////////////////////////////////////////////
+//vailedation for registered
+
+// function formValidation()
+// {
+//     // var uid = document.registration.userid;
+//
+//     var uname = document.registration.name;
+//     var uemail = document.registration.email;
+//     var uadd = document.registration.city;
+//     var ucountry = document.registration.phone;
+//     var passid = document.registration.password;
+//     // var uzip = document.registration.zip;
+//     var umsex = document.registration.type;
+//     // var ufsex = document.registration.fsex;
+//     if(userid_validation(uid,5,12))
+// {
+//     if(passid_validation(passid,7,12))
+//     {
+//         if(allLetter(uname))
+//         {
+//             if(alphanumeric(uadd))
+//             {
+//                 if(countryselect(ucountry))
+//                 {
+//                     if(allnumeric(uzip))
+//                     {
+//                         if(ValidateEmail(uemail))
+//                         {
+//                             if(validsex(umsex,ufsex))
+//                             {
+//                             }
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+//     return false;
+// }
