@@ -44,8 +44,9 @@ a {
 a:hover,
 a:focus {color: #666;text-decoration: none;}
 
-input:not([type]), input[type="color"], input[type="email"], input[type="number"], input[type="password"], input[type="tel"], input[type="url"], input[type="text"], input[type="search"], textarea, .form-control, select {
-    border-radius: 0 0 0 0;
+input:not([type]), input[type="color"], input[type="email"], input[type="number"], input[type="password"], input[type="tel"], input[type="url"], input[type="text"], input[type="search"], textarea, select {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
     box-shadow: none;
     color: #333;
     display: block;
@@ -59,9 +60,15 @@ input:not([type]), input[type="color"], input[type="email"], input[type="number"
     transition: border-color 0.2s ease-in-out 0s, color 0.2s ease-in-out 0s;
     width: 100%;
 	background-color: transparent;
-    border: 2px solid #444444;
-}
+    border: 2px solid white;
 
+
+
+}
+::placeholder {
+    color: black;
+    /* Firefox */
+}
 .f-right{float: right;}
 .f-left{float: left;}
 .t-center{text-align: center; margin: 0 auto;}
