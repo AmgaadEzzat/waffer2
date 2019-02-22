@@ -40,10 +40,10 @@ return [
         'client_secret' => 'd6663b0af5f29152892c46d4273eed91',
         'redirect' => 'http://localhost:8000/login/facebook/callback',
     ],
-    'google' => [
-        'client_id' => 'doaabakhiet11@gmail.com',
-        'client_secret' => 'diedxxlhuoqszqmj',
-        'redirect' => 'http://localhost:8000/login/google/callback',
+    'twitter' => [
+        'client_id' => 'dclu7ratjr33rp4hMz3d6PRsy',
+        'client_secret' => 'GVzEu9siVf3lNQfZMb3UEyvskghiDrbqNJNfpYRucQQnFrGLFz',
+        'redirect' => 'http://localhost:8000/login/twitter/callback',
     ],
 
 ];

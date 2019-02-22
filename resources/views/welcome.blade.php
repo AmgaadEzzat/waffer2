@@ -55,7 +55,7 @@
 @if(Auth::check())
             <li class="nav-item"  style="padding-left:24px;">
 
-                <a href="/deals"class="btn" style= "background-color: #ff5370;color: white">Deals</a>
+                <a href="/deals"class="btn" style= "border-radius:20px; background-color: #ff5370;color: white">Deals</a>
 
             </li>
     @endif
@@ -393,7 +393,7 @@
 
 
 
-    <div class="row" style="background-color: #dbe6f0;">
+    <div class="row" style="">
 
         <div class="col-sm-1" ></div>
         <div class="col-sm-7" style="">
@@ -403,8 +403,8 @@
         <div class="col-sm-4" style=""></div></div>
 
 
-    <div class="row" style="background-color: #dbe6f0; ">
-        <div class="col-sm-12">
+    <div class="row  style=" ">
+        <div class="col-sm-9">
             <div class="row">
             <div class="col-sm-1"></div>
             <div class="col-sm-10">
@@ -418,7 +418,13 @@
             <div class="col-sm-1"></div>
             </div>
         </div>
-    </div>
+        <div class="col-sm-3 wow bounceIn text-center">
+          <a href="/deals" >
+              <span> <img src="/images/deas.jpg" id="deals"style="width:70%;height:70%;"/></span><span><b style="font-size:4vw;paddig-top:6px;color:red;">S</b></span>
+          </a>
+
+        </div>
+</div>
     <!--footer-->
     <div class="row">
         <div  class="col-sm-12 footer">

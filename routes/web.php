@@ -115,8 +115,8 @@ Route::get('/fetchdailyproduct','ChartController@fetchproductspostedeveryday');
 Route::get('/login/facebook', 'Auth\LoginController@redirectToProvider');
 Route::get('/login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
 
-Route::get('/login/google', 'Auth\LoginController@redirectToProvidergoogle');
-Route::get('/login/google/callback', 'Auth\LoginController@handleProviderCallbackgoogle');
+Route::get('/login/twitter', 'Auth\LoginController@redirectToProvidertwitter');
+Route::get('/login/twitter/callback', 'Auth\LoginController@handleProviderCallbacktwitter');
 
 
 Route::get('/master','UserController@masterCat');

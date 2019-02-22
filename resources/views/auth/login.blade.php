@@ -147,9 +147,9 @@
                     Facebook
                 </a>
 
-                <a href="/login/google" class="btn-google m-b-10">
+                <a href="/login/twitter" class="btn-google m-b-10">
                     <img src="images/icons/icon-google.png" alt="GOOGLE">
-                    Google
+                    Twitter
                 </a>
 
                 <div class="text-center w-full ">
