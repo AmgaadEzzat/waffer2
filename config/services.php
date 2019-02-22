@@ -46,4 +46,10 @@ return [
         'redirect' => 'http://localhost:8000/login/twitter/callback',
     ],
 
+    'github' => [
+        'client_id' => '8ad7df005176ba156c58',
+        'client_secret' => 'e3daee788c857099b2d13fbd3e12163a032661ca',
+        'redirect' => 'http://localhost:8000/login/github/callback',
+    ],
+
 ];

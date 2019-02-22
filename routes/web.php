@@ -116,6 +116,8 @@ Route::get('/login/facebook/callback', 'Auth\LoginController@handleProviderCallb
 Route::get('/login/twitter', 'Auth\LoginController@redirectToProvidertwitter');
 Route::get('/login/twitter/callback', 'Auth\LoginController@handleProviderCallbacktwitter');
 
+Route::get('/login/github', 'Auth\LoginController@redirectToProvidergithub');
+Route::get('/login/github/callback', 'Auth\LoginController@handleProviderCallbackgithub');
 
 Route::get('/master','UserController@masterCat');
 //Route::get('/details/{}','ProductDetailController@sendCat');
