@@ -32,14 +32,16 @@
 <body>
 <nav class="navbar navbar-expand-sm   " >
 
-        <a class="navbar-brand"  href="/"><i class="fas fa-money-bill-wave"></i>&nbsp;Waffar </a>
-
-
-        <div style="width:60%;">
-            <form action="/insertsearch" method="post">
+        <a class="navbar-brand font-weight-bold wowclass wow pulse"  id="brand" href="/"><i class="fas fa-money-bill-wave"></i>&nbsp;Waffar </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class=" text-light"> <i class="fas fa-ellipsis-v"></i></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <div style="width:70%">
+            <form action="/insertsearch" method="post" >
                 {{csrf_field()}}
-                <div class="form-group " style="width: 80%;">
-                    <div class="input-group mt-4">
+                <div class="form-group w-75" >
+                    <div class="input-group ">
                         <input type="text" name="txtsearch" id="txtsearch" class="form-control input-lg" placeholder="Search is easier now...."required autocomplete=off />
                         <div class="input-group-append">
                             <button class="btn  btn-outline-light" id="buttonsearch" type="submit" style="background-color:#1caaca">Search</button>
@@ -51,7 +53,7 @@
 
             </form>
             {{ csrf_field() }}
-
+        </div>
             <script>
                 $(document).ready(function(){
                     console.log("dddd");
@@ -81,11 +83,10 @@
                 });
             </script>
 
-        </div>
 
 
 
-        <ul class="navbar-nav  ">
+        <ul class="navbar-nav d-flex  ">
 
 
             @guest
@@ -97,24 +98,29 @@
                     <a href="{{ route('register') }}" class="btn  navbutton btn-danger">Join now</a>
                 </li>
             @else
-                @if(Auth::check())
-                    <li class="nav-item dropdown" >
+                <li class="nav-item  "   style="padding-left:24px;">
+                    <a href="/" class="nav-link"> <span class="text-light"> <i class="fas fa-home"></i></span> Home </a>
+                </li>
 
-                        <a href="category" class="nav-link dropdown-toggle" data-toggle="dropdown" >Category </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                @if(Auth::check())
+                    <li class="nav-item dropdown  " >
+
+
+                        <a href="category" class="nav-link dropdown-toggle  " data-toggle="dropdown" > Category </a>
+                        <div class="dropdown-menu border border-info shadow wow fadeInDown" aria-labelledby="navbarDropdown">
+                            <h5 class="dropdown-header">choose Category</h5>
                         @foreach($catName as $category)
-                            <a href="/category/{{$category->id}}" class="dropdown-item"> {{$category->categoryName}}</a>
+
+                            <a href="/category/{{$category->id}}" class="dropdown-item">{{$category->categoryName}}</a>
                             @endforeach
                         </div>
                     </li>
 
                 <li class="nav-item">
-                <a href="/deals"class=" nav-link btn btn-danger">Deals</a>
+                <a href="/deals"class=" nav-link bg-danger rounded shadow">Deals</a>
                 </li>
 
-                    <li class="nav-item">
-                        <a href="/contactUs"class=" nav-link ">Contact us</a>
-                    </li>
+
                 @endif
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -138,7 +144,7 @@
 
         </ul>
 
-
+    </div>
 
 
 </nav>
