@@ -99,9 +99,9 @@ class LoginController extends Controller
     {
         $userSocial = Socialite::driver('twitter')->user();
         // check if user exists and log user in
-        $email=$userSocial->user['email'];
 
-        $user= User::where('email',$email)->first();
+        $email=$userSocial->name;
+        $user= User::where('name',$email)->first();
 
         if($user){
             if(Auth::loginUsingId($user->id)){
@@ -114,8 +114,8 @@ class LoginController extends Controller
         $type=0;
 
         $userSignup= User::create([
-            'name' => $userSocial->user['name'],
-            'email' => $userSocial->user['email'],
+            'name' => $userSocial->name,
+            'email' => $userSocial->name,
             'password' =>bcrypt('1234'),
             'phone' =>'1234',
             'type' =>$type,
@@ -148,6 +148,50 @@ class LoginController extends Controller
     public function handleProviderCallbackgithub()
     {
         $userSocial = Socialite::driver('github')->user();
+
+        // check if user exists and log user in
+        $email=$userSocial->user['email'];
+
+        $user= User::where('email',$email)->first();
+
+        if($user){
+            if(Auth::loginUsingId($user->id)){
+                return redirect('/profile');
+            }
+        }
+
+
+        //else sign the user up
+        $type=0;
+
+        $userSignup= User::create([
+            'name' => $userSocial->user['name'],
+            'email' => $userSocial->user['email'],
+            'password' =>bcrypt('1234'),
+            'phone' =>'1234',
+            'type' =>$type,
+            'city' =>"city",
+//            'avatar' => $userSocial->avatar,
+            //'facebook_profile' => $userSocial->user['link'],
+            // 'gender' => $userSocial->user['gender'],
+        ]);
+        // finally log the user in
+        if($userSignup){
+            if(Auth::loginUsingId($userSignup->id)){
+                return redirect('/profile');
+            }
+        }
+    }
+///////////////////////////////////////////////
+    public function redirectToProvidergoogle()
+    {
+        return Socialite::driver('google')->redirect();
+    }
+
+
+    public function handleProviderCallbackgoogle()
+    {
+        $userSocial = Socialite::driver('google')->user();
 
         // check if user exists and log user in
         $email=$userSocial->user['email'];

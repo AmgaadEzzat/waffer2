@@ -152,12 +152,15 @@
                     Twitter
                 </a>
 
+
                 <a href="/login/github" class="btn-github m-b-10">
                     <img src="images/icons/icon-google.png" alt="GOOGLE">
                     Github
                 </a>
-
-
+                <a href="/login/google" class="btn-google m-b-10">
+                    <img src="images/icons/icon-google.png" alt="GOOGLE">
+                    Google
+                </a>
                 <div class="text-center w-full ">
 						<span class="txt1">
 							Not a member?

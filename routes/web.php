@@ -121,6 +121,10 @@ Route::get('/login/twitter/callback', 'Auth\LoginController@handleProviderCallba
 Route::get('/login/github', 'Auth\LoginController@redirectToProvidergithub');
 Route::get('/login/github/callback', 'Auth\LoginController@handleProviderCallbackgithub');
 
+Route::get('/login/google', 'Auth\LoginController@redirectToProvidergoogle');
+Route::get('/login/google/callback', 'Auth\LoginController@handleProviderCallbackgoogle');
+
+
 Route::get('/master','UserController@masterCat');
 Route::get('/proDetails','ProductDetailController@sendCat');
 
