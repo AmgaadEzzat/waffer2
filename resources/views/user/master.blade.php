@@ -108,7 +108,7 @@
 
                         <a href="category" class="nav-link dropdown-toggle  " data-toggle="dropdown" > Category </a>
                         <div class="dropdown-menu border border-info shadow wow fadeInDown" aria-labelledby="navbarDropdown">
-                            <h5 class="dropdown-header">choose Category</h5>
+                            <h5 class="dropdown-header">Browes By Category</h5>
                         @foreach($catName as $category)
 
                             <a href="/category/{{$category->id}}" class="dropdown-item">{{$category->categoryName}}</a>
@@ -131,7 +131,7 @@
                         <a class="dropdown-item" href="{{ route('logout') }}"
                            onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
+                            <span class=""><i class="fas fa-sign-out-alt"></i></span>  {{ __('Logout') }}
                         </a>
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
