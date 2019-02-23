@@ -69,6 +69,7 @@
                                     </span>
                                     @endif
                                 </div>
+                                <div class="col-md-4 mt-2  col-form-label  " id="name_error" style="display: none ; color:red ; border: 2px solid ;  margin-left: 40% ; border-radius: 3%">Incorrect Name</div>
                             </div>
 
                             <div class="form-group row">
@@ -97,6 +98,7 @@
                                     </span>
                                     @endif
                                 </div>
+                                <div class="col-md-4 mt-2  col-form-label  " id="address_error" style="display: none ; color:red ; border: 2px solid ;  margin-left: 40% ; border-radius: 3%">Please specify the address more</div>
                             </div>
 
                             <div class="form-group row">
@@ -109,6 +111,7 @@
                                     </span>
                                     @endif
                                 </div>
+                                <div class="col-md-4 mt-2  col-form-label  " id="desc_error" style="display: none ; color:red ; border: 2px solid ;  margin-left: 40% ; border-radius: 3%">Please more information</div>
                             </div>
                             <div class="form-group row">
                                 <label for="productImage" class="col-md-4 col-form-label text-md-left">{{ __('Image for Product') }}</label>

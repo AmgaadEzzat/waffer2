@@ -145,7 +145,7 @@
         <!-- <img src="images/signup-bg.jpg" alt=""> -->
         <div class="container">
             <div class="signup-content">
-                <form method="POST" id="signup-form" class="signup-form" action="{{ route('register') }}" >
+                <form method="POST" id="signup-form" class="signup-form" onsubmit="return vaildResigter()" action="{{ route('register') }}" name="register" >
                     @csrf
                     <h2 class="form-title">Create account</h2>
                     <div class="form-group">
@@ -156,6 +156,8 @@
                         </span>
                         @endif
                     </div>
+                    <div class="w-50 h-50" id="error_name" style="display: none "></div>
+
                     <div class="form-group ">
                         <input type="email" class=" form-input form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"  name="email" id="email" value="{{ old('email') }}" placeholder="Your Email" required/>
                         @if ($errors->has('email'))
@@ -164,6 +166,8 @@
                         </span>
                         @endif
                     </div>
+                    <div class="w-50 h-50" id="error_email" style="display: none "></div>
+
                     <div class="form-group">
                         <input type="text"  name="city" class="form-input form-control{{ $errors->has('city') ? ' is-invalid' : '' }}"  id="city" value="{{ old('city') }}" placeholder="Your City" required/>
                         @if ($errors->has('city'))
@@ -172,6 +176,7 @@
                         </span>
                         @endif
                     </div>
+                    <div class="w-50 h-50" id="error_city" style="display: none "></div>
                     <div class="form-group">
                         <input type="text"  name="phone" class="form-input form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}"  id="phone" value="{{ old('phone') }}" placeholder="Your Phone" required/>
                         @if ($errors->has('name'))
@@ -180,6 +185,7 @@
                         </span>
                         @endif
                     </div>
+                    <div class="w-50 h-50" id="error_phone" style="display: none "></div>
                     <div class="form-group">
                         <input type="text" class="form-input form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" id="password" placeholder="Password" required/>
                         <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
@@ -189,6 +195,7 @@
                         </span>
                         @endif
                     </div>
+                    <div class="w-50 h-50" id="error_password" style="display: none "></div>
                     <div class="form-group">
                         <input type="password" class="form-input" name="password_confirmation" id="re_password" placeholder="Repeat your password"/>
                     </div>
@@ -206,10 +213,12 @@
                         </span>
                         @endif
                     </div>
+                    <div class="w-50 h-50" id="error_type" style="display: none "></div>
                     <div class="form-group">
                         <input type="submit" name="submit" id="submit" class=" btn btn-info w-100" value="Sign up"/>
                     </div>
                 </form>
+
                 <p class="loginhere">
                     Have already an account ? <a href="login" class="loginhere-link">Login here</a>
                 </p>
@@ -222,6 +231,7 @@
 <!-- JS -->
 <script src="{{asset('vendor/reg-jquery/jquery.min.js')}}"></script>
 <script src="{{asset('js/reg-main.js')}}"></script>
+{{--<script src-="{{asset('js/regvaild.js')}}"></script>--}}
 </body>
 </html>
 
