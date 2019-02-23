@@ -137,7 +137,7 @@
                 <div class="form-group">
 
                     <div class="input-group mb-3" >
-                        <input type="search" name="txtsearch" id="txtsearch" required class="" placeholder="Search is easier now...."style="width:90%;" autocomplete=off />
+                        <input type="search" name="txtsearch" id="txtsearch" required class="" placeholder="Search is easier now...."style="width:80%;" autocomplete=off />
 
                         <div class="input-group-append" >
                             <button class="btn btn-light" id="buttonsearch" style="margin-top:12%;margin-bottom:12%;border-top-right-radius:20px;border-bottom-right-radius:20px;color:#93ade0;" type="submit">Search</button>

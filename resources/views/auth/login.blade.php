@@ -174,25 +174,25 @@
 						</span>
                 </div>
 
-                <a href="/login/facebook" class="btn-face m-b-10">
+                <a href="/login/facebook" style="color:#353aff;" class=" ">
                     <i class="fa fa-facebook-official"></i>
                     Facebook
                 </a>
 
-                <a href="/login/twitter" class="btn-twitter m-b-10">
-                    <img src="images/icons/icon-google.png" alt="GOOGLE">
+                <a href="/login/twitter" style="color:deepskyblue;" class="btn-twitter m-b-10">
+                    <i class="fab fa-twitter"></i>
                     Twitter
                 </a>
 
 
-                <a href="/login/github" class="btn-github m-b-10">
-                    <img src="images/icons/icon-google.png" alt="GOOGLE">
+                <a href="/login/github" style="color:black;"class="btn-github m-b-10">
+                    <i class="fab fa-github"></i>
                     Github
                 </a>
-                <a href="/login/google" class="btn-google m-b-10">
-                    <img src="images/icons/icon-google.png" alt="GOOGLE">
-                    Google
-                </a>
+                {{--<a href="/login/google" class="btn-google m-b-10">--}}
+                    {{--<img src="images/icons/icon-google.png" alt="GOOGLE">--}}
+                    {{--Google--}}
+                {{--</a>--}}
                 <div class="text-center w-full ">
 						<span class="txt1">
 							Not a member?

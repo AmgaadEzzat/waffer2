@@ -118,18 +118,7 @@
         <span class="navbar-toggler-icon" style="background-color:rgb(224, 220, 220);color:red;"></span>
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav">
-            {{--<li class="nav-item">--}}
-                {{--<a class="nav-link  navlink4" href="#" id="navlinks">Browse product</a>--}}
-            {{--</li>--}}
-            <li class="nav-item">
-                <a class="nav-link  navlink4  " href="/" id="navlinks">Search</a>
-            </li>
-            {{--<li class="nav-item">--}}
-                {{--<a class="nav-link  navlink4" href="#" id="navlinks">Message</a>--}}
-            {{--</li>--}}
 
-        </ul>
 
         <ul class="navbar-nav ml-auto">
 
