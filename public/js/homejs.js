@@ -39,6 +39,14 @@ $(document).ready(function(){
         $("#buttonsearch").css('color','#93ade0');
     });
 
+$('#deals').mouseover(function () {
+    $(this).height('80%');
+    $(this).width('80%');
+});
+    $('#deals').mouseleave(function () {
+        $(this).height('70%');
+        $(this).width('70%');
+    });
 //////////////////////////////////////////////
     //carosuel
 

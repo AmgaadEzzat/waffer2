@@ -26,143 +26,45 @@
         }
         #comment{display: none;}
     </style>
-    <div class="container-fluid">
-        <div class="row container-fluid">
-            <div class="col-sm-2 border  border-secondary ">
-                <div class="dropdown">
-                    <button type="button" class="btn  dropdown-toggle" data-toggle="dropdown">
-                        Browse By Category
-                    </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item border border-secondary border-bottom-0 " href="#">Mobiles & Tablets</a>
-                        <a class="dropdown-item border border-secondary border-bottom-0" href="#">Computer & Software</a>
-                        <a class="dropdown-item  border border-secondary" href="#">Electorinc</a>
 
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-10 border  border-secondary border-left-0 d-inline-flex justify-content-end  small">
-                <a href="#" class="m-2"> Mobiles & Tablets </a>
-
-                <a href="#" class="m-2"> Mobiles </a>
-
-                <a href="#" class="m-2"> Smart phones </a>
-            </div>
-        </div>
-    </div>
-    <div class="container m-5 ">
+    <div class="container mt-2 ">
         <div class="row">
             @foreach($productdetails as $product)
-                <div class="col-sm-4 col-xs-2 border  border-secondary">
+                <div class="col-sm-3 m-2   ">
 
 
                     <div class="img-zoom-container">
-                        <img id="myimage" src="/images/{{$product->productImage}}" width="300" height="240"><br><br>
-                        <div id="myresult" class="img-zoom-result"></div>
-                        <br><br><br>
+                        <img id="myimage"  src="/images/{{$product->productImage}}"   style="width:100%; " class="shadow"><br><br>
+
+                                    <div id="myresult" class="img-zoom-result"  style="width:100%" ></div>
+
+
+
                     </div>
 
-                    {{--<div id="demo" class="carousel slide" data-ride="carousel">--}}
 
-
-
-                    {{--<!-- The slideshow -->--}}
-                    {{--<div class="carousel-inner m-2">--}}
-                    {{--<div class="carousel-item active">--}}
-                    {{--<img src="images/2.jpg" class="w-25 " >--}}
-                    {{--</div>--}}
-                    {{--<div class="carousel-item ">--}}
-                    {{--<img src="images/3.jpg"  class="w-25">--}}
-                    {{--</div>--}}
-                    {{--<div class="carousel-item ">--}}
-                    {{--<img src="images/huawei_nova3i.jpg"  class="w-25 ">--}}
-                    {{--</div>--}}
-                    {{--</div>--}}
-
-                    {{--<!-- Left and right controls -->--}}
-                    {{--<a class="carousel-control-prev" href="#demo" data-slide="prev">--}}
-                    {{--<span class="carousel-control-prev-icon"></span>--}}
-                    {{--</a>--}}
-                    {{--<a class="carousel-control-next" href="#demo" data-slide="next">--}}
-                    {{--<span class="carousel-control-next-icon"></span>--}}
-                    {{--</a>--}}
-
-                    {{--</div>--}}
-                    {{--<div class="modal fade" id="myModal">--}}
-                    {{--<div class="modal-dialog modal-dialog-centered">--}}
-                    {{--<div class="modal-content">--}}
-
-                    {{--<!-- Modal Header -->--}}
-                    {{--<div class="modal-header">--}}
-                    {{--<h4 class="modal-title">Product </h4>--}}
-                    {{--<button type="button" class="close" data-dismiss="modal">&times;</button>--}}
-                    {{--</div>--}}
-
-
-                    {{--<div class="modal-body">--}}
-                    {{--<div id="modelDemo" class="carousel slide" data-ride="carousel">--}}
-
-
-
-                    {{--<!-- The slideshow -->--}}
-                    {{--<div class="carousel-inner m-2">--}}
-                    {{--<div class="carousel-item active">--}}
-                    {{--<img src="images/2.jpg" class="w-50 " >--}}
-                    {{--</div>--}}
-                    {{--<div class="carousel-item">--}}
-                    {{--<img src="images/3.jpg"  class="w-50 ">--}}
-                    {{--</div>--}}
-                    {{--<div class="carousel-item">--}}
-                    {{--<img src="images/4.jpg"  class="w-50 ">--}}
-                    {{--</div>--}}
-                    {{--<div class="carousel-item ">--}}
-                    {{--<img src="images/huawei_nova3i.jpg"  class="w-50 ">--}}
-                    {{--</div>--}}
-                    {{--</div>--}}
-
-                    {{--<!-- Left and right controls -->--}}
-                    {{--<a class="carousel-control-prev" href="#modelDemo" data-slide="prev">--}}
-                    {{--<span class="carousel-control-prev-icon"></span>--}}
-                    {{--</a>--}}
-                    {{--<a class="carousel-control-next" href="#modelDemo" data-slide="next">--}}
-                    {{--<span class="carousel-control-next-icon"></span>--}}
-                    {{--</a>--}}
-
-                    {{--</div>--}}
-
-                    {{--</div>--}}
-
-
-
-                    {{--</div>--}}
-
-
-
-                    {{--</div>--}}
-
-
-
-                    {{--</div>--}}
                 </div>
 
 
 
-                <div class="col-sm-8  border  border-secondary border-left-0 container">
-                    <h1>{{$product->name}}</h1>
-                    <a href="#">  <h1>Product name and details</h1></a>
-                    <span class="border border-secondary w-75 p-2 m-4"  > Price {{$product->productPrice}}EGP</span>
-                    <span class="badge badge-success m-4"> {{$product->productAddress}}</span>
+                <div class="col-sm-8 borderStyle   container" >
+
+                      <h1 class="ml-2"> {{$product->productName}}</h1> <br>
+                    <span class="border btn-outline-success w-75 p-2 ml-2"  >  {{$product->productPrice}} EGP</span> <br><br>
+                    <span class=" ml-2"> you can buy it from <span class="text-danger">  {{$product->productAddress}} </span></span>
+                    <hr>
+                    <h4>Description </h4>
                     <br>
-                    <span class="m-4"> {{$product->productDescription}} </span>
-                    <div class="m-4">
+                    <span class="ml-2"> {{$product->productDescription}} </span>
+                    <div class="ml-2">
                         {{--<button class="btn btn-success"> Buy it from Jumia</button> --}}
                     </div>  <input type="hidden" name="productid" id="prodid" value="{{$id}}"/>
-                    <div id=stars class="m-4 d-inline-flex">
+                    <div id=stars class="ml-2 p-2">
                     <span style="color:rgb(179, 75, 75);">
 
                         @if(!Auth::check()) <b>Likes:</b>@endif
                         @if(Auth::check())
-                            <button class="likeproduct">like&nbsp;<i class="far fa-thumbs-up"></i></button>
+                            <button class="likeproduct btn btn-info">like&nbsp;<i class="far fa-thumbs-up"></i></button>
                         @endif
                         <span id="numberOfLikes">{{$product->like}}</span>
                     </span>
@@ -172,20 +74,22 @@
                         <span style="color:rgb(179, 75, 75);">
                         @if(!Auth::check())<b>Dislikes:</b>@endif
                             @if(Auth::check())
-                                <span><button id="dislikeproduct" h="">dislike<i class="far fa-thumbs-down"></i></button></span>
+                                <span><button id="dislikeproduct" class=" btn btn-info" h="">dislike<i class="far fa-thumbs-down"></i></button></span>
                             @endif
                             <span id="numberOfdisLikes">{{$product->dislike}}</span>
                     </span>
+                        <br>
+                        <br>
                         @if(Auth::check())
-                            <ul class="nav d-inline-flex ">
+                            <ul class="nav ">
 
-                                <li ><button class="p-2 btn btn-light" id="wishlist"> <i class="fas fa-heart"></i>Add to a wish list</button></li>
+                                <li ><button class=" btn btn-light btn-outline-info" id="wishlist"><span id="wishheart"> <i class="fas fa-heart"></i></span> Add to a wish list</button></li>
                             </ul>
                         @endif
                     </div>
-                    <div> Share:
+                    <div>
                         {{--<div class="sharethis-inline-share-buttons"></div>--}}
-                        <div class="sharethis-inline-share-buttons"></div>
+                     <span class=" ml-5 font-weight-bold"> Share: </span>     <span class="sharethis-inline-share-buttons">  </span>
                     </div>
                     <hr>
                     <ul class="nav d-inline-flex ">
@@ -329,7 +233,7 @@
                     data:{id:1},
                     success: function (data) {
                         console.log(data);
-                        $('#wishlist').addClass(data);
+                        $('#wishheart').css("color", "red");
                     }
                 });
 

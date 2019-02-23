@@ -48,12 +48,17 @@ Route::group(['middleware' => 'UserMiddleware'], function () {
     Route::get(' /Browse','DealController@browse');
     Route::post('/store','DealController@store');
     Route::get('/deletedeal/{id}', 'DealController@destroy');
+
+    Route::get('/contact',function (){
+        return view('user.contact');
+    });
+    Route::post('/insertcontact','UserController@insertContact');
+
     Route::get('/home', 'InsertProduct@ mostsearchedforhome');
+
 });
 Route::get('/deals','DealController@index');
-Route::get('/details', function () {
-    return view('user.productDetails');
-});
+
 Route::get('/isadmin' , 'AdminController@isadmin');
 
 Route::get('/isadmin' , 'AdminController@isadmin');
@@ -115,12 +120,18 @@ Route::get('/fetchdailyproduct','ChartController@fetchproductspostedeveryday');
 Route::get('/login/facebook', 'Auth\LoginController@redirectToProvider');
 Route::get('/login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
 
+Route::get('/login/twitter', 'Auth\LoginController@redirectToProvidertwitter');
+Route::get('/login/twitter/callback', 'Auth\LoginController@handleProviderCallbacktwitter');
+
+Route::get('/login/github', 'Auth\LoginController@redirectToProvidergithub');
+Route::get('/login/github/callback', 'Auth\LoginController@handleProviderCallbackgithub');
+
 Route::get('/login/google', 'Auth\LoginController@redirectToProvidergoogle');
 Route::get('/login/google/callback', 'Auth\LoginController@handleProviderCallbackgoogle');
 
 
 Route::get('/master','UserController@masterCat');
-Route::get('/proDetails','ProductDetailController@sendCat');
+//Route::get('/details/{}','ProductDetailController@sendCat');
 
 //Route::get('sendemail',function (){
 //  $data=array(['name'=>'Doaa','email'=>'doaabakhiet11@gmail.com']);
