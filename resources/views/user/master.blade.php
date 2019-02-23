@@ -15,12 +15,16 @@
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
           crossorigin="anonymous">
+<<<<<<< HEAD
+    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+=======
   <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+>>>>>>> 1a5f5e23286b7c84dc0b97d5aad033b6746796db
 
  <!--  <script src="{{asset('js/jquery.min.js')}}"></script> -->
    <script src="{{asset('js/popper.min.js')}}"></script>
@@ -99,9 +103,12 @@
                     <a href="{{ route('register') }}" class="btn  navbutton btn-danger">Join now</a>
                 </li>
             @else
+<<<<<<< HEAD
+=======
                 <li class="nav-item  "   style="padding-left:24px;">
                     <a href="/" class="nav-link"> <span class="text-light"> <i class="fas fa-home"></i></span> Home </a>
                 </li>
+>>>>>>> 1a5f5e23286b7c84dc0b97d5aad033b6746796db
 
                 @if(Auth::check())
                     <li class="nav-item dropdown  " >
@@ -120,8 +127,14 @@
                 <li class="nav-item">
                 <a href="/deals"class=" nav-link bg-danger rounded shadow">Deals</a>
                 </li>
+<<<<<<< HEAD
+                    <li class="nav-item"  style="padding-left:24px;">
+                        <a href="/contact" ><button class="btn  navbutton btn-primary">Contact Us</button></a>
+                    </li>
+=======
 
 
+>>>>>>> 1a5f5e23286b7c84dc0b97d5aad033b6746796db
                 @endif
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -195,6 +208,9 @@
 
 </footer>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 
 
 
