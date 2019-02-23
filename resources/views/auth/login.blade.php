@@ -105,23 +105,45 @@
 					</span>
 
                 <div class="wrap-input100 validate-input m-b-16" data-validate = "Valid email is required: ex@abc.xyz">
-                    <input class="input100" type="email" name="email" placeholder="Email">
+                    <div class="form-group">
+                    <input class="input100 form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" type="email" name="email" placeholder="Email">
                     <span class="focus-input100"></span>
                     <span class="symbol-input100">
 							<span class="lnr lnr-envelope"></span>
 						</span>
+
+                    @if ($errors->has('email'))
+                    <span class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('email') }}</strong>
+                    </span>
+                    @endif
+                </div>
                 </div>
 
                 <div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
-                    <input class="input100" type="password" name="password" placeholder="Password">
+                    <div class="form-group">
+                    <input class="input100 form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" type="password" name="password" placeholder="Password" autocomplete="off">
                     <span class="focus-input100"></span>
                     <span class="symbol-input100">
 							<span class="lnr lnr-lock"></span>
 						</span>
-                </div>
+
+
+                        @if ($errors->has('password'))
+                        <span class="invalid-feedback" role="alert">
+                        <strong>{{ $errors->first('password') }}</strong>
+                        </span>
+                        @endif
+                    </div></div>
+
+
+
+
+
+
 
                 <div class="contact100-form-checkbox m-l-4">
-                    <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+                    <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me" autocomplete="off">
                     <label class="label-checkbox100" for="ckb1">
                         Remember me
                     </label>
