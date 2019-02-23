@@ -6,43 +6,17 @@ body{
     background-color: rgb(193, 223, 236);
     
 }
-.profile{
 
-    background: rgb(86, 179, 223);
-    box-shadow: 0 5px 10px 0 rgba(0, 0,0, 0.5);
 
-}
-.imges-container{
-    position: relative;
-}
 .info{
-color:darkcyan;
+color:#1dbee2;
   margin-right: 15px;
 }
 .main-container{
     padding: 20px;
 }
-.prag{
-    font-weight: bold;
+.btnstyle:hover{
+    background-color:#1dbee2 ;
 }
-.progress{
-    width: 90%;
-    padding: 0.2em 15px;
-    border-radius: 15px;
-}
-.rate{
-    background-color: rgb(27, 129, 238);
-    border-radius: 15px;
-    text-align: center;
-    color: rgb(12, 72, 77);
-    background-color: rgb(216, 49, 71);
-}
-.title{
-    position: absolute;
-    left: 15px;
-    bottom: 0px;
-    color: red;;
-}
-.infoAnim{
 
-}
+

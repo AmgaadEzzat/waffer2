@@ -3,7 +3,8 @@
 
     <div class="container-fluid " style="margin-bottom: 5%">
         <div class="row">
-            <div class="col-md-8">
+
+            <div class="col-md-3">
                 <div class="dropdown dropright">
                     <button type="button" class="btn  dropdown-toggle" data-toggle="dropdown" style="background: #2ed8b6;color:white">
                         choose category
@@ -15,9 +16,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4"> <a href="/" type="button"  class="btn" style="background: #2ed8b6;color:white">
-                    Back To Home
-                </a></div>
+
         </div>
     </div>
     @if(session()->has('notif'))

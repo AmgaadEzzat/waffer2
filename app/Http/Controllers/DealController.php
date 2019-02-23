@@ -19,7 +19,8 @@ class DealController extends Controller
         $deals=DB::table('deals')->leftJoin('users','deals.userId','=','users.id')
             ->orderBy('deals.created_at')
             ->get();
-        return view('user.deals',compact('deals'));
+        $catName=DB::table('categories')->get();
+        return view('user.deals',compact('deals','catName'));
     }
 
     /**
@@ -29,7 +30,8 @@ class DealController extends Controller
      */
     public function browse(){
         $deals=DB::table('deals')->join('users','users.id','=','deals.userId')->get();
-        return view('user.browsedeal',compact('deals'));
+        $catName=DB::table('categories')->get();
+        return view('user.browsedeal',compact('deals','catName'));
     }
 
     public function showdealsforadmin(){

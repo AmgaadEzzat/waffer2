@@ -40,5 +40,20 @@ return [
         'client_secret' => 'd6663b0af5f29152892c46d4273eed91',
         'redirect' => 'http://localhost:8000/login/facebook/callback',
     ],
+    'twitter' => [
+        'client_id' => 'dclu7ratjr33rp4hMz3d6PRsy',
+        'client_secret' => 'GVzEu9siVf3lNQfZMb3UEyvskghiDrbqNJNfpYRucQQnFrGLFz',
+        'redirect' => 'http://localhost:8000/login/twitter/callback',
+    ],
 
+    'github' => [
+        'client_id' => '8ad7df005176ba156c58',
+        'client_secret' => 'e3daee788c857099b2d13fbd3e12163a032661ca',
+        'redirect' => 'http://localhost:8000/login/github/callback',
+    ],
+    'google' => [
+        'client_id' => '1089622880119-4hq7hcmfahvj6sg49fvh4etos9m798pg.apps.googleusercontent.com ',
+        'client_secret' => 'jjohejvetugywzwo',
+        'redirect' => 'http://localhost:8000/login/google/callback',
+    ],
 ];

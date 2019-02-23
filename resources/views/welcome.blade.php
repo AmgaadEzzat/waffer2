@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Waffar</title>
+
     <link rel="stylesheet" href="{{asset('animate.css-master/animate.min.css')}}">
     <script src="{{asset('wow.min.js')}}"></script>
     <script>
@@ -24,12 +25,16 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/animate.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
 
+
+
 </head>
 <style>
 .btnnn:hover{
     background-color: white;
     color: white;
 }
+
+
 </style>
 <script>
 
@@ -41,7 +46,7 @@
 
 <nav class="navbar navbar-expand-sm fixed-top text-white" id="navbar">
 
-    <a class="navbar-brand font-weight-bold" id="logo" href="{{ url('/') }}"><i class="fas fa-money-bill-wave"></i><STRONG>WaffeR</STRONG>.com</a>
+    <a class="navbar-brand font-weight-bold" id="logo" href="{{ url('/') }}"><i class="fas fa-money-bill-wave"></i><STRONG style="">WaffeR</STRONG>.com</a>
     <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon" style="background-color:#49cbe7;color:white;"></span>
     </button>
@@ -50,17 +55,17 @@
 @if(Auth::check())
             <li class="nav-item"  style="padding-left:24px;">
 
-                <a href="/deals"class="btn" style= "background-color: #ff5370;color: white">Deals</a>
+                <a href="/deals"class="btn" style= "border-radius:20px; background-color: #ff5370;color: white">Deals</a>
 
             </li>
     @endif
             @guest
                 <li class="nav-item" style="padding-left:24px;">
-                    <a href="{{ route('login') }}"  class="btn btn-warning" style="color:white">Log in</a>
+                    <a href="{{ route('login') }}"  class="btn btn-warning" style="color:#93ade0; border-radius:20px;color:white">Log in</a>
                 </li>
 
                 <li class="nav-item"  style="padding-left:24px;">
-                    <a href="{{ route('register') }}" class="btn  navbutton " style="background-color: #ff5370;color: white">Join now</a>
+                    <a href="{{ route('register') }}" class="btn  navbutton " style="color:#6473e0; border-radius:20px;background-color: #ff5370;color: white">Join now</a>
                 </li>
             @else
 
@@ -71,17 +76,18 @@
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('logout') }}"
+                        <a class="dropdown-item text-dark" href="/isadmin" id="navlinks"> <span class="teext-light"> <i class="far fa-user"></i></span> profile</a>
+                   <a class="dropdown-item" href="{{ route('logout') }}"
                            onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
+                       <span class=""><i class="fas fa-sign-out-alt"></i></span>   {{ __('Logout') }}
                         </a>
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                         </form>
 
-                        <a class="dropdown-item text-dark" href="/isadmin" id="navlinks">profile</a>
+
 
                     </div>
                 </li>
@@ -113,23 +119,28 @@
 <div class="col-sm-12" >
 
     <div class="row">
-        {{--<div class="col-sm-5"></div>--}}
-        <div class="col-sm-7">
+        <div class="col-sm-2">
+            {{--<p style="color:#fffdee;"><br><br><br><br><br>--}}
+                {{--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our Website Is A Service that <br>Helps You Searching About The<br>--}}
+                {{--Product Price To Buy <br> With Lowest Price Help Others to Find Near PLace<br>To Buy Thier Product From--}}
+                {{--<br><a herf="/isadmin">Click Here</a>--}}
+            {{--</p>--}}
+        </div>
+        <div class="col-sm-8">
             <!--begin for loop-->
-            <br><br><br><br><br><br><br><br><label for="txtsearch" class="text-light" id=""style="font-size:2vw" >
+            <br><br><br><br><br><br><br><br><br><label for="txtsearch" class="text-light" id=""style="font-size:1.8vw;" >
                 <i class="fas fa-search"></i>
-                Search now for the lowest price<br> in <h class="font-weight-bold">Egypt</h></label><br><br>
+                Search now for the lowest price in <h class="font-weight-bold">Egypt</h></label><br>
 
             <form action="/insertsearch" method="post">
                 {{csrf_field()}}
                 <div class="form-group">
 
-                    <div class="input-group " >
-
-                        <input type="text" name="txtsearch" id="txtsearch" required class="form-control input-lg" placeholder="Search is easier now...." autocomplete=off />
+                    <div class="input-group mb-3" >
+                        <input type="search" name="txtsearch" id="txtsearch" required class="" placeholder="Search is easier now...."style="width:90%;" autocomplete=off />
 
                         <div class="input-group-append" >
-                            <button class="btn btn-light ml-3" id="buttonsearch" type="submit">Search</button>
+                            <button class="btn btn-light" id="buttonsearch" style="margin-top:12%;margin-bottom:12%;border-top-right-radius:20px;border-bottom-right-radius:20px;color:#93ade0;" type="submit">Search</button>
                         </div>
                     </div>
                 </div>
@@ -138,6 +149,7 @@
                 </div>
 
             </form>
+
             {{ csrf_field() }}
 
             <script>
@@ -165,20 +177,15 @@
                         $('#txtsearch').val($(this).text());
                         $('#productList').fadeOut("slow");
                     });
+                    $(document).on('click', 'body', function(){
+                        $('#productList').fadeOut("slow");
+                    });
 
                 });
             </script>
-
-
-
-
-
-
-
-
-
         </div>
-    </div>
+        <div class="col-sm-2">
+        </div></div>
     <br><br><br><br><br><br><br>
 
     <br><br><br><br><br><br><br><br><br>
@@ -190,7 +197,7 @@
         {{--<div class="col-sm-4" style=""></div>--}}
     </div>
 
-    {{$count=0}}
+    <div style="visibility:hidden;">{{$count=0}}</div>
     <div class="row wow fadeInRightBig " >
         <div class="col-sm-1" ></div>
         <div class="col-sm-10" >
@@ -230,18 +237,28 @@
 
 
 
+
+
+
+
+
+
+
     <div class="row" style="background-color: #dbe6f0;"><div class="col-sm-1" style=""></div>
         <div class="col-sm-7" style="">  <hr style="background-color:gray;border-color:gray;">
-            <h3 class="text-secondary">The Lowest Prices At Our Website</h3>
+            <h1 class="text-secondary">The Lowest Prices At Our Website</h1>
             <hr style="background-color:gray;border-color:gray;"><br><br>
         </div>
         <div class="col-sm-4" style=""></div></div>
-        <div class="row" style="background-color: #dbe6f0;">
+
+
+
+    <div class="row " style="background-color: #dbe6f0;">
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
             <div class="main">
 
-                <div id="myBtnContainer"><br><br>
+                <div id="myBtnContainer wow fadeInUpBig"><br><br>
                     <button class="btn btnn active" onclick="filterSelection('all')"> All</button>
                     @foreach($catName as $catagory)
                         <button class="btn btnn" onclick="filterSelection('{{$catagory->categoryName}}')"> {{$catagory->categoryName}}</button>
@@ -250,19 +267,20 @@
                 </div>
 
                 <!-- Portfolio Gallery Grid -->
-                <div class="row wow fadeInUpBig">
+                <div class="row">
 
-                    <div class="col-sm-12 wow fadeInUpBig">
-                        <div class="row text-left wow fadeInUpBig">
+                    <div class="col-sm-12">
+                        <div class="row text-left">
                             @foreach($products as $product)
                                 {{--<div class="col-sm-4 float-left  text-left"style="margin-top:30px;">--}}
 
-                                <div class="column col-sm-3 wow fadeInUpBig {{$product->categoryName}}" style="margin:20px 20px 20px 20px;background-color: white;" >
-
-                                    <b class="text-primary ">{{$product->name}}</b>
-                                    <img src="/images/{{$product->productImage}}" class="img-thumbnail"alt="Car" style="width:90%;height:40%;">
+                                <div class="column col-sm-3 wow fadeInUpBig {{$product->categoryName}}" style="margin-top:10px;background-color: #dbe6f0;" >
+                                <div class="container-fluid" style="width:100%;height:100%;background-color: white;">
+                                    <b class="text-primary font-weight-bold">{{$product->name}}</b>
+                                    <img src="/images/{{$product->productImage}}" class="img-thumbnail"alt="Car" style="width:100%;height:50%;">
                                     <h4>{{$product->productName}}</h4>
-                                    <p>{{$product->productDescription}}<br>
+                                    <div style="height:10%">{{$product->productDescription}}</div>
+                                    <p>
                                         <b class="text-danger"> Address &nbsp;</b>:&nbsp;{{$product->productAddress}}<br>
                                         <b class="text-danger"> Price&nbsp;</b>:&nbsp;{{$product->productPrice}}EGP<br>
                                         <b class="text-danger">Posted At</b>&nbsp;:&nbsp;{{$product->created_at }}<br>
@@ -270,18 +288,21 @@
                                     </p>
 
                                 </div>
+                                </div>
                                 {{--</div>--}}
                             @endforeach
                         </div>
                     </div>
-                {{--<div class="col-sm-1"></div>--}}
-                <!-- END GRID -->
+                    <div class="col-sm-1"></div>
+                    <!-- END GRID -->
+                    <br>
                 </div>
             </div>
             <!-- END MAIN -->
-
+            <br>
         </div>
     </div>
+
     <script>
         filterSelection("all")
         function filterSelection(c) {
@@ -327,7 +348,34 @@
             });
         }
     </script>
-    <br><br>
+
+
+    {{--begin of carousel--}}
+
+    <div class="container">
+        <h3 class="pt-5" style="text-align: left ; color: gray">Latest additions</h3>
+        <section class="customer-logos slider pt-4">
+            @foreach($lastProducts as $lastProduct)
+            <div class="slide ">
+                <img  src="/img/{{$lastProduct->productImage }}">
+                <h5 class="pt-3">{{$lastProduct->productName}}</h5>
+                <p style="height:50%">{{$lastProduct->productAddress }}<br>
+                {{$lastProduct->productDescription }}
+                    {{$lastProduct->created_at }}</p>
+
+                <a href="/details/{{$lastProduct->id}} fixed-bottom" class="btn btn-primary">Show More Details</a>
+            </div>
+       @endforeach
+
+
+        </section>
+        <br><br>
+    </div>
+
+    {{--end of carousel--}}
+
+
+
     <div class="row" style="">
         <div  class="col-sm-12 parallax" style="background-image: url({{asset('images/images.jpg')}});" >
             <br><br>
@@ -346,14 +394,7 @@
 
 
 
-
-
-
-
-
-
-    <br>
-    <div class="row" style="background-color: #dbe6f0;">
+    <div class="row" style="">
 
         <div class="col-sm-1" ></div>
         <div class="col-sm-7" style="">
@@ -363,8 +404,8 @@
         <div class="col-sm-4" style=""></div></div>
 
 
-    <div class="row" style="background-color: #dbe6f0; ">
-        <div class="col-sm-12">
+    <div class="row  style=" ">
+        <div class="col-sm-9">
             <div class="row">
             <div class="col-sm-1"></div>
             <div class="col-sm-10">
@@ -378,7 +419,13 @@
             <div class="col-sm-1"></div>
             </div>
         </div>
-    </div>
+        <div class="col-sm-3 wow bounceIn text-center">
+          <a href="/deals" >
+              <span> <img src="/images/deas.jpg" id="deals"style="width:70%;height:70%;"/></span><span><b style="font-size:4vw;paddig-top:6px;color:red;">S</b></span>
+          </a>
+
+        </div>
+</div>
     <!--footer-->
     <div class="row">
         <div  class="col-sm-12 footer">
@@ -426,14 +473,12 @@
     <!--end-footer-->
 
 
-
-
-
-
-
-
-
 </div>
+<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
 </body>
 </html>
 

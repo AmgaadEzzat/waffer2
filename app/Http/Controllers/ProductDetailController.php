@@ -21,9 +21,19 @@ class ProductDetailController extends Controller
             ->where('reviws.productid','=',$id)
             ->select('reviws.*','users.*')
             ->get();
+        $catName = DB::table('categories')->get();
 
-            return view('user.productDetails',compact('productdetails','commentsinthisproduct','comments','id'));
+            return view('user.productDetails',compact('productdetails','commentsinthisproduct','comments','id','catName'));
     }
+
+    public function sendCat()
+    {
+
+        $catName = DB::table('categories')->get();
+
+        return view('user.productDetails', compact('catName'));
+    }
+
 
     public function sorecomment(Request $request,$id){
         $this->validate($request,[

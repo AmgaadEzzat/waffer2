@@ -5,45 +5,60 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="{{asset('css/productDetails.css')}}" rel="stylesheet">
+    <link href="{{asset('css/homestyle.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('animate.css-master/animate.min.css')}}">
+    <script src="{{asset('wow.min.js')}}"></script>
+    <script>
+        new WOW().init();
+    </script>
     <link href="{{asset('css/profile.css')}}" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
           crossorigin="anonymous">
+<<<<<<< HEAD
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+=======
+  <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
 
-    <script src="{{asset('js/jquery.min.js')}}"></script>
-    <script src="{{asset('js/popper.min.js')}}"></script>
-    <script src="{{asset('js/bootstrap.min.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+>>>>>>> 1a5f5e23286b7c84dc0b97d5aad033b6746796db
+
+ <!--  <script src="{{asset('js/jquery.min.js')}}"></script> -->
+   <script src="{{asset('js/popper.min.js')}}"></script>
+   <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <script src="{{asset('js/projectDetailsJs.js')}}"></script>
     <link rel="shortcut icon" type="image/jpg" href="{{asset('/images/icon.jpg')}}"/>
     <script src="https://cdn.ckeditor.com/4.5.6/standard/ckeditor.js"></script>
 </head>
 
 <body>
-<nav class="navbar navbar-expand-sm   ">
+<nav class="navbar navbar-expand-sm   " >
 
-        <a class="navbar-brand"  href="welcome"><i class="fas fa-money-bill-wave"></i>&nbsp;Waffar </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="text-light navbar-toggler-icon "> <i class="fas fa-bars"></i></span>
-        </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <div class=" w-75 ">
-            <form action="/insertsearch" method="post">
+        <a class="navbar-brand font-weight-bold wowclass wow pulse"  id="brand" href="/"><i class="fas fa-money-bill-wave"></i>&nbsp;Waffar </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class=" text-light"> <i class="fas fa-ellipsis-v"></i></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <div style="width:70%">
+            <form action="/insertsearch" method="post" >
                 {{csrf_field()}}
-                <div class="form-group w-75">
-                    <div class="input-group mt-4">
+                <div class="form-group w-75" >
+                    <div class="input-group ">
                         <input type="text" name="txtsearch" id="txtsearch" class="form-control input-lg" placeholder="Search is easier now...."required autocomplete=off />
                         <div class="input-group-append">
-                            <button class="btn btn-success btn-outline-light" id="buttonsearch" type="submit">Search</button>
+                            <button class="btn  btn-outline-light" id="buttonsearch" type="submit" style="background-color:#1caaca">Search</button>
                         </div>
                     </div>
                 </div>
-                <div id="productList" class="fixed-top" style="padding-top:60px;padding-left:130px;">
-                </div>
+                {{--<div id="productList"  style="padding-top:60px;padding-left:130px;">--}}
+                {{--</div>--}}
 
             </form>
             {{ csrf_field() }}
-
+        </div>
             <script>
                 $(document).ready(function(){
                     console.log("dddd");
@@ -73,11 +88,10 @@
                 });
             </script>
 
-        </div>
 
 
-<div class="w-25 ">
-        <ul class="navbar-nav  ">
+
+        <ul class="navbar-nav d-flex  ">
 
 
             @guest
@@ -89,14 +103,38 @@
                     <a href="{{ route('register') }}" class="btn  navbutton btn-danger">Join now</a>
                 </li>
             @else
+<<<<<<< HEAD
+=======
+                <li class="nav-item  "   style="padding-left:24px;">
+                    <a href="/" class="nav-link"> <span class="text-light"> <i class="fas fa-home"></i></span> Home </a>
+                </li>
+>>>>>>> 1a5f5e23286b7c84dc0b97d5aad033b6746796db
 
                 @if(Auth::check())
+                    <li class="nav-item dropdown  " >
+
+
+                        <a href="category" class="nav-link dropdown-toggle  " data-toggle="dropdown" > Category </a>
+                        <div class="dropdown-menu border border-info shadow wow fadeInDown" aria-labelledby="navbarDropdown">
+                            <h5 class="dropdown-header">Browes By Category</h5>
+                        @foreach($catName as $category)
+
+                            <a href="/category/{{$category->id}}" class="dropdown-item">{{$category->categoryName}}</a>
+                            @endforeach
+                        </div>
+                    </li>
+
                 <li class="nav-item">
-                <a href="/deals"class="btn btn-danger">Deals</a>
+                <a href="/deals"class=" nav-link bg-danger rounded shadow">Deals</a>
                 </li>
+<<<<<<< HEAD
                     <li class="nav-item"  style="padding-left:24px;">
                         <a href="/contact" ><button class="btn  navbutton btn-primary">Contact Us</button></a>
                     </li>
+=======
+
+
+>>>>>>> 1a5f5e23286b7c84dc0b97d5aad033b6746796db
                 @endif
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -107,7 +145,7 @@
                         <a class="dropdown-item" href="{{ route('logout') }}"
                            onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
+                            <span class=""><i class="fas fa-sign-out-alt"></i></span>  {{ __('Logout') }}
                         </a>
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -119,9 +157,9 @@
             @endguest
 
         </ul>
-</div>
 
     </div>
+
 
 </nav>
 

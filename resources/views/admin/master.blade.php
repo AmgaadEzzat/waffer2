@@ -6,7 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dashboard</title>
 
-
+    <link rel="stylesheet" href="{{asset('animate.css-master/animate.min.css')}}">
+    <script src="{{asset('wow.min.js')}}"></script>
+    <script>
+        new WOW().init();
+    </script>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
@@ -88,6 +92,14 @@
                             <i class="fas fa-align-left"></i>
                         </button>
 
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link"  href="/" >
+                                    <i class="fas fa-home " style="font-size: 2em ; color: #1aabcb"></i>
+                                </a>
+                            </li>
+
+                        </ul>
 
                         <ul class="nav navbar-nav ml-auto">
                             @guest

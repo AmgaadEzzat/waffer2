@@ -59,9 +59,8 @@ class AdminController extends Controller
         $countOfUsers = DB::table('users')->count();
         $countOfProducts = DB::table('products')->count();
         $countOfCategories = DB::table('categories')->count();
-        return view('admin.mainPage' , compact('catName' , 'users' , 'countOfUsers' , 'countOfProducts' , 'countOfCategories') );
+        return view('admin.mainPage' , compact( 'catName','users' , 'countOfUsers' , 'countOfProducts' , 'countOfCategories') );
     }
-
 
 
     public function store(Request $request)

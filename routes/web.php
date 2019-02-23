@@ -17,7 +17,7 @@ Auth::routes();
 
 
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'InsertProduct@ mostsearchedforhome');
 
 Route::get('/autocomplete', 'InsertProduct@index');
 Route::post('/autocomplete/fetch', 'InsertProduct@fetch')->name('autocomplete.fetch');
@@ -29,7 +29,7 @@ Route::post('/index/search', 'InsertProduct@index')->name('index.search');
 
 
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 
 
 
@@ -42,22 +42,24 @@ Route::group(['middleware' => 'UserMiddleware'], function () {
     Route::get('/profile/{id}/editProduct', 'UserController@editProduct');
     Route::post('/profile/{id}/update', 'UserController@updateProduct');
     Route::get('/profile/{id}/editUser', 'UserController@editUser');
-    Route::get('/delete/{id}', 'UserController@destroyProduct');
+    Route::get('/{id}/deleteFromUser', 'UserController@destroyProduct');
     Route::post('/profile/{id}/updateUser', 'UserController@updateUser');
     Route::get('/deals','DealController@index');
     Route::get(' /Browse','DealController@browse');
     Route::post('/store','DealController@store');
     Route::get('/deletedeal/{id}', 'DealController@destroy');
+<<<<<<< HEAD
     Route::get('/contact',function (){
         return view('user.contact');
     });
     Route::post('/insertcontact','UserController@insertContact');
 
+=======
+    Route::get('/home', 'InsertProduct@ mostsearchedforhome');
+>>>>>>> 1a5f5e23286b7c84dc0b97d5aad033b6746796db
 });
 Route::get('/deals','DealController@index');
-Route::get('/details', function () {
-    return view('user.productDetails');
-});
+
 Route::get('/isadmin' , 'AdminController@isadmin');
 
 Route::get('/isadmin' , 'AdminController@isadmin');
@@ -107,6 +109,8 @@ Route::get('/place/{id}','InsertProduct@place');
 Route::get('fetchlike', 'AjaxController@fetchlike');
 Route::get('fetchdislike', 'AjaxController@fetchdislike');
 Route::get('addtowishlist','AjaxController@addtowishlist');
+Route::get('/category/{id}','UserController@showByCategory');
+
 
 
 Route::get('/piechart','ChartController@piechart');
@@ -116,6 +120,19 @@ Route::get('/fetchdailyproduct','ChartController@fetchproductspostedeveryday');
 
 Route::get('/login/facebook', 'Auth\LoginController@redirectToProvider');
 Route::get('/login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
+
+Route::get('/login/twitter', 'Auth\LoginController@redirectToProvidertwitter');
+Route::get('/login/twitter/callback', 'Auth\LoginController@handleProviderCallbacktwitter');
+
+Route::get('/login/github', 'Auth\LoginController@redirectToProvidergithub');
+Route::get('/login/github/callback', 'Auth\LoginController@handleProviderCallbackgithub');
+
+Route::get('/login/google', 'Auth\LoginController@redirectToProvidergoogle');
+Route::get('/login/google/callback', 'Auth\LoginController@handleProviderCallbackgoogle');
+
+
+Route::get('/master','UserController@masterCat');
+//Route::get('/details/{}','ProductDetailController@sendCat');
 
 //Route::get('sendemail',function (){
 //  $data=array(['name'=>'Doaa','email'=>'doaabakhiet11@gmail.com']);

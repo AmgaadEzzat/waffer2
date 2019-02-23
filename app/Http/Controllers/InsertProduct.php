@@ -84,7 +84,7 @@ in (select distinct(searchName) from searchs order by  	created_at)and users.id=
 
 
 
-
+    $lastProducts =  Product::orderBy('id', 'desc')->take(8)->get();
     $catName=DB::table('categories')->get();
 //    $products = DB::table('products')
 //        ->joinSub($productname, 'productname', function($join) {
@@ -94,7 +94,8 @@ in (select distinct(searchName) from searchs order by  	created_at)and users.id=
 
 
     $places=DB::table('products')->select('productAddress')->distinct()->get();
-   return view ('welcome',compact('mostsearchproduct' ,'products','catName','places'));
+//   dd($lastProducts);
+    return view ('welcome',compact('mostsearchproduct' ,'products','catName','places' , 'lastProducts'));
 
 }
 
