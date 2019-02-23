@@ -6,6 +6,7 @@ use App\Category;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use App\Contact;
 use Mail;
@@ -132,7 +133,7 @@ class UserController extends Controller
             'email'=>$request->email,
             'city'=>$request->city,
             'phone'=>$request->phone,
-            'password'=>$request->password
+          
 
 
         ));

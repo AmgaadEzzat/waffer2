@@ -3,10 +3,10 @@
 
 
     <div class="container">
-        <div class="row m-3">
+        <div class="row ">
 
             @foreach($catgoryPro as $catPro)
-            <div class="col-sm-3 ml-5 mb-4 wow bounceIn">
+            <div class="col-sm-3 m-2 wow bounceIn">
 
                 <div class="card shadow p-2 w-100  " style="height: 85%;">
                     <b class="text-primary font-weight-bold m-2">{{$catPro->productName}}</b>
@@ -22,6 +22,7 @@
             </div>
             @endforeach
             </div>
+
         </div>
 
 
