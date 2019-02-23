@@ -42,7 +42,7 @@
         <span class=" text-light"> <i class="fas fa-ellipsis-v"></i></span>
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <div style="width:70%">
+        <div style="width:65%">
             <form action="/insertsearch" method="post" >
                 {{csrf_field()}}
                 <div class="form-group w-75" >
