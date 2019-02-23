@@ -183,7 +183,7 @@
 
         </div>
         <div class="col-sm-2" id="footerlinks"><br><strong>Links</strong><br>
-            <p><a href="#">Waffer Coaches</a> <br><a href="#">Waffer coaches</a><br><a href="#">About Us</a><br>
+            <p><br><a href="#">About Us</a><br>
             </p>
         </div>
         <div class="col-sm-2" id="footerlinks"><br><br><p> <a href="/contact" ><button class="btn   btn-outline-primary">Contact Us</button></a><br></p></div>
@@ -194,7 +194,7 @@
             <a href="www.google.com" style="color:white;"><i class="fab fa-google"></i></a>&nbsp;&nbsp;&nbsp;
             <a href="www.instagram.com" style="color:white;"><i class="fab fa-instagram"></i></a>&nbsp;&nbsp;&nbsp;
             <a href="www.youtube.com" style="color:white;"> <i class="fab fa-youtube"></i></a>&nbsp;&nbsp;&nbsp;<br>
-            <br><small>© 2019 WaffeR. All Rights Reserved.<br> Owned by <a href="#" id="footerlink">BasharSoft LLC.</a> </small><br><br>
+            <br><small>© 2019 WaffaR. All Rights Reserved.<br> Owned by <a href="#" id="footerlink">BasharSoft LLC.</a> </small><br><br>
         </div>
         <div class="col-sm-1" >
         </div>

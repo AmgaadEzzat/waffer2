@@ -56,6 +56,8 @@ class InsertProduct extends Controller
         $searchResult=DB::table('products')
              ->where('products.productName','like','%'.$inputseearch.'%')
             ->orderBy('products.productPrice')->get();
+
+
          return view('products',compact('searchResult'));
 }
 

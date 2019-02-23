@@ -23,11 +23,16 @@ class RatingController extends Controller
         $inputsearch=$request->txtsearch;
         // $locations = DB::table('products')->select('productAddress')->get();
 
+        $catName = DB::table('categories')->get();
+        $catgoryMob = DB::table('products')->select(DB::raw('count(*) as catMob'))->where('catId','=','1')->get();
+        $catgoryTab = DB::table('products')->select(DB::raw('count(*) as catTap'))->where('catId','=','2')->get();
+        $catgoryLap = DB::table('products')->select(DB::raw('count(*) as catLap'))->where('catId','=','3')->get();
 
         $searchResult=DB::table('products')->where('productName','like','%'.$inputsearch.'%')->orderBy('productPrice')->get();
-        return view('products',compact('searchResult'));
+        return view('products',compact('searchResult','catName','catgoryMob','catgoryTab','catgoryLap'));
 
     }
+
 
 
 

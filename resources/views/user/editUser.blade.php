@@ -1,7 +1,7 @@
 @extends('user.master')
 @section('content')
 
-    <div class="container m-4">
+    <div class="container p-5">
         @if(session()->has('notif'))
             <div class="row">
                 <div class="alert alert-success">
@@ -11,8 +11,8 @@
                 </div>
             </div>
         @endif
-        <div class="card">
-            <div class="card-header" style="background:#1dbee2">{{ __('Update Your Information ') }}</div>
+        <div class="card ">
+            <div class="card-header border border-info rounded"  >{{ __('Update Your Information ') }}</div>
 
             <div class="card-body">
 
