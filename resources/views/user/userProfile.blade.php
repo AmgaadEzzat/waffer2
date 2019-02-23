@@ -17,9 +17,10 @@
                     <p  class="wow fadeInDown"><i class="fas fa-phone info"></i>{{$userData->phone}}</p>
                     <hr>
 
-
+                    <a href="/profile/{{$userData->id}}/editUser" class="btn border border-secondary btnstyle"> Verify Your Email</a>
+                    <hr>
                    <a href="/profile/{{$userData->id}}/editUser" class="btn border border-secondary btnstyle"> Edit Your Info</a>
-                    <br>
+                    <hr>
                     @if(Auth::user()->type==1)
                         <a href="/Browse" class="btn border border-secondary btnstyle">Browse A Deal</a>
                     @endif

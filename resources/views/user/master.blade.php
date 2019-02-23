@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="{{asset('css/productDetails.css')}}" rel="stylesheet">
+    <link href="{{asset('css/homestyle.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('animate.css-master/animate.min.css')}}">
     <script src="{{asset('wow.min.js')}}"></script>
     <script>
@@ -37,7 +38,7 @@
         <span class=" text-light"> <i class="fas fa-ellipsis-v"></i></span>
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <div style="width:70%">
+        <div style="width:65%">
             <form action="/insertsearch" method="post" >
                 {{csrf_field()}}
                 <div class="form-group w-75" >

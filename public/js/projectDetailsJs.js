@@ -89,3 +89,4 @@ function imageZoom(imgID, resultID) {
 $('.wowclass').hover(function (){
     $('#brand').toggleClass('.pulse');
 });
+

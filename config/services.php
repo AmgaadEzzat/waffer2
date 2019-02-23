@@ -51,5 +51,9 @@ return [
         'client_secret' => 'e3daee788c857099b2d13fbd3e12163a032661ca',
         'redirect' => 'http://localhost:8000/login/github/callback',
     ],
-
+    'google' => [
+        'client_id' => '1089622880119-4hq7hcmfahvj6sg49fvh4etos9m798pg.apps.googleusercontent.com ',
+        'client_secret' => 'jjohejvetugywzwo',
+        'redirect' => 'http://localhost:8000/login/google/callback',
+    ],
 ];
