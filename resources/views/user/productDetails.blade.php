@@ -50,7 +50,7 @@
                 <div class="col-sm-8 borderStyle   container" >
 
                       <h1 class="ml-2"> {{$product->productName}}</h1> <br>
-                    <span class="border border-secondary w-75 p-2 ml-2"  >  {{$product->productPrice}} EGP</span> <br><br>
+                    <span class="border btn-outline-success w-75 p-2 ml-2"  >  {{$product->productPrice}} EGP</span> <br><br>
                     <span class=" ml-2"> you can buy it from <span class="text-danger">  {{$product->productAddress}} </span></span>
                     <hr>
                     <h4>Description </h4>
@@ -59,7 +59,7 @@
                     <div class="ml-2">
                         {{--<button class="btn btn-success"> Buy it from Jumia</button> --}}
                     </div>  <input type="hidden" name="productid" id="prodid" value="{{$id}}"/>
-                    <div id=stars class="ml-2 d-inline-flex">
+                    <div id=stars class="ml-2 p-2">
                     <span style="color:rgb(179, 75, 75);">
 
                         @if(!Auth::check()) <b>Likes:</b>@endif
@@ -78,16 +78,18 @@
                             @endif
                             <span id="numberOfdisLikes">{{$product->dislike}}</span>
                     </span>
+                        <br>
+                        <br>
                         @if(Auth::check())
-                            <ul class="nav d-inline-flex ">
+                            <ul class="nav ">
 
-                                <li ><button class=" btn btn-light" id="wishlist"><span id="wishheart"> <i class="fas fa-heart"></i></span> Add to a wish list</button></li>
+                                <li ><button class=" btn btn-light btn-outline-info" id="wishlist"><span id="wishheart"> <i class="fas fa-heart"></i></span> Add to a wish list</button></li>
                             </ul>
                         @endif
                     </div>
-                    <div> Share:
+                    <div>
                         {{--<div class="sharethis-inline-share-buttons"></div>--}}
-                        <div class="sharethis-inline-share-buttons"></div>
+                     <span class=" ml-5 font-weight-bold"> Share: </span>     <span class="sharethis-inline-share-buttons">  </span>
                     </div>
                     <hr>
                     <ul class="nav d-inline-flex ">
