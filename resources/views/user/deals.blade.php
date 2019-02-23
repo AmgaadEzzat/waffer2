@@ -26,15 +26,15 @@
 
                 <div class="col-sm-3">
 
-                    <div class="card" >
-                        <b class="text-primary font-weight-bold"> Offered  by {{$deal->name}}</b>
+                    <div class="card wow pulse" >
+                        <b class="text-primary font-weight-bold m-2"> Offered  by {{$deal->name}}</b>
                         <img class="card-img-top" src="/img/{{$deal->Image}}" alt="Card image">
                         <div class="card-body">
                             <h4 class="card-title">{{$deal->Heading}}</h4>
                             <p class="card-text">
                                 <b class="text-primary"> End Date&nbsp;</b>:&nbsp;{{$deal->end}}<br>
                                 <b class="text-primary">Begin Date</b>&nbsp;:&nbsp;{{$deal->begin }}<br></p>
-                            <a href="/detailofdeal/{{$deal->id}}" class="btn btn-primary">Show More Details</a>
+
                         </div> <!--end of card body--> 
                     </div> <!--end of card--> 
                     </div>  <!--end of co13-->

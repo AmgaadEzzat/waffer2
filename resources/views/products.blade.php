@@ -33,8 +33,15 @@
                         </ul>
 
 
+                        <h1>Price Range</h1>
+                        <div class="slidecontainer ">
+                            <input type="range" min="0" max="50000"  value="50" class="slider" id="myRange">
+                            <p>Cost: <span id="range"></span> EGP</p>
 
+                        </div>
 
+                        <button type="button" id="filter" class="btn btn-danger">Filter</button>
+                        <button type="button" id="back" class="btn btn-danger">Back<br> without Filter</button>
 
 
             </div>
@@ -47,6 +54,9 @@
                         <img src="/images/{{$searchRes->productImage}} " class="w-75 h-75 p-2" >
                     </div>
                         <div class="col-sm-6 ">
+
+                            <div class="price {{$searchRes->productPrice}}"> </div>
+
 
                         <input type="hidden" value="{{$searchRes->productPrice}}" id="input">
                             <span class="p-2" >{{$searchRes->productName}}</span><br>

@@ -134,35 +134,39 @@
 
                         <div class="col-sm-3 m-3 wow pulse " >
                             <div class="crad border shadow h-75 ">
-                                <img src="/img/{{$proUser->productImage}}"  class="w-25 h-25 m-3" data-toggle="modal" data-target="#myModal">
-                                <div class="modal fade" id="myModal">
-                                    <div class="modal-dialog modal-xl">
-                                        <div class="modal-content">
+                                <img src="/img/{{$proUser->productImage}}"  class="w-25 h-25 p-2" data-toggle="modal" data-target="#promodel">
+                                {{--<div class="modal fade" id="promodel">--}}
 
-                                            <!-- Modal Header -->
-                                            <div class="modal-header">
-                                                <h4 class="modal-title"> {{$proUser->productName}}</h4>
-                                            </div>
-                                            <div class="modal-body">
-                                              <img src="/img/{{$proUser->productImage}}">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body cardstyle w-100 h-75" >
+                                        {{--<div class="modal-content">--}}
+
+                                            {{--<!-- Modal Header -->--}}
+                                            {{--<div class="modal-header">--}}
+                                                {{--<h4 class="modal-title"> {{$proUser->productName}}</h4>--}}
+                                            {{--</div>--}}
+                                            {{--<div class="modal-body">--}}
+                                              {{--<img src="/img/{{$proUser->productImage}}">--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+
+                                {{--</div>--}}
+                                <div class="card-body cardstyle w-100 h-100" >
                                     <a href="#"  class="ml-3 text-center">  {{$proUser->productName}} </a>
                                     <br>
-                                    <span class="small m-2 text-secondary d-flex">  buy it from {{$proUser->productAddress}} </span>
+                                    <span class="small  text-secondary  ">  buy it from {{$proUser->productAddress}} </span>
+<br>
 
-
-                                    <span class="text-*-center    font-weight-bold"  style="color:red;">{{$proUser->productPrice }}  EGP </span>
+                                    <span class="text-*-center   font-weight-bold"  style="color:red;">{{$proUser->productPrice }}  EGP </span>
 
 
                                 </div>
                             </div>
-                           <a href="/profile/{{$proUser->id}}/editProduct"  class="btn btn-outline-dark m-3 shadow"> Edit</a>
-                            <a href="{{$proUser->id}}/deleteFromUser" class="btn btn-outline-dark m-3 shadow"  onclick="return confirm ('Are You Sure You want to delete ! ');">
+                        <a href="/profile/{{$proUser->id}}/editProduct"  class="btn btn-outline-dark m-2 shadow"> Edit</a>
+
+
+
+                            <a href="{{$proUser->id}}/deleteFromUser" class="btn btn-outline-dark m-2 shadow"  onclick="return confirm ('Are You Sure You want to delete ! ');">
                                  Delete</a>
+
                         </div>
 
 

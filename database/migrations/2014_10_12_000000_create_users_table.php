@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->integer('phone');
             $table->integer('type');
             $table->string('city');
+
             $table->rememberToken();
             $table->timestamps();
         });
