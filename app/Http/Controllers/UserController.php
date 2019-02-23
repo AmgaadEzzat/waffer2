@@ -6,7 +6,8 @@ use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-
+use App\Contact;
+use Mail;
 class UserController extends Controller
 {
 
@@ -131,7 +132,30 @@ class UserController extends Controller
     }
 
 
+public function insertContact(Request $request){
+        $contactUs = new Contact();
+            $contactUs->name= $request->input('name');
+    $contactUs->email=$request->input('email');
+    $contactUs->msg=$request->input('msg');
+    $contactUs->save();
+    Mail::send('emails.welcome',
+        array(
+            'name' => $request->get('name'),
+            'email' => $request->get('email'),
+            'user_message'=> $request->get('msg')
+        ),function($message)
+        {
+            $message->from('maimohameds444@gmail.com','Admin mai');
+            $message->to('maimohameds444@gmail.com', 'Admin mai2')->subject('Important message');
+        });
 
+    return redirect('/')->with('success', 'Message Sent');
+
+
+
+//return back();
+
+}
     public function ShowDataProfile()
     {
         $userId=Auth::user()->id;

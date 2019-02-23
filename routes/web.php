@@ -48,6 +48,10 @@ Route::group(['middleware' => 'UserMiddleware'], function () {
     Route::get(' /Browse','DealController@browse');
     Route::post('/store','DealController@store');
     Route::get('/deletedeal/{id}', 'DealController@destroy');
+    Route::get('/contact',function (){
+        return view('user.contact');
+    });
+    Route::post('/insertcontact','UserController@insertContact');
 
 });
 Route::get('/deals','DealController@index');

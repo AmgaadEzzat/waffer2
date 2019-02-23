@@ -1,11 +1,10 @@
 @extends('user.master')
 @section('content')
+
+
     <div class="container-fluid">
         <div class="row infoAnim">
         <div class="col-sm-3 m-3">
-            
-
-
 
 @foreach($userData as $userData)
     <div class="container-fluid divinfo">
