@@ -123,6 +123,7 @@ class LoginController extends Controller
             'phone' =>'1234',
             'type' =>$type,
             'city' =>"city",
+
 //            'avatar' => $userSocial->avatar,
             //'facebook_profile' => $userSocial->user['link'],
             // 'gender' => $userSocial->user['gender'],
