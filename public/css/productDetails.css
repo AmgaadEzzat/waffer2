@@ -14,7 +14,10 @@ nav{
 
     background-color: #49cbe7;
 }
+.borderStyle{
 
+    border-left:1px solid #c2c2a3;
+}
 
 .divinfo{
     border:1px solid  #1aabcb ;

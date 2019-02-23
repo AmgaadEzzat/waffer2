@@ -15,12 +15,16 @@
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
           crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+
   <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
 
  <!--  <script src="{{asset('js/jquery.min.js')}}"></script> -->
    <script src="{{asset('js/popper.min.js')}}"></script>
@@ -38,7 +42,7 @@
         <span class=" text-light"> <i class="fas fa-ellipsis-v"></i></span>
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <div style="width:70%">
+        <div style="width:65%">
             <form action="/insertsearch" method="post" >
                 {{csrf_field()}}
                 <div class="form-group w-75" >
@@ -99,9 +103,11 @@
                     <a href="{{ route('register') }}" class="btn  navbutton btn-danger">Join now</a>
                 </li>
             @else
+
                 <li class="nav-item  "   style="padding-left:24px;">
                     <a href="/" class="nav-link"> <span class="text-light"> <i class="fas fa-home"></i></span> Home </a>
                 </li>
+
 
                 @if(Auth::check())
                     <li class="nav-item dropdown  " >
@@ -120,6 +126,9 @@
                 <li class="nav-item">
                 <a href="/deals"class=" nav-link bg-danger rounded shadow">Deals</a>
                 </li>
+
+
+
 
 
                 @endif
@@ -177,7 +186,7 @@
             <p><a href="#">Waffer Coaches</a> <br><a href="#">Waffer coaches</a><br><a href="#">About Us</a><br>
             </p>
         </div>
-        <div class="col-sm-2" id="footerlinks"><br><br><p><a href="#">Parteners</a> <br><a href="#">Contact Us</a><br></p></div>
+        <div class="col-sm-2" id="footerlinks"><br><br><p> <a href="/contact" ><button class="btn   btn-outline-primary">Contact Us</button></a><br></p></div>
         <div class="col-sm-3" id="footerlinks">
             <br><strong>Follow Us</strong><br>
             <a href="www.facebook.com" style="color:white;"><i class="fab fa-facebook-square"></i></a>&nbsp;&nbsp;&nbsp;
@@ -195,6 +204,9 @@
 
 </footer>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 
 
 

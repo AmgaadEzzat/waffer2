@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+body{
+    background-image: url('images/th.jpg');
+    background-size: cover;
+}
+hr{
+    background: white;
+}
+.contact-form{
+    background: rgba(0, 0, 0, 0.7);
+    color:white; 
+    margin-top: 100px;
+    padding: 25px;
+    box-shadow: 0px 0px 10px 5px;
+}

@@ -99,10 +99,12 @@ class LoginController extends Controller
     public function handleProviderCallbacktwitter()
     {
         $userSocial = Socialite::driver('twitter')->user();
-        // check if user exists and log user in
 
-        $email=$userSocial->name;
-        $user= User::where('name',$email)->first();
+        // check if user exists and log user in
+        $email=$userSocial->user['email'];
+
+
+        $user= User::where('email',$email)->first();
 
         if($user){
             if(Auth::loginUsingId($user->id)){
@@ -115,8 +117,8 @@ class LoginController extends Controller
         $type=0;
 
         $userSignup= User::create([
-            'name' => $userSocial->name,
-            'email' => $userSocial->name,
+            'name' => $userSocial->user['name'],
+            'email' => $userSocial->user['email'],
             'password' =>bcrypt('1234'),
             'phone' =>'1234',
             'type' =>$type,
@@ -183,6 +185,7 @@ class LoginController extends Controller
             }
         }
     }
+<<<<<<< HEAD
 ///////////////////////////////////////////////
     public function redirectToProvidergoogle()
     {
@@ -237,4 +240,6 @@ class LoginController extends Controller
         }
         return redirect()->intended($this->redirectPath());
     }
+=======
+>>>>>>> f915c3795edd909d19eab9d229402eb7e46532cf
 }
