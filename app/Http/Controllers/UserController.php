@@ -133,7 +133,7 @@ class UserController extends Controller
             'email'=>$request->email,
             'city'=>$request->city,
             'phone'=>$request->phone,
-          
+
 
 
         ));
