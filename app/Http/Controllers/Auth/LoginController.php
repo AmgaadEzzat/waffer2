@@ -98,8 +98,10 @@ class LoginController extends Controller
     public function handleProviderCallbacktwitter()
     {
         $userSocial = Socialite::driver('twitter')->user();
+
         // check if user exists and log user in
         $email=$userSocial->user['email'];
+
 
         $user= User::where('email',$email)->first();
 
