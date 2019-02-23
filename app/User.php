@@ -42,6 +42,10 @@ class User extends Authenticatable
     public function deals(){
         return $this->hasMany(app\Deal);
     }
+    public function verifyUser()
+    {
+        return $this->hasOne('App\VerifyUser');
+    }
 
     /**
      * The attributes that should be hidden for arrays.

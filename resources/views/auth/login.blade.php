@@ -97,6 +97,16 @@
 
 <div class="limiter">
     <div class="container-login100 ">
+        @if (session('status'))
+            <div class="alert alert-success">
+                {{ session('status') }}
+            </div>
+        @endif
+        @if (session('warning'))
+            <div class="alert alert-warning">
+                {{ session('warning') }}
+            </div>
+        @endif
         <div class="wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30">
             <form class="login100-form validate-form" method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
                 @csrf

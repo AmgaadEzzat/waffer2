@@ -124,6 +124,9 @@ Route::get('/login/google/callback', 'Auth\LoginController@handleProviderCallbac
 
 
 Route::get('/master','UserController@masterCat');
+
+
+Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
 //Route::get('/details/{}','ProductDetailController@sendCat');
 
 //Route::get('sendemail',function (){
