@@ -86,7 +86,7 @@ Route::group(['middleware' => 'AdminMiddleware'], function () {
 
 Route::post('/insertsearch','RatingController@insertsearch');
 Route::get('/insertsearch', function () {
-    return view('products');
+    return view('welcome');
 });
 
 Route::post('/dislike','RatingController@dislike');

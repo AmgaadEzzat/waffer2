@@ -185,7 +185,7 @@
                 </a>
 
 
-                <a href="/login/github" style="color:black;"class="btn-github m-b-10">
+                <a href="/login/github" style=" color:black;"class="btn-github m-b-10">
                     <i class="fab fa-github"></i>
                     Github
                 </a>

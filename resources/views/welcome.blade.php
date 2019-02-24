@@ -279,7 +279,7 @@
                                     <b class="text-primary font-weight-bold">{{$product->name}}</b>
                                     <img src="/images/{{$product->productImage}}" class="img-thumbnail"alt="Car" style="width:100%;height:50%;">
                                     <h4>{{$product->productName}}</h4>
-                                    <div style="height:10%">{{$product->productDescription}}</div>
+                                    {{--<div style="height:10%">{{$product->productDescription}}</div>--}}
                                     <p>
                                         <b class="text-danger"> Address &nbsp;</b>:&nbsp;{{$product->productAddress}}<br>
                                         <b class="text-danger"> Price&nbsp;</b>:&nbsp;{{$product->productPrice}}EGP<br>
@@ -360,7 +360,7 @@
                 <img  src="/img/{{$lastProduct->productImage }}">
                 <h5 class="pt-3">{{$lastProduct->productName}}</h5>
                 <p style="height:50%">{{$lastProduct->productAddress }}<br>
-                {{$lastProduct->productDescription }}
+                {{--{{$lastProduct->productDescription }}--}}
                     {{$lastProduct->created_at }}</p>
 
                 <a href="/details/{{$lastProduct->id}} fixed-bottom" class="btn btn-primary">Show More Details</a>

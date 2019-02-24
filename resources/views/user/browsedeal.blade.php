@@ -25,8 +25,7 @@
                     </div>
                 </div>
             @endif
-        <div class="row" >
-            <div class="col-sm-1"></div>
+
                 <div class="row">
                     @foreach($deals as $deal)
                         <div class="col-sm-4">
@@ -34,8 +33,9 @@
                                 <img class="card-img-top" src="/img/{{$deal->Image}}" alt="Card image">
                                 <div class="card-body">
                                     <h4 class="card-title">{{$deal->Heading}}</h4>
-                                    <p class="card-text"><b class="text-primary">
-                                            <b class="text-primary"> End Date&nbsp;</b>:&nbsp;{{$deal->end}}<br>
+                                    <p class="card-text">
+                                        {!!$deal-> Description!!}<br>
+                                             <b class="text-primary"> End Date&nbsp;</b>:&nbsp;{{$deal->end}}<br>
                                             <b class="text-primary">Begin Date</b>&nbsp;:&nbsp;{{$deal->begin }}<br></p>
                                     <a href="/deletedeal/{{$deal->id}}" class="btn btn-primary">Delete</a>
                                 </div>
@@ -45,8 +45,7 @@
                     <br><br><br>
                 </div>
 
-            <div class="col-sm-1"></div>
-            </div>
+
         <br><br><br>
         <div class="row"><div class="col-sm-2"></div>
             <div class="col-sm-8">

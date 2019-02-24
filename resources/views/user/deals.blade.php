@@ -32,6 +32,7 @@
                         <div class="card-body">
                             <h4 class="card-title">{{$deal->Heading}}</h4>
                             <p class="card-text">
+                                {!!$deal-> Description!!}<br>
                                 <b class="text-primary"> End Date&nbsp;</b>:&nbsp;{{$deal->end}}<br>
                                 <b class="text-primary">Begin Date</b>&nbsp;:&nbsp;{{$deal->begin }}<br></p>
 

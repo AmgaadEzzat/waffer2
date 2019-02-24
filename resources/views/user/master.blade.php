@@ -53,8 +53,7 @@
                         </div>
                     </div>
                 </div>
-                {{--<div id="productList"  style="padding-top:60px;padding-left:130px;">--}}
-                {{--</div>--}}
+
 
             </form>
             {{ csrf_field() }}
@@ -82,6 +81,9 @@
 
                     $(document).on('click', 'li', function(){
                         $('#txtsearch').val($(this).text());
+                        $('#productList').fadeOut("slow");
+                    });
+                    $(document).on('click', 'body', function(){
                         $('#productList').fadeOut("slow");
                     });
 
@@ -158,7 +160,10 @@
 
 
 </nav>
-
+<div class="row">
+<div id="productList" style="padding-left:130px;position:absolute;">
+</div>
+</div>
 @yield("content")
 
 <footer  class="col-sm-12 footer">

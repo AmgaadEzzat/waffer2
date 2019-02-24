@@ -49,13 +49,13 @@
 
             <div class="col-sm-6   " style="background-color:white;">
                 @foreach($searchResult as $searchRes)
-                    <div class="container row border  border-success m-2 ">
+                    <div class="container row border  border-success m-2 price">
                     <div class="col-sm-4 m-2" >
-                        <img src="/images/{{$searchRes->productImage}} " class="w-75 h-75 p-2" >
+                        <img src="/images/{{$searchRes->productImage}} " class="w-75 h-50 p-2" >
                     </div>
                         <div class="col-sm-6 ">
 
-                            <div class="price {{$searchRes->productPrice}}"> </div>
+                            <div class=" {{$searchRes->productPrice}}"> </div>
 
 
                         <input type="hidden" value="{{$searchRes->productPrice}}" id="input">
@@ -87,12 +87,13 @@
                         $('#back').fadeIn("slow");
 
                             $('.price').each(function () {
-
+console.log(slider.value);
                                 var dslidervalue=parseInt(slider.value)-3000;
                                 console.log(dslidervalue);
                                 var newslidervalue=parseInt(slider.value)+3000;
                                 console.log(newslidervalue);
                                 var inputvalue=$(this).find("input[type=hidden]").val();
+                                console.log(inputvalue);
                                if((dslidervalue<=inputvalue)&&(newslidervalue>=inputvalue))
                                     {
                                     $(this).show();
